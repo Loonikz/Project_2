@@ -1,5 +1,6 @@
 const express = require('express');
-const MySQL = require('./databases/mySQL/MySQL')
+const { MySQL } = require('./databases/mySQL/MySQL')
+const { MongoDB } = require('./databases/MongoDB/MongoDB')
 
 const app = express();
 const port = 3000;
@@ -12,14 +13,19 @@ app.listen(port, async (err) => {
     }
     console.log(`server is listening on ${port}`)
 
-    const mySQL = new MySQL({
-        host: "34.122.166.203",
-        user: "root",
-        database: "person",
-        password: "kFf3hHpxtjI8PFkN"
-    });
-    await mySQL.connection();
-    await mySQL.query('SELECT * FROM persons');
+    const mongoDB = new MongoDB();
+    // await mongoDB.connection();
+    await mongoDB.insertOne('3333','2323', 2, 'test', 'test', 'test', 'test');
+    // await mongoDB.findAll();
+    // await mongoDB.update();
+    // const mySQL = new MySQL({
+    //     host: "34.122.166.203",
+    //     user: "root",
+    //     database: "person",
+    //     password: "kFf3hHpxtjI8PFkN"
+    // });
+    // await mySQL.connection();
+    // await mySQL.query('SELECT * FROM persons');
 
     app.get('/mySQL', (req, res) => {
         mySQL.queryAll('SELECT * FROM persons',(rows) => {
