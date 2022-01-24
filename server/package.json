@@ -2,8 +2,12 @@
   "name": "server",
   "version": "1.0.0",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.17.2",
     "mongodb": "^4.3.1",
     "mysql": "^2.18.1"
+  },
+  "devDependencies": {
+    "helmet": "^5.0.2"
   }
 }

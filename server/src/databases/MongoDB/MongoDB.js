@@ -13,6 +13,13 @@ const uri = "mongodb+srv://root:kFf3hHpxtjI8PFkN@cluster0.qlr4p.mongodb.net/pers
 class MongoDB {
     constructor() {
         this.client = new MongoClient(uri, {useNewUrlParser: true, useUnifiedTopology: true});
+
+    }
+
+    async connection() {
+        this.client.connect().then(r => {
+            console.log('connect ')
+        });
     }
 
     async collection() {
@@ -35,66 +42,40 @@ class MongoDB {
     }
 
     async insertOne(fname, lname, age, city, phoneNumber, email, companyName) {
-        this.client.connect((e, client) => {
-            if (e) {
-                console.log(e)
-            } else {
-                console.log('Connection MongoDB')
-                const person = {
-                    'id': '',
-                    'fname': `${fname}`,
-                    'lname': `${lname}`,
-                    'age': age,
-                    'city': `${city}`,
-                    'phoneNumber': `${phoneNumber}`,
-                    'email': `${email}`,
-                    'companyName': `${companyName}`
-                };
-                const collection = client.db('person').collection('persons');
-                collection.insertOne(person, async function (err, result) {
-
-                    if (err) {
-                        return console.log(err);
-                    }
-                    // console.log(result.insertedId);
-                    this.updateId(result['insertedId']).then(() => {
-                        client.close();
-                    })
-                });
+        const person = {
+            'id': '',
+            'fname': `${fname}`,
+            'lname': `${lname}`,
+            'age': age,
+            'city': `${city}`,
+            'phoneNumber': `${phoneNumber}`,
+            'email': `${email}`,
+            'companyName': `${companyName}`
+        };
+        const collection = this.client.db('person').collection('persons');
+        collection.insertOne(person, async (err, result) => {
+            if (err) {
+                return console.log(err);
             }
-        })
+            await this.updateId(result['insertedId']);
+        });
     }
 
-    async findAll() {
-        this.client.connect(async (e, client) => {
-            if (e) {
-                console.log(e)
-            } else {
-                console.log('Connection MongoDB')
-                const collection = client.db('person').collection('persons');
-                await collection.find({}).toArray()
-                    .then((items) => {
-                        console.log(items);
-                    }).then(() => {
-                        client.close();
-                    })
-            }
-        })
+    async findAll(cb, param = {}) {
+        const collection = this.client.db('person').collection('persons');
+        await collection.find(param).toArray()
+            .then((items) => {
+                cb(items);
+            })
     }
+
     async updateId(id) {
-        this.client.connect((e, client) => {
-            if (e) {
-                console.log(e)
+        const collection = this.client.db('person').collection('persons');
+        collection.updateOne({'_id': id}, {$set: {'id': `${id}`}}, (error, result) => {
+            if (error) {
+                console.log(error)
             } else {
-                console.log('Connection MongoDB')
-                const collection = client.db('person').collection('persons');
-                collection.updateOne({'_id': id}, {$set: {'id': id}}, (error, result) => {
-                    if (e) {
-                        console.log(e)
-                    } else {
-                        console.log(result)
-                    }
-                })
+                console.log(result)
             }
         })
     }
