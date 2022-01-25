@@ -3,6 +3,7 @@ const MySQL  = require('./databases/mySQL/MySQL')
 const { MongoDB } = require('./databases/MongoDB/MongoDB')
 const CORS = require('cors') // решение корс политики
 const helmet = require('helmet')
+const bodyParser = require("express");
 const app = express();
 const port = 3000;
 
@@ -27,7 +28,9 @@ app.listen(port, async (err) => {
             contentSecurityPolicy: false,
         })
     );
-    app.use(CORS())
+    app.use(CORS({
+        origin:'localhost:3000'
+    }))
     app.get('/mySQL', (req, res) => {
         mySQL.queryAll('SELECT * FROM persons',(rows) => {
             res.send(rows);
@@ -44,14 +47,13 @@ app.listen(port, async (err) => {
             res.send(rows);
         })
     });
-    const urlencodedParser = express.urlencoded({extended: false});
-    app.post('/mySQL',urlencodedParser, (req, res) => {
-        console.log(req.body)
+    app.use(express.json())
+    app.post('/mySQL',(req, res) => {
         if(!req.body) return res.sendStatus(400);
         mySQL.insert(req.body.fname,req.body.lname,req.body.age,req.body.city,req.body.phoneNumber,req.body.email,req.body.companyName)
         res.sendStatus(200);
     });
-    app.post('/mySQL/:id',urlencodedParser, (req, res) => {
+    app.post('/mySQL/:id', (req, res) => {
         console.log(req.body)
         if(!req.body) return res.sendStatus(400);
         mySQL.update(req.params.id,req.body.fname,req.body.lname,req.body.age,req.body.city,req.body.phoneNumber,req.body.email,req.body.companyName)
@@ -68,8 +70,7 @@ app.listen(port, async (err) => {
             res.send(record);
         },{'id':`${req.params.id}`})
     });
-    app.post('/mongoDB',urlencodedParser, (req, res) => {
-        console.log(req.body)
+    app.post('/mongoDB', (req, res) => {
         if(!req.body) return res.sendStatus(400);
         mongoDB.insertOne(req.body.fname,req.body.lname,req.body.age,req.body.city,req.body.phoneNumber,req.body.email,req.body.companyName)
         res.sendStatus(200);
