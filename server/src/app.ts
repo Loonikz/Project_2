@@ -1,12 +1,15 @@
-const express = require('express');
-const MySQL  = require('./databases/mySQL/MySQL')
-const { MongoDB } = require('./databases/MongoDB/MongoDB')
+const express  = require( "express");
+// @ts-ignore
+const {MySQL}  = require( './databases/mySQL/MySQL');
+// @ts-ignore
+const { MongoDB }  = require( './databases/MongoDB/MongoDB');
 const CORS = require('cors') // решение корс политики
 const helmet = require('helmet')
 const bodyParser = require("express");
 const app = express();
 const port = 3000;
 
+// @ts-ignore
 app.listen(port, async (err) => {
 
     if (err) {
