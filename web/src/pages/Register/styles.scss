@@ -1,8 +1,31 @@
-html {
-  background: url("../../../public/img/backgroud_light.svg");
+body {
+  background: var(--background);
   background-size: cover;
   font-family: 'Montserrat', sans-serif;
   font-size: 25px;
+  --logo-color: #F00418;
+  --background: url("../../../public/img/backgroud_light.svg");
+  --btn-them: url("../../../public/img/icon_dark.svg");
+  --text-color: #000000;
+  --text-color-hover: #F08686;
+  --bg-dropdawn: #999999;
+  --bg-dropdawn-hover: #DAD7D7;
+  --text-color-label: #F08686;
+  --bg-avatar: url("../../../public/img/icon_user_light.svg");
+  --btn-registr: #F00418;
+}
+
+.dark{
+  --background: url('../../../public/img/background_dark.svg');
+  --logo-color: #FFFFFF;
+  --btn-them: url("../../../public/img/icon_light.svg");
+  --text-color: #FFFFFF;
+  --text-color-hover: #FAFF00;
+  --bg-dropdawn: #646FA1;
+  --bg-dropdawn-hover: #C9C0C0;
+  --text-color-label: #FFFFFF;
+  --bg-avatar: url("../../../public/img/icon_user_dark.svg");
+  --btn-registr: #5C17B4
 }
 
 .nav-container {
@@ -11,7 +34,7 @@ html {
 
   &__logo {
     font-size: 50px;
-    color: #F00418;
+    color: var(--logo-color);
     margin-left: 25px;
     margin-right: 70%;
   }
@@ -21,13 +44,14 @@ html {
     align-items: center;
 
     &--login {
-      background: rgba(255, 255, 255, 0.1);
+      background: transparent;
       border: none;
       font-size: 26px;
       padding: 15px;
+      color: var(--text-color);
 
       &:hover {
-        color: #F08686;
+        color: var(--text-color-hover);
       }
     }
 
@@ -44,36 +68,36 @@ html {
     &--dropdown-content {
       display: none;
       position: absolute;
-      background-color: #f9f9f9;
       box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
       z-index: 1;
     }
 
     &--dropdown-item {
-      color: black;
+      color: var(--text-color);
       text-decoration: none;
       display: block;
-      background: #999999;
+      background: var(--bg-dropdawn);
       padding: 10px;
 
       &:hover {
-        background: #DAD7D7;
+        background: var(--bg-dropdawn-hover);
       }
     }
 
     &--themes {
       width: 35px;
       height: 35px;
-      background: url("../../../public/img/icon_dark.svg");
+      background: var(--btn-them);
       border: none;
       cursor: pointer;
     }
 
     &--language {
-      background: rgba(255, 255, 255, 0.1);
+      background: transparent;
       border: none;
       font-size: 30px;
       cursor: pointer;
+      color: var(--text-color);
     }
   }
 }
@@ -89,12 +113,12 @@ html {
 
     &--avatar {
       display: block;
-      background-image: url("../../../public/img/icon_user_light.svg");
+      background-image: var(--bg-avatar);
       background-size: cover;
       border-radius: 50%;
       border: 2px solid white;
-      height: 127px;
-      width: 127px;
+      height: 107px;
+      width: 107px;
       margin: auto;
     }
 
@@ -104,7 +128,7 @@ html {
 
     &--label {
       display: block;
-      color: #F08686;
+      color: var(--text-color-label);
       padding: 8px;
     }
 
@@ -125,8 +149,9 @@ html {
       border: none;
       padding: 8px;
       margin-top: 25px;
+      margin-left: 7px;
       font-size: 28px;
-      background: #F00418;
+      background: var(--btn-registr);
       width: 100%;
     }
   }
