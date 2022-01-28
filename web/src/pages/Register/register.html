@@ -3,9 +3,46 @@
 <head>
   <meta charset="UTF-8">
   <title>Title</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital@1&family=Caveat&family=Montserrat:wght@100;300&family=Nunito:wght@300&display=swap" rel="stylesheet">
 </head>
 <body>
-  <h1>Register</h1>
+<section class="nav-container">
+  <section class="nav-container__logo">
+    LOGO
+  </section>
+  <section class="nav-container__buttons">
+    <button class="nav-container__buttons--login">Log In</button>
+    <section class="nav-container__buttons--dropdown">
+      <button class="nav-container__buttons--themes"></button>
+      <div class="nav-container__buttons--dropdown-content">
+        <a href="#" class="nav-container__buttons--dropdown-item">Dark </a>
+      </div>
+    </section>
+    <section class="nav-container__buttons--dropdown">
+      <button class="nav-container__buttons--language">EN</button>
+      <div class="nav-container__buttons--dropdown-content">
+        <a href="#" class="nav-container__buttons--dropdown-item">RU </a>
+      </div>
+    </section>
+  </section>
+</section>
+<section class="container">
+  <form class="container__form">
+    <section class="container__form--avatar">
+    </section>
+    <label class="container__form--label"> login
+      <input class="container__form--input" id="login-reg" type="text">
+    </label>
+    <label class="container__form--label"> password
+      <input class="container__form--input" id="password-reg" type="password">
+    </label>
+    <label class="container__form--label"> confirm password
+      <input class="container__form--input" id="passw-conf-reg" type="password">
+    </label>
+    <button class="container__form--button" type="submit">register</button>
+  </form>
+</section>
 </body>
 </html>
