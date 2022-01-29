@@ -18,6 +18,10 @@ body {
   --bg-btn: #F00418;
   --border-cont: none;
   --bg-input: #DAD7D7;
+  --bg-head-table: #999999;
+  --hover-table-color: #FFFFFF;
+  --bg-tr-odd: #DAD7D7;
+  --bg-tr: #A8A7A7;
 }
 
 .dark {
@@ -36,6 +40,10 @@ body {
   --bg-btn: #FFFFFF;
   --border-cont: solid #FFFFFF;
   --bg-input: #FFFFFF;
+  --bg-head-table: #485380;
+  --hover-table-color: #A562DF;
+  --bg-tr-odd: #55608F;
+  --bg-tr: #646FA1;
 }
 
 .nav-container {
@@ -121,6 +129,7 @@ body {
     display: flex;
     height: 95px;
 
+
     &--selects {
       margin-top: 30px;
       margin-left: 30px;
@@ -137,6 +146,25 @@ body {
       width: 135px;
       color: var(--text-select);
       cursor: pointer;
+      //&:after {
+      //  position: absolute;
+      //  content: "";
+      //  top: 14px;
+      //  right: 10px;
+      //  width: 0;
+      //  height: 0;
+      //  border: 6px solid transparent;
+      //  border-color: #F00418 transparent transparent transparent;
+      //}
+      &:active {
+        border: none;
+      }
+    }
+
+    &--option {
+      border: none;
+      background: #DBFF00;
+      margin: 55px;
     }
 
     &--panel {
@@ -189,12 +217,58 @@ body {
     border-radius: 15px;
 
     &--table {
+      border-radius: 15px;
+      border-collapse: collapse;
+      overflow: hidden;
+      color: var(--text-color);
+      font-size: 15px;
     }
 
     &--items-head {
-      background-color: #55608f;
+      background-color: var(--bg-head-table);
       padding: 15px;
-      width: 16%;
+      width: 150px;
+
+      &:nth-of-type(odd) {
+        border-right: 1px solid #FFFFFF;
+      }
+
+      &:nth-of-type(even) {
+        border-right: 1px solid #FFFFFF;
+      }
+
+      &:nth-of-type(8) {
+        border-right: none;
+      }
+    }
+
+    &--items-body {
+      padding: 15px;
+
+      &:nth-child(odd) {
+        border-right: 1px solid #FFFFFF;
+      }
+
+      &:nth-of-type(even) {
+        border-right: 1px solid #FFFFFF;
+      }
+    }
+
+    &--tr {
+      background: var(--bg-tr);
+
+      &:nth-of-type(odd) {
+        background: var(--bg-tr-odd);
+        border-right: 1px solid #FFFFFF;
+      }
+
+      &:nth-of-type(even) {
+        border-right: 1px solid #FFFFFF;
+      }
+
+      &:hover {
+        background: var(--hover-table-color);
+      }
     }
   }
 }

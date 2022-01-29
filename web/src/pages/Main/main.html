@@ -34,20 +34,20 @@
   <section class="container__content">
     <section class="container__content--selects">
       <select id="selectDB" class="container__content--list">
-        <option value="MySQL" selected>MySQL</option>
-        <option value="MongoDB">MongoDB</option>
+        <option class="container__content--option" value="MySQL" selected>MySQL</option>
+        <option class="container__content--option" value="MongoDB">MongoDB</option>
       </select>
 
       <select id="sort" class="container__content--list">
-        <option value="0" disabled selected>Sorting by</option>
-        <option value="id">id</option>
-        <option value="first name">first name</option>
-        <option value="last name">last name</option>
-        <option value="age">age</option>
-        <option value="city">city</option>
-        <option value="number">number</option>
-        <option value="email">email</option>
-        <option value="number">company</option>
+        <option class="container__content--option" value="" hidden>Sorting by</option>
+        <option class="container__content--option" value="id">id</option>
+        <option class="container__content--option" value="first name">first name</option>
+        <option class="container__content--option" value="last name">last name</option>
+        <option class="container__content--option" value="age">age</option>
+        <option class="container__content--option" value="city">city</option>
+        <option class="container__content--option" value="number">number</option>
+        <option class="container__content--option" value="email">email</option>
+        <option class="container__content--option" value="number">company</option>
       </select>
     </section>
 
@@ -59,8 +59,8 @@
     </section>
 
       <select id="select-search" class="container__content--select">
-        <option value="fname">fname</option>
-        <option value="lname">lname</option>
+        <option class="container__content--option" value="fname">fname</option>
+        <option class="container__content--option" value="lname">lname</option>
       </select>
       <input class="container__content--search" type="search" name="search"
              placeholder="Search...">
@@ -69,7 +69,7 @@
 
   <section class="container__data">
     <table class="container__data--table">
-      <thead>
+      <thead class="container__data--head">
       <tr>
         <th class="container__data--items-head">id</th>
         <th class="container__data--items-head">first name</th>
@@ -81,6 +81,28 @@
         <th class="container__data--items-head">company</th>
       </tr>
       </thead>
+      <tbody>
+      <tr class="container__data--tr">
+        <th class="container__data--items-body">1</th>
+        <th class="container__data--items-body">Vasia</th>
+        <th class="container__data--items-body">Pupkin</th>
+        <th class="container__data--items-body">28</th>
+        <th class="container__data--items-body">Donetsk</th>
+        <th class="container__data--items-body">+380952334452</th>
+        <th class="container__data--items-body">test@test.com</th>
+        <th class="container__data--items-body">CompanyName</th>
+      </tr>
+      <tr class="container__data--tr">
+        <th class="container__data--items-body">2</th>
+        <th class="container__data--items-body">Vasia</th>
+        <th class="container__data--items-body">Pupkin</th>
+        <th class="container__data--items-body">28</th>
+        <th class="container__data--items-body">Donetsk</th>
+        <th class="container__data--items-body">+380952334452</th>
+        <th class="container__data--items-body">test@test.com</th>
+        <th class="container__data--items-body">CompanyName</th>
+      </tr>
+      </tbody>
     </table>
   </section>
 </section>
