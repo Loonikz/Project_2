@@ -13,6 +13,10 @@ body {
   --text-color-label: #F08686;
   --bg-avatar: url("../../../public/img/icon_user_light.svg");
   --btn-registr: #F00418;
+  --opacity-container: 1;
+  --bg-container: #E4E4E4;
+  --border-input-active: solid 2px #FFFFFF;
+  --btn-shadow: 0px 0px 20px 0px rgba(0,0,0,0.5);
 }
 
 .dark{
@@ -25,7 +29,11 @@ body {
   --bg-dropdawn-hover: #C9C0C0;
   --text-color-label: #FFFFFF;
   --bg-avatar: url("../../../public/img/icon_user_dark.svg");
-  --btn-registr: #5C17B4
+  --btn-registr: #5C17B4;
+  --opacity-container: 0.8;
+  --bg-container: linear-gradient(#630086, #00408B);
+  --border-input-active: solid 2px #DBFF00;
+  --btn-shadow: 0px 0px 20px 0px rgba(255,255,255,0.5);
 }
 
 .nav-container {
@@ -103,10 +111,11 @@ body {
 }
 
 .container {
-  background-color: #E4E4E4;
+  background: var(--bg-container);
   border-radius: 15px;
   width: 30%;
   margin: auto;
+  opacity: var(--opacity-container);
 
   &__form {
     padding: 45px;
@@ -141,11 +150,19 @@ body {
       padding: 8px;
       background: #BEBDBD;
       width: 100%;
+      &:focus{
+        outline: none;
+        border: var(--border-input-active);
+      }
+      &:invalid{
+        border: solid 2px #F00418;
+      }
     }
 
     &--button{
       color: white;
       border-radius: 10px;
+      opacity: 1;
       border: none;
       padding: 8px;
       margin-top: 25px;
@@ -153,6 +170,8 @@ body {
       font-size: 28px;
       background: var(--btn-registr);
       width: 100%;
+      cursor: pointer;
+      box-shadow: var(--btn-shadow);
     }
   }
 }
