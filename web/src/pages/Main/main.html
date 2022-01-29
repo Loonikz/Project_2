@@ -3,9 +3,86 @@
 <head>
   <meta charset="UTF-8">
   <title>Title</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap"
+        rel="stylesheet">
 </head>
 <body>
-<h1>Main</h1>
+<section class="nav-container">
+  <section class="nav-container__logo">
+    LOGO
+  </section>
+  <section class="nav-container__buttons">
+    <button class="nav-container__buttons--profile"></button>
+    <section class="nav-container__buttons--dropdown">
+      <button class="nav-container__buttons--themes"></button>
+      <div class="nav-container__buttons--dropdown-content">
+        <a href="#" id="toggle" class="nav-container__buttons--dropdown-item">Dark </a>
+      </div>
+    </section>
+    <section class="nav-container__buttons--dropdown">
+      <button class="nav-container__buttons--language">EN</button>
+      <div class="nav-container__buttons--dropdown-content">
+        <a href="#" class="nav-container__buttons--dropdown-item">RU </a>
+      </div>
+    </section>
+  </section>
+</section>
+
+<section class="container">
+  <section class="container__content">
+    <section class="container__content--selects">
+      <select id="selectDB" class="container__content--list">
+        <option value="MySQL" selected>MySQL</option>
+        <option value="MongoDB">MongoDB</option>
+      </select>
+
+      <select id="sort" class="container__content--list">
+        <option value="0" disabled selected>Sorting by</option>
+        <option value="id">id</option>
+        <option value="first name">first name</option>
+        <option value="last name">last name</option>
+        <option value="age">age</option>
+        <option value="city">city</option>
+        <option value="number">number</option>
+        <option value="email">email</option>
+        <option value="number">company</option>
+      </select>
+    </section>
+
+    <section class="container__content--panel">
+      <button class="container__content--btn" id="create">Create</button>
+      <button class="container__content--btn" id="update">Update</button>
+      <button class="container__content--btn" id="delete">Delete</button>
+      <button class="container__content--btn" id="clear">ClearAll</button>
+    </section>
+
+      <select id="select-search" class="container__content--select">
+        <option value="fname">fname</option>
+        <option value="lname">lname</option>
+      </select>
+      <input class="container__content--search" type="search" name="search"
+             placeholder="Search...">
+
+  </section>
+
+  <section class="container__data">
+    <table class="container__data--table">
+      <thead>
+      <tr>
+        <th class="container__data--items-head">id</th>
+        <th class="container__data--items-head">first name</th>
+        <th class="container__data--items-head">last name</th>
+        <th class="container__data--items-head">age</th>
+        <th class="container__data--items-head">city</th>
+        <th class="container__data--items-head">number</th>
+        <th class="container__data--items-head">email</th>
+        <th class="container__data--items-head">company</th>
+      </tr>
+      </thead>
+    </table>
+  </section>
+</section>
 </body>
 </html>
