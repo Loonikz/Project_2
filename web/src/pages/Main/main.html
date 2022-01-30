@@ -14,16 +14,23 @@
     LOGO
   </section>
   <section class="nav-container__buttons">
-    <button class="nav-container__buttons--profile"></button>
+
+    <section class="nav-container__buttons--dropdown">
+      <button class="nav-container__buttons--profile"></button>
+      <div class="nav-container__buttons--dropdown-content">
+        <a href="#" id="security" class="nav-container__buttons--dropdown-btn">Security</a>
+        <a href="#" id="logout" class="nav-container__buttons--dropdown-btn">Logout</a>
+      </div>
+    </section>
     <section class="nav-container__buttons--dropdown">
       <button class="nav-container__buttons--themes"></button>
-      <div class="nav-container__buttons--dropdown-content">
-        <a href="#" id="toggle" class="nav-container__buttons--dropdown-item">Dark </a>
+      <div class="nav-container__buttons--dropdown-content nav-container__buttons--dropdown-noborder">
+        <a href="#" id="toggle" class="nav-container__buttons--dropdown-item">Dark</a>
       </div>
     </section>
     <section class="nav-container__buttons--dropdown">
       <button class="nav-container__buttons--language">EN</button>
-      <div class="nav-container__buttons--dropdown-content">
+      <div class="nav-container__buttons--dropdown-content nav-container__buttons--dropdown-noborder">
         <a href="#" class="nav-container__buttons--dropdown-item">RU </a>
       </div>
     </section>
