@@ -11,10 +11,12 @@ body {
   --bg-dropdawn: #999999;
   --bg-dropdawn-hover: #DAD7D7;
   --opacity-container: 1;
+  --border-input-active: solid 2px #FFFFFF;
   --bg-container: #E4E4E4;
   --btn-profile: url('../../../public/img/icon-profile-light.svg');
   --text-select: #000000;
   --text-btn: #FFFFFF;
+  --text-color-label: #F08686;
   --bg-btn: #F00418;
   --border-cont: none;
   --bg-input: #DAD7D7;
@@ -22,6 +24,9 @@ body {
   --hover-table-color: #FFFFFF;
   --bg-tr-odd: #DAD7D7;
   --bg-tr: #A8A7A7;
+  --bg-tab: #999999;
+  --btn-form: #F00418;
+  --text-btn-form: #FFFFFF;
 }
 
 .dark {
@@ -32,7 +37,9 @@ body {
   --text-color-hover: #FAFF00;
   --bg-dropdawn: #646FA1;
   --bg-dropdawn-hover: #C9C0C0;
+  --border-input-active: solid 2px #DBFF00;
   --opacity-container: 0.8;
+  --text-color-label: #FFFFFF;
   --bg-container: linear-gradient(#630086, #00408B);
   --btn-profile: url('../../../public/img/icon-profile-dark.svg');
   --text-select: #7F1581;
@@ -44,6 +51,9 @@ body {
   --hover-table-color: #A562DF;
   --bg-tr-odd: #55608F;
   --bg-tr: #646FA1;
+  --bg-tab: #3B0A4F;
+  --btn-form: #FFFFFF;
+  --text-btn-form: #000000;
 }
 
 .nav-container {
@@ -55,6 +65,113 @@ body {
     color: var(--logo-color);
     margin-left: 25px;
     margin-right: 70%;
+  }
+
+  &__modal {
+    background: var(--bg-container);
+    display: none;
+    position: fixed;
+    z-index: 1;
+    overflow: auto;
+    left: 30%;
+    top: 20%;
+    color: var(--text-color);
+    border-radius: 20px;
+    text-align: center;
+
+    &--title {
+      display: inline-block;
+      align-content: center;
+      margin: 20px;
+    }
+
+    &--closed {
+      cursor: pointer;
+      display: inline-block;
+      float: right;
+      margin-top: 5px;
+      margin-right: 15px;
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    &--content-modal {
+      width: 550px;
+      height: auto;
+    }
+
+    &--tab-menu {
+      display: flex;
+      padding: 0;
+      margin: 0;
+    }
+
+    &--tab-link {
+      text-align: center;
+      width: 50%;
+      padding: 25px;
+      background: var(--bg-tab);
+      border-radius: 30px 30px 0 0;
+      height: 30px;
+      cursor: pointer;
+      display: block;
+      text-decoration: none;
+      color: var(--text-color);
+    }
+
+    .active {
+      color: var(--text-color-hover);
+      background: var(--bg-container);
+    }
+
+    &--tab-content {
+      text-align: left;
+      display: flex;
+      width: 80%;
+      margin: 0 auto;
+    }
+
+    &--form-login{
+      width: 100%;
+    }
+
+    &--label {
+      display: block;
+      color: var(--text-color-label);
+      padding: 10px;
+    }
+
+    &--input {
+      display: block;
+      height: 25px;
+      margin: 0 auto;
+      border-radius: 10px;
+      border: none;
+      padding: 8px;
+      background: #BEBDBD;
+      width: 100%;
+
+      &:focus {
+        outline: none;
+        border: var(--border-input-active);
+      }
+
+      &:invalid {
+        border: solid 2px #F00418;
+      }
+    }
+
+    &--button{
+      border: none;
+      border-radius: 8px;
+      width: 38%;
+      margin-bottom: 25px;
+      padding: 8px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 15px;
+      background: var(--btn-form);
+      color: var(--text-btn-form);
+    }
   }
 
   &__buttons {
@@ -91,7 +208,7 @@ body {
       border: var(--border-cont);
     }
 
-    &--dropdown-noborder{
+    &--dropdown-noborder {
       border: none;
     }
 
@@ -102,7 +219,8 @@ body {
       padding: 10px;
       margin: 5px;
       font-size: 20px;
-      &:hover{
+
+      &:hover {
         color: var(--text-color-hover);
       }
     }
@@ -148,7 +266,6 @@ body {
     display: flex;
     height: 95px;
 
-
     &--selects {
       margin-top: 30px;
       margin-left: 30px;
@@ -156,7 +273,7 @@ body {
     }
 
     &--list {
-      border-radius: 20px;
+      border-radius: 10px;
       font-family: 'Montserrat', sans-serif;
       font-size: 15px;
       border: none;
@@ -234,6 +351,8 @@ body {
   &__data {
     border: var(--border-cont);
     border-radius: 15px;
+    margin: 25px;
+
 
     &--table {
       border-radius: 15px;

@@ -12,3 +12,15 @@ toggle.addEventListener("click", () => {
   } else window.localStorage.setItem("theme", "dark");
 });
 console.log('main')
+
+const security = document.getElementById('security');
+const modalSecurity = document.getElementById('modal-security');
+const closedModal = document.getElementById('closed-modal');
+
+security.addEventListener('click', ()=> {
+  modalSecurity.style.display = "block";
+});
+
+closedModal.addEventListener('click', () => {
+  modalSecurity.style.display = "none";
+});

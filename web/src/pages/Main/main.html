@@ -22,15 +22,49 @@
         <a href="#" id="logout" class="nav-container__buttons--dropdown-btn">Logout</a>
       </div>
     </section>
+
+    <section id="modal-security" class="nav-container__modal">
+
+        <p class="nav-container__modal--title">Security</p>
+        <span id='closed-modal' class="nav-container__modal--closed">x</span>
+
+      <section class="nav-container__modal--content-modal">
+        <section class="nav-container__modal--tab-menu" role="tablist">
+            <a class="nav-container__modal--tab-link active"
+               href="#login">login</a>
+            <a class="nav-container__modal--tab-link" href="#password">password</a>
+        </section>
+
+        <section class="nav-container__modal--tab-content">
+          <form class="nav-container__modal--form-login">
+            <label class="nav-container__modal--label">New login
+              <input class="nav-container__modal--input" id="login-reg" type="text">
+            </label>
+            <label class="nav-container__modal--label">Password
+              <input class="nav-container__modal--input" id="password-reg" min="5" type="password">
+            </label>
+            <label class="nav-container__modal--label">Confirm password
+              <input class="nav-container__modal--input" id="password-conf" min="5" type="password">
+            </label>
+            <button class="nav-container__modal--button" type="submit">Cancel</button>
+            <button class="nav-container__modal--button" type="reset">Save</button>
+          </form>
+        </section>
+
+      </section>
+    </section>
+
     <section class="nav-container__buttons--dropdown">
       <button class="nav-container__buttons--themes"></button>
-      <div class="nav-container__buttons--dropdown-content nav-container__buttons--dropdown-noborder">
+      <div
+        class="nav-container__buttons--dropdown-content nav-container__buttons--dropdown-noborder">
         <a href="#" id="toggle" class="nav-container__buttons--dropdown-item">Dark</a>
       </div>
     </section>
     <section class="nav-container__buttons--dropdown">
       <button class="nav-container__buttons--language">EN</button>
-      <div class="nav-container__buttons--dropdown-content nav-container__buttons--dropdown-noborder">
+      <div
+        class="nav-container__buttons--dropdown-content nav-container__buttons--dropdown-noborder">
         <a href="#" class="nav-container__buttons--dropdown-item">RU </a>
       </div>
     </section>
@@ -65,12 +99,12 @@
       <button class="container__content--btn" id="clear">ClearAll</button>
     </section>
 
-      <select id="select-search" class="container__content--select">
-        <option class="container__content--option" value="fname">fname</option>
-        <option class="container__content--option" value="lname">lname</option>
-      </select>
-      <input class="container__content--search" type="search" name="search"
-             placeholder="Search...">
+    <select id="select-search" class="container__content--select">
+      <option class="container__content--option" value="fname">fname</option>
+      <option class="container__content--option" value="lname">lname</option>
+    </select>
+    <input class="container__content--search" type="search" name="search"
+           placeholder="Search...">
 
   </section>
 
