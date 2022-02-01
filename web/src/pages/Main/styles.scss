@@ -133,7 +133,7 @@ body {
       margin: 0 auto;
     }
 
-    &--form-login{
+    &--form-login {
       width: 100%;
     }
 
@@ -163,7 +163,7 @@ body {
       }
     }
 
-    &--button{
+    &--button {
       border: none;
       border-radius: 8px;
       width: 38%;
@@ -188,71 +188,6 @@ body {
       height: 35px;
       margin: 15px;
       padding: 10px;
-    }
-
-    &--dropdown {
-      position: relative;
-      display: inline-block;
-      margin: 15px;
-
-      &:hover .nav-container__buttons--dropdown-content {
-        display: block;
-      }
-    }
-
-    &--dropdown-content {
-      display: none;
-      position: absolute;
-      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-      z-index: 1;
-      background: var(--bg-container);
-      border-radius: 15px;
-      border: var(--border-cont);
-    }
-
-    &--dropdown-noborder {
-      border: none;
-    }
-
-    &--dropdown-btn {
-      color: var(--text-color);
-      text-decoration: none;
-      display: block;
-      padding: 10px;
-      margin: 5px;
-      font-size: 20px;
-
-      &:hover {
-        color: var(--text-color-hover);
-      }
-    }
-
-    &--dropdown-item {
-      color: var(--text-color);
-      text-decoration: none;
-      display: block;
-      background: var(--bg-dropdawn);
-      padding: 10px;
-
-      &:hover {
-        background: var(--bg-dropdawn-hover);
-      }
-    }
-
-    &--themes {
-      width: 35px;
-      height: 35px;
-      background: var(--btn-them);
-      border: none;
-      cursor: pointer;
-    }
-
-    &--language {
-      background: transparent;
-      border: none;
-      font-size: 30px;
-      cursor: pointer;
-      color: var(--text-color);
     }
   }
 }
@@ -284,16 +219,7 @@ body {
       width: 135px;
       color: var(--text-select);
       cursor: pointer;
-      //&:after {
-      //  position: absolute;
-      //  content: "";
-      //  top: 14px;
-      //  right: 10px;
-      //  width: 0;
-      //  height: 0;
-      //  border: 6px solid transparent;
-      //  border-color: #F00418 transparent transparent transparent;
-      //}
+
       &:active {
         border: none;
       }
@@ -321,6 +247,14 @@ body {
       color: var(--text-btn);
       background: var(--bg-btn);
       cursor: pointer;
+
+      &:hover {
+
+      }
+
+      &:active {
+
+      }
     }
 
     &--search {
@@ -335,7 +269,7 @@ body {
       width: 15%;
     }
 
-    &--search-btn{
+    &--search-btn {
       background: var(--btn-search);
       cursor: pointer;
       border: none;
