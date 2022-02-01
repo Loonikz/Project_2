@@ -23,7 +23,7 @@ module.exports = {
   },
   resolve: {
     extensions: ['.ts', '.tsx', '.json', 'js']
-  }, // ВАЖНО
+  },
   module: {
     rules: [
       {
@@ -47,11 +47,19 @@ module.exports = {
             }
           }
         ]
+      },
+      {
+        test: /\.(png|jpe?g|gif)$/i,
+        use: [
+          {
+            loader: 'file-loader',
+          },
+        ],
       }
     ]
   },
   plugins: [new CleanWebpackPlugin({verbose: true}),
-    new CopyPlugin({patterns: [{ from: "public", to: "public" }]}),
+    new CopyPlugin({patterns: [{from: "public", to: "public"}]}),
     !isDevMode && new MiniCssExtractPlugin(),
     new HtmlWebpackPlugin({
       filename: "login.html",
