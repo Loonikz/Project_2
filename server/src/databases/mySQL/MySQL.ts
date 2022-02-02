@@ -1,20 +1,24 @@
-const mySQL = require('mysql');
-
+const {createConnection} = require('mysql');
+// @ts-ignore
 class MySQL {
+    private connect: any;
+
     constructor(config) {
-        this.conn = mySQL.createConnection(config);
+        this.connect = createConnection(config);
     }
-    async connection(){
-        this.conn.connect((e) =>{
-            if(e){
+
+    async connection() {
+        this.connect.connect((e) => {
+            if (e) {
                 console.log(e)
             } else {
                 console.log('Connection mySQL')
             }
         })
     }
-    async query(str){
-        this.conn.query(str, (e, rows, fields)=> {
+
+    async query(queryString: string) {
+        this.connect.query(queryString, (e, rows, fields) => {
             if (e) {
                 console.log(e)
             } else {
@@ -23,8 +27,9 @@ class MySQL {
             }
         })
     }
-    async queryAll(str, cb){
-        this.conn.query(str, (e, rows, fields) => {
+
+    async queryAll(str, cb) {
+        this.connect.query(str, (e, rows, fields) => {
             if (e) {
                 console.log(e)
             } else {
@@ -33,17 +38,20 @@ class MySQL {
             }
         })
     }
-    async insert(fname, lname, age, city, phoneNumber, email, companyName){
+
+    async insert(fname: string, lname: string, age: number, city: string, phoneNumber: string, email: string, companyName: string) {
         await this.query(`INSERT INTO person.persons (fname, lname, age, city, phoneNumber, email, companyName) 
                     VALUES ('${fname}', '${lname}', ${age}, '${city}', '${phoneNumber}', '${email}', '${companyName}')`)
     }
-    async update(id, fname, lname, age, city, phoneNumber, email, companyName){
+
+    async update(id, fname: string, lname: string, age: number, city: string, phoneNumber: string, email: string, companyName: string) {
         await this.query(`UPDATE person.persons SET fname = '${fname}', lname = '${lname}', age = '${age}', city = '${city}', 
             phoneNumber = '${phoneNumber}', email = '${email}', companyName = '${companyName}' WHERE (id = '${id}')`);
     }
-    async delete(id){
+
+    async delete(id) {
         await this.query(`DELETE FROM persons WHERE (id = '${id}')`)
     }
 }
 
-module.exports = MySQL;
+module.exports = {MySQL}
