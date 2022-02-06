@@ -17,6 +17,8 @@
     "css-loader": "6.5.1",
     "file-loader": "6.2.0",
     "html-webpack-plugin": "5.5.0",
+    "i18next": "21.6.10",
+    "loc-i18next": "0.1.4",
     "mini-css-extract-plugin": "2.5.3",
     "prettier": "2.5.1",
     "sass": "1.49.0",

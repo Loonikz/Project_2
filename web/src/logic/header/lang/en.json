@@ -1,0 +1,10 @@
+{
+  "app_title": "Login",
+  "light_them": "Light",
+  "dark_them": "Dark",
+  "label_login": "login",
+  "label_password": "password",
+  "btn_login": "login",
+  "text_have_account": "Need an account?",
+  "btn_sign_up": "Sign up"
+}

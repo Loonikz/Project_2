@@ -1,0 +1,10 @@
+{
+  "app_title": "Авторизоваться",
+  "light_them": "Светлая",
+  "dark_them": "Темная",
+  "label_login": "логин",
+  "label_password": "пароль",
+  "btn_login": "авторизоваться",
+  "text_have_account": "Нужен аккаунт?",
+  "btn_sign_up": "Зарегистрироваться"
+}
