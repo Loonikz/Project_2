@@ -2,10 +2,144 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Title</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap"
+        rel="stylesheet">
 </head>
 <body>
-<h1>Main</h1>
+<header class="nav-container">
+  <section class="nav-container__logo">
+    LOGO
+  </section>
+  <section class="nav-container__buttons">
+
+    <button id="profile" class="nav-container__buttons--profile"></button>
+
+    <section id="modal-security" class="nav-container__modal">
+
+      <p class="nav-container__modal--title">Security</p>
+      <span id='closed-modal' class="nav-container__modal--closed">x</span>
+
+      <section class="nav-container__modal--content-modal">
+        <section class="nav-container__modal--tab-menu" role="tablist">
+          <a class="nav-container__modal--tab-link active"
+             href="#login">login</a>
+          <a class="nav-container__modal--tab-link" href="#password">password</a>
+        </section>
+
+        <section class="nav-container__modal--tab-content">
+          <form class="nav-container__modal--form-login">
+            <label class="nav-container__modal--label">New login
+              <input class="nav-container__modal--input" id="login-reg" type="text">
+            </label>
+            <label class="nav-container__modal--label">Password
+              <input class="nav-container__modal--input" id="password-reg" min="5" type="password">
+            </label>
+            <label class="nav-container__modal--label">Confirm password
+              <input class="nav-container__modal--input" id="password-conf" min="5" type="password">
+            </label>
+            <button class="nav-container__modal--button" type="submit">Cancel</button>
+            <button class="nav-container__modal--button" type="reset">Save</button>
+          </form>
+        </section>
+
+      </section>
+    </section>
+
+    <section class="nav-container__buttons--dropdown">
+      <button id="toggle" class="nav-container__buttons--dropdown-btn">Light
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <section class="nav-container__buttons--dropdown-content">
+        <a href="#" class="nav-container__buttons--dropdown-item">Dark </a>
+      </section>
+    </section>
+    <section class="nav-container__buttons--dropdown">
+      <button class="nav-container__buttons--dropdown-btn">EN
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <section class="nav-container__buttons--dropdown-content">
+        <a href="#" class="nav-container__buttons--dropdown-item">RU </a>
+      </section>
+    </section>
+  </section>
+</header>
+
+<section class="container">
+  <section class="container__content">
+    <section class="container__content--selects">
+      <select id="selectDB" class="container__content--list">
+        <option class="container__content--option" value="MySQL" selected>MySQL</option>
+        <option class="container__content--option" value="MongoDB">MongoDB</option>
+      </select>
+
+      <select id="sort" class="container__content--list">
+        <option class="container__content--option" value="" hidden>Sorting by</option>
+        <option class="container__content--option" value="id">id</option>
+        <option class="container__content--option" value="first name">first name</option>
+        <option class="container__content--option" value="last name">last name</option>
+        <option class="container__content--option" value="age">age</option>
+        <option class="container__content--option" value="city">city</option>
+        <option class="container__content--option" value="number">number</option>
+        <option class="container__content--option" value="email">email</option>
+        <option class="container__content--option" value="number">company</option>
+      </select>
+    </section>
+
+    <section class="container__content--panel">
+      <button class="container__content--btn" id="create">Create</button>
+      <button class="container__content--btn" id="update">Update</button>
+      <button class="container__content--btn" id="delete">Delete</button>
+      <button class="container__content--btn" id="clear">ClearAll</button>
+    </section>
+
+    <input class="container__content--search" type="search" name="search"
+           placeholder="Search...">
+    <button class="container__content--search-btn"></button>
+
+  </section>
+
+  <section class="container__data">
+    <table class="container__data--table">
+      <thead class="container__data--head">
+      <tr>
+        <th class="container__data--items-head">id</th>
+        <th class="container__data--items-head">first name</th>
+        <th class="container__data--items-head">last name</th>
+        <th class="container__data--items-head">age</th>
+        <th class="container__data--items-head">city</th>
+        <th class="container__data--items-head">number</th>
+        <th class="container__data--items-head">email</th>
+        <th class="container__data--items-head">company</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr class="container__data--tr">
+        <th class="container__data--items-body">1</th>
+        <th class="container__data--items-body">Vasia</th>
+        <th class="container__data--items-body">Pupkin</th>
+        <th class="container__data--items-body">28</th>
+        <th class="container__data--items-body">Donetsk</th>
+        <th class="container__data--items-body">+380952334452</th>
+        <th class="container__data--items-body">test@test.com</th>
+        <th class="container__data--items-body">CompanyName</th>
+      </tr>
+      <tr class="container__data--tr">
+        <th class="container__data--items-body">2</th>
+        <th class="container__data--items-body">Vasia</th>
+        <th class="container__data--items-body">Pupkin</th>
+        <th class="container__data--items-body">28</th>
+        <th class="container__data--items-body">Donetsk</th>
+        <th class="container__data--items-body">+380952334452</th>
+        <th class="container__data--items-body">test@test.com</th>
+        <th class="container__data--items-body">CompanyName</th>
+      </tr>
+      </tbody>
+    </table>
+  </section>
+</section>
 </body>
 </html>
