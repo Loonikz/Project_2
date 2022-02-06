@@ -173,5 +173,22 @@ body {
       cursor: pointer;
       box-shadow: var(--btn-shadow);
     }
+
+    &--text{
+      margin-top: 25px;
+      text-align: center;
+      font-family: 'Montserrat', sans-serif;
+      font-style: italic;
+      font-size: 20px;
+      color: var(--text-btn-color);
+    }
+
+    &--sign-up{
+      cursor: pointer;
+      color: var(--text-btn-sign-up);
+      &:hover{
+        color: var(--logo-color);
+      }
+    }
   }
 }
