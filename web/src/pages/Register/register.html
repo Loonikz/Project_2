@@ -16,19 +16,17 @@
   <section class="nav-container__logo">
     LOGO
   </section>
-  <section class="nav-container__buttons--dropdown">
-    <button id="toggle" class="nav-container__buttons--dropdown-btn" data-i18n="light_them">
-      <i class="fa fa-caret-down"></i>
-    </button>
-    <section class="nav-container__buttons--dropdown-content">
-      <a href="#" class="nav-container__buttons--dropdown-item"
-         data-i18n="dark_them"></a>
-    </section>
-  </section>
   <section class="nav-container__buttons">
+    <section id="dropdownTheme">
+      <label for="changeTheme"></label>
+      <select id="changeTheme" class="nav-container__buttons--select">
+        <option value="light" data-i18n="light_them"></option>
+        <option value="dark" data-i18n="dark_them"></option>
+      </select>
+    </section>
     <section id="dropdownLanguage">
       <label for="changeLanguage" data-i18n="change_language"></label>
-      <select id="changeLanguage">
+      <select id="changeLanguage" class="nav-container__buttons--select">
         <option value="en">EN</option>
         <option value="ru">Ru</option>
       </select>

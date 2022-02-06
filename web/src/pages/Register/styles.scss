@@ -16,10 +16,10 @@ body {
   --opacity-container: 1;
   --bg-container: #E4E4E4;
   --border-input-active: solid 2px #FFFFFF;
-  --btn-shadow: 0px 0px 20px 0px rgba(0,0,0,0.5);
+  --btn-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.5);
 }
 
-.dark{
+.dark {
   --background: url('../../../public/img/background_dark.svg');
   --logo-color: #FFFFFF;
   --btn-them: url("../../../public/img/icon_light.svg");
@@ -33,7 +33,7 @@ body {
   --opacity-container: 0.8;
   --bg-container: linear-gradient(#630086, #00408B);
   --border-input-active: solid 2px #DBFF00;
-  --btn-shadow: 0px 0px 20px 0px rgba(255,255,255,0.5);
+  --btn-shadow: 0px 0px 20px 0px rgba(255, 255, 255, 0.5);
 }
 
 .nav-container {
@@ -51,61 +51,14 @@ body {
     display: flex;
     align-items: center;
 
-    &--login {
+    &--select {
+      color: var(--text-color);
       background: transparent;
       border: none;
-      font-size: 26px;
-      padding: 15px;
-      color: var(--text-color);
-
-      &:hover {
-        color: var(--text-color-hover);
-      }
-    }
-
-    &--dropdown {
-      position: relative;
-      display: inline-block;
-      margin: 15px;
-
-      &:hover .nav-container__buttons--dropdown-content {
-        display: block;
-      }
-    }
-
-    &--dropdown-content {
-      display: none;
-      position: absolute;
-      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-      z-index: 1;
-    }
-
-    &--dropdown-item {
-      color: var(--text-color);
-      text-decoration: none;
-      display: block;
-      background: var(--bg-dropdawn);
       padding: 10px;
-
-      &:hover {
-        background: var(--bg-dropdawn-hover);
-      }
-    }
-
-    &--themes {
-      width: 35px;
-      height: 35px;
-      background: var(--btn-them);
-      border: none;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 20px;
       cursor: pointer;
-    }
-
-    &--language {
-      background: transparent;
-      border: none;
-      font-size: 30px;
-      cursor: pointer;
-      color: var(--text-color);
     }
   }
 }
@@ -150,16 +103,18 @@ body {
       padding: 8px;
       background: #BEBDBD;
       width: 100%;
-      &:focus{
+
+      &:focus {
         outline: none;
         border: var(--border-input-active);
       }
-      &:invalid{
+
+      &:invalid {
         border: solid 2px #F00418;
       }
     }
 
-    &--button{
+    &--button {
       color: white;
       border-radius: 10px;
       opacity: 1;
@@ -174,19 +129,23 @@ body {
       box-shadow: var(--btn-shadow);
     }
 
-    &--text{
+    &--text {
       margin-top: 25px;
       text-align: center;
       font-family: 'Montserrat', sans-serif;
       font-style: italic;
       font-size: 20px;
       color: var(--text-btn-color);
+      display: flex;
     }
 
-    &--sign-up{
+    &--sign-up {
+      margin-top: 25px;
+      margin-right: 5px;
       cursor: pointer;
       color: var(--text-btn-sign-up);
-      &:hover{
+
+      &:hover {
         color: var(--logo-color);
       }
     }
