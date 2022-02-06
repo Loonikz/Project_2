@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Title</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -49,20 +50,20 @@
     </section>
 
     <section class="nav-container__buttons--dropdown">
-      <select class="nav-container__buttons--dropdown-content">
-        <option class="container__content--option" value="" hidden>sync</option>
-        <option class="container__content--option" value="Dark">Dark</option>
-        <option class="container__content--option" value="Light">Light</option>
-      </select>
+      <button id="toggle" class="nav-container__buttons--dropdown-btn">Light
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <section class="nav-container__buttons--dropdown-content">
+        <a href="#" class="nav-container__buttons--dropdown-item">Dark </a>
+      </section>
     </section>
-  </section>
-
     <section class="nav-container__buttons--dropdown">
-      <select id="language" class="nav-container__buttons--dropdown-content">
-        <option class="container__content--option" value="" hidden>language</option>
-        <option class="container__content--option" value="ru">RU</option>
-        <option class="container__content--option" value="en">EN</option>
-      </select>
+      <button class="nav-container__buttons--dropdown-btn">EN
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <section class="nav-container__buttons--dropdown-content">
+        <a href="#" class="nav-container__buttons--dropdown-item">RU </a>
+      </section>
     </section>
   </section>
 </header>
