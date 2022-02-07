@@ -188,7 +188,11 @@ body {
     }
 
     &--sign-up{
+      cursor: pointer;
       color: var(--text-btn-sign-up);
+      &:hover{
+        color: var(--logo-color);
+      }
     }
   }
 }

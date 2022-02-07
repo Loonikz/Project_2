@@ -1,13 +1,12 @@
 import "./styles.scss"
-const toggle = document.getElementById("toggle");
-const theme = window.localStorage.getItem("theme");
+import {onTheme} from "../../logic/header/theme";
+import {addListener} from "../../logic/header/utils";
+import {changeLng} from "../../logic/header/localization";
 
-if (theme === "dark") document.body.classList.add("dark");
-
-toggle.addEventListener("click", () => {
-  document.body.classList.toggle("dark");
-  if (theme === "dark") {
-    window.localStorage.setItem("theme", "light");
-  } else window.localStorage.setItem("theme", "dark");
+function init() {
+  onTheme();
+  addListener('dropdownLanguage', 'change', (event) => changeLng(event));
+}
+document.addEventListener('DOMContentLoaded', function () {
+  init();
 });
-console.log('register')
