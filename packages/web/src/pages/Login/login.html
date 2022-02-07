@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title data-i18n="login_title"></title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,600&display=swap"
+        rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital@1&family=Caveat&family=Montserrat:wght@100;300&family=Nunito:wght@300&display=swap"
+    rel="stylesheet">
+</head>
+<body>
+<header class="nav-container">
+  <section class="nav-container__logo">
+    LOGO
+  </section>
+  <section class="nav-container__buttons">
+    <section class="nav-container__buttons--dropdown">
+      <button id="toggle" class="nav-container__buttons--dropdown-btn" data-i18n="light_them">
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <section class="nav-container__buttons--dropdown-content">
+        <a href="#" class="nav-container__buttons--dropdown-item"
+           data-i18n="dark_them"></a>
+      </section>
+    </section>
+    <section id="dropdownLanguage">
+      <label for="changeLanguage" data-i18n="change_language"></label>
+      <select id="changeLanguage">
+        <option value="en">EN</option>
+        <option value="ru">Ru</option>
+      </select>
+    </section>
+  </section>
+</header>
+<main class="container">
+  <form class="container__form">
+    <section class="container__form--avatar">
+    </section>
+    <label class="container__form--label" data-i18n="label_login"></label>
+    <input class="container__form--input" id="login-reg" type="text">
+
+    <label class="container__form--label" data-i18n="label_password"></label>
+    <input class="container__form--input" id="password-reg" min="5" type="password">
+
+    <button class="container__form--button" type="submit" data-i18n="btn_login"></button>
+    <section class="container__form--text">
+      <p data-i18n="text_need_account"></p>
+      <span class="container__form--sign-up"
+            data-i18n="btn_sign_up"></span>
+    </section>
+  </form>
+</main>
+</body>
+</html>
