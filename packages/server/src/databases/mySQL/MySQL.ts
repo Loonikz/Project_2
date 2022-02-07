@@ -40,12 +40,12 @@ class MySQL {
     }
 
     async insert(fname: string, lname: string, age: number, city: string, phoneNumber: string, email: string, companyName: string) {
-        await this.query(`INSERT INTO person.persons (fname, lname, age, city, phoneNumber, email, companyName) 
+        await this.query(`INSERT INTO heroku_74f535d3c337155.persons (fname, lname, age, city, phoneNumber, email, companyName)
                     VALUES ('${fname}', '${lname}', ${age}, '${city}', '${phoneNumber}', '${email}', '${companyName}')`)
     }
 
     async update(id, fname: string, lname: string, age: number, city: string, phoneNumber: string, email: string, companyName: string) {
-        await this.query(`UPDATE person.persons SET fname = '${fname}', lname = '${lname}', age = '${age}', city = '${city}', 
+        await this.query(`UPDATE heroku_74f535d3c337155.persons SET fname = '${fname}', lname = '${lname}', age = '${age}', city = '${city}',
             phoneNumber = '${phoneNumber}', email = '${email}', companyName = '${companyName}' WHERE (id = '${id}')`);
     }
 

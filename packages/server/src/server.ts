@@ -22,10 +22,10 @@ app.listen(port, async (err) => {
   const mongoDB = new MongoDB();
   await mongoDB.connection();
   const mySQL = new MySQL({
-    host: '34.122.166.203',
-    user: 'root',
-    database: 'person',
-    password: 'kFf3hHpxtjI8PFkN',
+    host: process.env.MYSQL_HOST || 'localhost',
+    user: process.env.MYSQL_USER || 'root',
+    password: process.env.MYSQL_PASSWORD || 'root',
+    database: process.env.MYSQL_DATABASE || 'userdatabase',
   });
   await mySQL.connection();
   app.use(
