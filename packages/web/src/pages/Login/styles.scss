@@ -134,15 +134,17 @@ body {
     }
 
     &--text {
-      margin-top: 25px;
-      text-align: center;
+      justify-content: center;
       font-family: 'Montserrat', sans-serif;
       font-style: italic;
       font-size: 20px;
       color: var(--text-btn-color);
+      display: flex;
+      flex-wrap: wrap;
     }
 
     &--sign-up {
+      margin-left: 5px;
       cursor: pointer;
       color: var(--text-btn-sign-up);
 

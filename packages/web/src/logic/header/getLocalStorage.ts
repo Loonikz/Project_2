@@ -4,5 +4,4 @@ export function getLocalStorage(){
 
   const selectedLang = (<HTMLSelectElement>document.getElementById('dropdownLanguage')).value;
   const lang = window.localStorage.getItem("lang");
-
 }
