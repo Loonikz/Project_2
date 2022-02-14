@@ -27,17 +27,3 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
-function getData(url: string) {
-  return new Promise<[]>((resolve, reject) => {
-    fetch(url, {
-      method: 'GET'
-    })
-      .then((data) => data.json())
-      .then((data) => {
-        resolve(data);
-      })
-      .catch(() => {
-        reject([])
-      });
-  });
-}
