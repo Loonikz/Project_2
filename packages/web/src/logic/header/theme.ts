@@ -1,13 +1,13 @@
-export function onTheme(){
-  const toggle = document.getElementById("toggle");
+export function changeTheme(event){
   const theme = window.localStorage.getItem("theme");
 
-  if (theme === "dark") document.body.classList.add("dark");
+  const selectedLang = event ? event.target.value : 'light';
 
-  toggle.addEventListener("click", () => {
-    document.body.classList.toggle("dark");
-    if (theme === "dark") {
-      window.localStorage.setItem("theme", "light");
-    } else window.localStorage.setItem("theme", "dark");
-  });
+  if (selectedLang === 'dark') {
+    document.body.classList.add("dark");
+    window.localStorage.setItem("theme", "dark");
+  } else {
+    document.body.classList.remove('dark');
+    window.localStorage.setItem("theme", "light");
+  }
 }

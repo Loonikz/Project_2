@@ -1,11 +1,14 @@
 import "./styles.scss"
-import {onTheme} from "../../logic/header/theme";
+import {changeTheme} from "../../logic/header/theme";
 import {addListener} from "../../logic/header/utils";
 import {changeLng} from "../../logic/header/localization";
+import {getLocalStorage} from "../../logic/header/getLocalStorage";
 
 function init() {
-  onTheme();
   addListener('dropdownLanguage', 'change', (event) => changeLng(event));
+  addListener('dropdownTheme', 'change', (event) => changeTheme(event));
+
+  getLocalStorage()
 }
 
 document.addEventListener('DOMContentLoaded', function () {
