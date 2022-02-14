@@ -66,7 +66,7 @@ body {
   &__logo {
     font-size: 50px;
     color: var(--logo-color);
-    margin-right: 68%;
+    margin-right: 65%;
   }
 
   &__modal {
@@ -206,17 +206,16 @@ body {
   background: var(--bg-container);
   border-radius: 15px;
   margin: 25px auto;
-  width: 80%;
+  padding: 30px;
+  width: 82%;
   opacity: var(--opacity-container);
   border: var(--border-cont);
 
   &__content {
     display: flex;
-    height: 95px;
+    height: 65px;
 
     &--selects {
-      margin-top: 30px;
-      margin-left: 30px;
       width: 28%;
     }
 
@@ -243,7 +242,7 @@ body {
     }
 
     &--panel {
-      margin: 30px auto;
+      margin: 0px auto;
       width: 45%;
     }
 
@@ -269,15 +268,15 @@ body {
     }
 
     &--search {
-      margin: 30px 10px 30px 10px;
       border: none;
       padding: 8px;
-      font-family: 'Montserrat', sans-serif;
+      font-family: "Montserrat", sans-serif;
       font-size: 15px;
       border-radius: 20px;
       background: var(--bg-input);
       opacity: 0.5;
       width: 15%;
+      height: 40px;
     }
 
     &--search-btn {
@@ -286,7 +285,7 @@ body {
       border: none;
       width: 45px;
       height: 45px;
-      margin: 25px 40px 30px 0;
+      margin-right: 5px;
       padding: 10px;
     }
   }
@@ -294,8 +293,6 @@ body {
   &__data {
     border: var(--border-cont);
     border-radius: 15px;
-    margin: 25px;
-
 
     &--table {
       border-radius: 15px;
