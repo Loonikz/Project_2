@@ -47,7 +47,7 @@ body {
   &__logo {
     font-size: 50px;
     color: var(--logo-color);
-    margin-left: 20%;
+    margin-left: 25px;
     margin-right: 70%;
   }
 
@@ -134,6 +134,7 @@ body {
     }
 
     &--text {
+      margin-top: 20px;
       justify-content: center;
       font-family: 'Montserrat', sans-serif;
       font-style: italic;
