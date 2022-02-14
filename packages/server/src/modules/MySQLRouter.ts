@@ -1,5 +1,5 @@
-import { Request, Response, Router } from 'express';
-import { MySQL } from '../controllers/MySQL';
+import {Request, Response, Router} from 'express';
+import {MySQL} from '../controllers/MySQL';
 
 export class MySQLRouter {
   path = '/mysql';
@@ -12,26 +12,27 @@ export class MySQLRouter {
 
   checkRoutes() {
     this.router.get('/', this.getData);
-    this.router.post('/', this.createData);
-    this.router.delete('/:*', this.deleteData);
-    // this.router.delete('/clear', this.clearData);
+    this.router.post('/', this.postData);
+    this.router.put('/', this.putData);
+    this.router.delete('/clear', this.deleteAllData);
+    this.router.delete('/:id', this.deleteData);
   }
 
-  // clearData(req: Request, res: Response): void {
-  //   const dbRequest = new MySQL();
-  //   dbRequest
-  //     .clear()
-  //     .then(() => {
-  //       dbRequest.endConnection();
-  //       res.status(200).end();
-  //     })
-  //     .catch(() => {
-  //       dbRequest.endConnection();
-  //       res.status(409).end();
-  //     });
-  // }
+  deleteAllData(req: Request, res: Response): void {
+    const dbRequest = new MySQL();
+    dbRequest
+      .clear()
+      .then(() => {
+        dbRequest.closeConnection();
+        res.status(200).end();
+      })
+      .catch(() => {
+        dbRequest.closeConnection();
+        res.status(409).end();
+      });
+  }
 
-  createData(req: Request, res: Response): void {
+  postData(req: Request, res: Response): void {
     const dbRequest = new MySQL();
     dbRequest
       .insert(req.body.fname, req.body.lname, req.body.age, req.body.city, req.body.phoneNumber, req.body.email, req.body.companyName)
@@ -44,9 +45,22 @@ export class MySQLRouter {
         res.status(409).end();
       });
   }
+  putData(req: Request, res: Response): void {
+    const dbRequest = new MySQL();
+    dbRequest
+      .update(req.body.id,req.body.fname, req.body.lname, req.body.age, req.body.city, req.body.phoneNumber, req.body.email, req.body.companyName)
+      .then(() => {
+        dbRequest.closeConnection();
+        res.status(200).end();
+      })
+      .catch(() => {
+        dbRequest.closeConnection();
+        res.status(409).end();
+      });
+  }
 
   deleteData(req: Request, res: Response): void {
-    const deleteId = req.url.split(':')[1];
+    const deleteId = req.params.id;
     const dbRequest = new MySQL();
     dbRequest
       .delete(deleteId)

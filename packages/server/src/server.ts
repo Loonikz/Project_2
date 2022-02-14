@@ -74,17 +74,17 @@
 //   });
 // });
 
-import Application from './modules/Application';
 import PagesController from './modules/PageRouter';
-import {MySQLRouter} from "./modules/MySQLRouter";
-import {MongoDBRouter} from "./modules/MongoDBRouter";
+import { MySQLRouter } from './modules/MySQLRouter';
+import { MongoDBRouter } from './modules/MongoDBRouter';
+import Application from "./modules/Application";
 
-// import {MongoDB} from "./database/mongoDB";
-// import MongoController from "./controllers/mainMongo";
+// import {MongoDB} from './database/mongoDB';
+// import MongoController from './controllers/mainMongo';
 
 const app = new Application(
   // [new AuthenticationController(), new PagesController(), new MongoController()]
-  [ new PagesController(), new MySQLRouter(), new MongoDBRouter()],
+  [ new MySQLRouter(), new MongoDBRouter(),new PagesController()],
 );
 
 app.start();

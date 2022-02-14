@@ -15,7 +15,7 @@ export class MySQL {
 
   insert(fname: string, lname: string, age: number, city: string, phoneNumber: string, email: string, companyName: string) {
     return new Promise((resolve, reject) => {
-      this.connect.query(`INSERT INTO heroku_74f535d3c337155.persons (fname, lname, age, city, phoneNumber, email, companyName)
+      this.connect.query(`INSERT INTO ${process.env.MYSQL_DATABASE}.persons (fname, lname, age, city, phoneNumber, email, companyName)
                     VALUES ('${fname}', '${lname}', ${age}, '${city}', '${phoneNumber}', '${email}', '${companyName}')`,
         ((err: Error, result: any) => {
           if (err) {
@@ -30,7 +30,7 @@ export class MySQL {
 
   update(id, fname: string, lname: string, age: number, city: string, phoneNumber: string, email: string, companyName: string) {
     return new Promise((resolve, reject) => {
-      this.connect.query(`UPDATE heroku_74f535d3c337155.persons SET fname = '${fname}', lname = '${lname}', age = '${age}', city = '${city}',
+      this.connect.query(`UPDATE ${process.env.MYSQL_DATABASE}.persons SET fname = '${fname}', lname = '${lname}', age = '${age}', city = '${city}',
             phoneNumber = '${phoneNumber}', email = '${email}', companyName = '${companyName}' WHERE (id = '${id}')`,
         ((err: Error, result: any) => {
           if (err) {
@@ -46,6 +46,20 @@ export class MySQL {
   delete(id) {
     return new Promise((resolve, reject) => {
       this.connect.query(`DELETE FROM persons WHERE (id = '${id}')`,
+        ((err: Error, result: any) => {
+          if (err) {
+            reject(err);
+          } else {
+            resolve(result);
+          }
+        })
+      );
+    });
+  }
+
+  clear() {
+    return new Promise((resolve, reject) => {
+      this.connect.query(`TRUNCATE TABLE persons`,
         ((err: Error, result: any) => {
           if (err) {
             reject(err);

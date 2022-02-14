@@ -13,14 +13,14 @@ class PagesRouter {
   }
 
   private checkRoutes() {
-    this.router.get('/', PagesRouter.redirect);
     this.router.get('/login', PagesRouter.login);
     this.router.get('/register', PagesRouter.register);
     this.router.get('/main', PagesRouter.main);
+    this.router.get('/*', PagesRouter.redirect);
   }
 
   static redirect(req: Request, res: Response) {
-    res.redirect('/main');
+    res.redirect('/login');
   }
 
   static main(req: Request, res: Response) {

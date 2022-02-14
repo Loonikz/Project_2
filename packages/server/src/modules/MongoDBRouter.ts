@@ -12,26 +12,13 @@ export class MongoDBRouter {
 
   checkRoutes() {
     this.router.get('/', this.getData);
-    this.router.post('/', this.createData);
-    // this.router.delete('/:*', this.deleteData);
-    // this.router.delete('/clear', this.clearData);
+    this.router.post('/', this.postData);
+    this.router.put('/', this.putData);
+    this.router.delete('/clear', this.clearData);
+    this.router.delete('/:id', this.deleteData);
   }
 
-  // clearData(req: Request, res: Response): void {
-  //   const dbRequest = new MongoDB();
-  //   dbRequest
-  //     .clear()
-  //     .then(() => {
-  //       dbRequest.endConnection();
-  //       res.status(200).end();
-  //     })
-  //     .catch(() => {
-  //       dbRequest.endConnection();
-  //       res.status(409).end();
-  //     });
-  // }
-
-  createData(req: Request, res: Response): void {
+  postData(req: Request, res: Response): void {
     const dbRequest = new MongoDB();
     dbRequest
       .insert(req.body.fname, req.body.lname, req.body.age, req.body.city, req.body.phoneNumber, req.body.email, req.body.companyName)
@@ -42,19 +29,41 @@ export class MongoDBRouter {
         res.status(409).end();
       });
   }
+  putData(req: Request, res: Response): void {
+    const dbRequest = new MongoDB();
+    dbRequest
+      .update(req.body.id,req.body.fname, req.body.lname, req.body.age, req.body.city, req.body.phoneNumber, req.body.email, req.body.companyName)
+      .then(() => {
+        res.status(200).end();
+      })
+      .catch(() => {
+        res.status(409).end();
+      });
+  }
 
-  // deleteData(req: Request, res: Response): void {
-  //   const deleteId = req.url.split(':')[1];
-  //   const dbRequest = new MongoDB();
-  //   dbRequest
-  //     .delete(deleteId)
-  //     .then(() => {
-  //       res.status(200).end();
-  //     })
-  //     .catch(() => {
-  //       res.status(409).end();
-  //     });
-  // }
+  deleteData(req: Request, res: Response): void {
+    const deleteId = req.params.id;
+    const dbRequest = new MongoDB();
+    dbRequest
+      .delete(deleteId)
+      .then(() => {
+        res.status(200).end();
+      })
+      .catch(() => {
+        res.status(409).end();
+      });
+  }
+  clearData(req: Request, res: Response): void {
+    const dbRequest = new MongoDB();
+    dbRequest
+      .clear()
+      .then((value) => {
+        res.status(200).end();
+      })
+      .catch(() => {
+        res.status(409).end();
+      });
+  }
 
   getData(req: Request, res: Response): void {
     const dbRequest = new MongoDB();
