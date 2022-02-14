@@ -8,25 +8,6 @@ export class MongoDB {
 
   }
 
-
-  async collection() {
-    return new Promise((resolve, reject) =>
-      this.client.connect((e, client) => {
-        if (e) {
-          throw e;
-        } else {
-          const collection = client.db(process.env.MONGODB_DATABASE).collection(process.env.MONGODB_COLLECTION);
-          collection.countDocuments((err, result) => {
-            if (err) {
-              reject(err);
-            }
-            reject(result);
-            client.close();
-          });
-        }
-      }));
-  }
-
   insert(fname: string, lname: string, age: number, city: string, phoneNumber: string, email: string, companyName: string) {
     const person = {
       'id': '',
@@ -70,7 +51,7 @@ export class MongoDB {
     });
   }
 
-  async updateId(id) {
+  updateId(id) {
     return new Promise((resolve, reject) => {
       const collection = this.client.db(process.env.MONGODB_DATABASE).collection(process.env.MONGODB_COLLECTION);
       collection.updateOne({'_id': id}, {
@@ -87,7 +68,69 @@ export class MongoDB {
     });
   }
 
-  public closeConnection() {
-    this.client.close();
+  update(id: string, fname: string, lname: string, age: number, city: string, phoneNumber: string, email: string, companyName: string) {
+    return new Promise((resolve, reject) => {
+      this.client.connect((e, client) => {
+        if (e) {
+          reject(e);
+        }
+        const collection = client.db(process.env.MONGODB_DATABASE).collection(process.env.MONGODB_COLLECTION);
+        collection.updateOne({'id': id}, {
+          $set: {
+            'fname': `${fname}`,
+            'lname': `${lname}`,
+            'age': age,
+            'city': `${city}`,
+            'phoneNumber': `${phoneNumber}`,
+            'email': `${email}`,
+            'companyName': `${companyName}`
+          }
+        }, (error, result) => {
+          if (error) {
+            reject(error)
+          } else {
+            resolve(result)
+          }
+        })
+      })
+    });
   }
+
+  delete(id: string) {
+    return new Promise((resolve, reject) => {
+      this.client.connect((e, client) => {
+        if (e) {
+          reject(e);
+        }
+        const collection = client.db(process.env.MONGODB_DATABASE).collection(process.env.MONGODB_COLLECTION);
+        collection.deleteOne({'id': id}, (error, result) => {
+          if (error) {
+            reject(error)
+          } else {
+            resolve(result)
+          }
+        })
+      });
+    });
+  }
+
+  clear() {
+    return new Promise((resolve, reject) => {
+      this.client.connect((e, client) => {
+        if (e) {
+          reject(e);
+        }
+        const collection = client.db(process.env.MONGODB_DATABASE).collection(process.env.MONGODB_COLLECTION);
+        console.log(collection)
+        collection.deleteMany({}, (error, result) => {
+          if (error) {
+            reject(error)
+          } else {
+            resolve(result)
+          }
+        })
+      });
+    });
+  }
+
 }
