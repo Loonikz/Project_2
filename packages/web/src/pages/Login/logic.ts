@@ -1,64 +1,66 @@
-import {getInputValue, getElementById, setInnerText} from "../../logic/header/utils"
+import { getInputValue, getElementById, setInnerText } from '../../logic/header/utils';
 
 export function loginValidation(state) {
+  const stateObj = state;
   const loginRegex = /^[a-zA-Z0-9_]{3,20}$/;
   const value = <string>getInputValue('login-reg');
   const loginId = 'login-message';
 
   if (value === '') {
     setInnerText(loginId, 'Field can`t be empty');
-    state.validateStatus[0] = false;
+    stateObj.validateStatus[0] = false;
     return false;
   }
 
   if (value.length < 6) {
     setInnerText(loginId, 'Login at least 6 characters');
-    state.validateStatus[0] = false;
+    stateObj.validateStatus[0] = false;
     return false;
   }
 
   if (value.length > 20) {
     setInnerText(loginId, 'Login can`t be longer than 20 characters');
-    state.validateStatus[0] = false;
+    stateObj.validateStatus[0] = false;
     return false;
   }
 
   if (!value.match(loginRegex)) {
     setInnerText(loginId, 'Login must contain only letters, numbers, and underscores');
-    state.validateStatus[0] = false;
+    stateObj.validateStatus[0] = false;
     return false;
   }
 
   setInnerText(loginId, '');
-  state.validateStatus[0] = true;
+  stateObj.validateStatus[0] = true;
   return true;
 }
 
 export function passwordValidation(state) {
+  const stateObj = state;
   const passwordRegex = /^(?=.*\d)(?=.*[a-zA-Z])(?=.*[!@#$%^&*]).{8,}$/;
   const value = <string>getInputValue('password-reg');
   const passwordId = 'password-message';
 
   if (value === '') {
     setInnerText(passwordId, 'Field can`t be empty');
-    state.validateStatus[1] = false;
+    stateObj.validateStatus[1] = false;
     return false;
   }
 
   if (value.length < 8) {
     setInnerText(passwordId, 'Password at least 8 characters');
-    state.validateStatus[1] = false;
+    stateObj.validateStatus[1] = false;
     return false;
   }
 
   if (!value.match(passwordRegex)) {
     setInnerText(passwordId, 'Password must contain letters, numbers, and special symbols');
-    state.validateStatus[1] = false;
+    stateObj.validateStatus[1] = false;
     return false;
   }
 
   setInnerText(passwordId, '');
-  state.validateStatus[1] = true;
+  stateObj.validateStatus[1] = true;
   return true;
 }
 
