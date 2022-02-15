@@ -58,6 +58,10 @@ body {
   --btn-search: url("../../assets/svg/search_white.svg");
 }
 
+.active{
+  filter: blur(5px);
+}
+
 .nav-container {
   display: flex;
   margin: 15px auto;

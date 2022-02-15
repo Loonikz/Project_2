@@ -9,7 +9,8 @@ const modalSecurity = document.getElementById('modal-security');
 const closedModal = document.getElementById('closed-modal');
 
 profile.addEventListener('click', () => {
-  modalSecurity.style.display = "block";
+  modalSecurity.style.display = 'block';
+  document.body.classList.add('active');
 });
 
 closedModal.addEventListener('click', () => {
