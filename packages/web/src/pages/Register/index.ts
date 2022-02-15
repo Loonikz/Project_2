@@ -1,21 +1,17 @@
-import "./styles.scss"
-import {addListener} from "../../logic/header/utils";
-import {changeLng} from "../../logic/header/localization";
-import {changeTheme} from "../../logic/header/theme";
-import {getLocalStorage} from "../../logic/header/getLocalStorage";
+import './styles.scss';
+import { addListener } from '../../logic/header/utils';
+import { changeLng } from '../../logic/header/localization';
+import { changeTheme } from '../../logic/header/theme';
+import { getLocalStorage } from '../../logic/header/getLocalStorage';
 import {
   confirmPasswordValidate,
   loginValidate,
   passwordValidate,
-  validateStatusCheck
-} from "./logic";
+  validateStatusCheck,
+} from './logic';
 
 function init() {
-  const state = {
-    urlRegister: '/register',
-    validateStatus: [false, false, false],
-  };
-
+  const state = { urlRegister: '/register', validateStatus: [false, false, false] };
   addListener('sign-up-login', 'input', () => {
     loginValidate.call(null, state);
     validateStatusCheck.call(null, state);
@@ -38,6 +34,6 @@ function init() {
   getLocalStorage();
 }
 
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', () => {
   init();
 });
