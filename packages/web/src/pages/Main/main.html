@@ -14,11 +14,10 @@
 </head>
 <body>
 <section id='modal-create-update' class='modal'>
-  <span id='closed-create-update' class='modal--closed'>x</span>
   <section class='modal__content-modal'>
-
-    <section class='modal__content'>
-      <form class='modal__form-login'>
+    <span id='closed-create-update' class='modal--closed'>x</span>
+    <section class='modal__form-create'>
+    <form class='modal__form-login'>
         <label class='modal--label' data-i18n='first_name'></label>
         <input class='modal--input' id='first-name' type='text'>
 
@@ -38,7 +37,7 @@
         <input class='modal--input' id='email' type='email'>
 
         <label class='modal--label' data-i18n='company'></label>
-        <input class='modal--input' id='company' type='email'>
+        <input class='modal--input' id='company' type='text'>
 
         <button class='modal--button' type='submit' data-i18n='cancel'></button>
         <button class='modal--button' type='reset' data-i18n='save'></button>
@@ -47,31 +46,32 @@
   </section>
 </section>
 <section id='modal-security' class='modal'>
-  <p class='modal--title' data-i18n='security'></p>
-  <span id='closed-modal' class='modal--closed'>x</span>
-  <section class='modal__tab-menu' role='tablist'>
-    <a class='modal__tab-menu--link active'
-       href='#login' data-i18n='label_login'></a>
-    <a class='modal__tab-menu--link' href='#password'
-       data-i18n='password'>password</a>
-  </section>
-  <section class='modal__content'>
-    <form class='modal__form-login'>
-      <label class='modal--label' data-i18n='new_login'></label>
-      <input class='modal--input' id='login-reg' type='text'>
+  <section class='modal__content-modal'>
+    <p class='modal--title' data-i18n='security'></p>
+    <span id='closed-modal' class='modal--closed'>x</span>
+    <section class='modal__tab-menu'>
+      <a class='modal__tab-menu--link active'
+         href='#' data-i18n='label_login'></a>
+      <a class='modal__tab-menu--link' href='#'
+         data-i18n='password'>password</a>
+    </section>
+    <section class='modal__form'>
+      <form class='modal__form-login'>
+        <label class='modal--label' data-i18n='new_login'></label>
+        <input class='modal--input' id='new-login' type='text'>
 
-      <label class='modal--label' data-i18n='password'></label>
-      <input class='modal--input' id='password-reg' min='5' type='password'>
+        <label class='modal--label' data-i18n='label_password'></label>
+        <input class='modal--input' id='password' type='password'>
 
-      <label class='modal--label' data-i18n='pass_confir'></label>
-      <input class='modal--input' id='password-conf' min='5' type='password'>
+        <label class='modal--label' data-i18n='pass_confir'></label>
+        <input class='modal--input' id='confirm-password' type='password'>
 
-      <button class='modal--button' type='submit' data-i18n='cancel'></button>
-      <button class='modal--button' type='reset' data-i18n='save'></button>
-    </form>
+        <button class='modal--button' type='submit' data-i18n='cancel'></button>
+        <button class='modal--button' type='reset' data-i18n='save'></button>
+      </form>
+    </section>
   </section>
 </section>
-
 <header class='nav-container'>
   <section class='nav-container__logo'>
     WWIWD
@@ -94,7 +94,6 @@
     </section>
   </section>
 </header>
-
 <section class='container'>
   <section class='container__content'>
     <section class='container__content--selects'>

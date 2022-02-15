@@ -1,8 +1,8 @@
 import './styles.scss';
-import {addListener} from '../../logic/header/utils';
-import {changeLng} from '../../logic/header/localization';
-import {changeTheme} from '../../logic/header/theme';
-import {getLocalStorage} from '../../logic/header/getLocalStorage';
+import { addListener } from '../../logic/header/utils';
+import { changeLng } from '../../logic/header/localization';
+import { changeTheme } from '../../logic/header/theme';
+import { getLocalStorage } from '../../logic/header/getLocalStorage';
 
 const profile = document.getElementById('profile');
 const modalSecurity = document.getElementById('modal-security');

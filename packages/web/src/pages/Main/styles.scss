@@ -25,6 +25,8 @@ body {
   --bg-tr-odd: #DAD7D7;
   --bg-tr: #A8A7A7;
   --bg-tab: #999999;
+  --bg-tab-active: #E4E4E4;
+  --bg-modal: #E4E4E4;
   --btn-form: #F00418;
   --text-btn-form: #FFFFFF;
   --btn-search: url("../../assets/svg/search_black.svg");
@@ -53,33 +55,52 @@ body {
   --bg-tr-odd: #55608F;
   --bg-tr: #646FA1;
   --bg-tab: #3B0A4F;
+  --bg-modal: linear-gradient(#461888FF, #3E18BC);
+  --bg-tab-active: linear-gradient(#590986FF, #461888FF);
   --btn-form: #FFFFFF;
   --text-btn-form: #000000;
   --btn-search: url("../../assets/svg/search_white.svg");
 }
 
-.blur{
-  filter: blur(5px);
-}
-
 .modal {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 20px;
-  background: var(--bg-container);
   display: none;
   position: fixed;
-  z-index: 1;
+  top: 0;
+  left: 0;
+  z-index: 9999;
   overflow: auto;
-  margin-left: 30%;
-  margin-top: 2%;
-  color: var(--text-color);
-  border-radius: 20px;
+  backdrop-filter: blur(5px);
+  width: 100%;
+  height: 100vh;
   text-align: center;
 
+  &__content-modal {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    background: var(--bg-container);
+    width: 550px;
+    margin: 1% auto;
+    height: auto;
+    color: var(--text-color);
+    border-radius: 20px;
+    justify-content: center;
+    text-align: center;
+  }
+
+  &__form-create {
+    text-align: left;
+    display: flex;
+    width: 100%;
+    margin-top: -20px;
+    z-index: 99;
+    border-radius: 0 0 20px 20px;
+    position: relative;
+  }
+
   &--title {
+    font-size: 25px;
     display: inline-block;
-    align-content: center;
-    margin: 20px;
+    margin: 20px auto;
   }
 
   &--closed {
@@ -92,43 +113,46 @@ body {
     font-weight: bold;
   }
 
-  &__content-modal {
-    width: 550px;
-    height: auto;
-  }
-
   &__tab-menu {
     display: flex;
-    padding: 0;
-    margin: 0;
 
-  &--tab-link {
-    text-align: center;
-    width: 50%;
-    padding: 25px;
-    background: var(--bg-tab);
-    border-radius: 30px 30px 0 0;
-    height: 30px;
-    cursor: pointer;
-    display: block;
-    text-decoration: none;
-    color: var(--text-color);
+    &--link {
+      display: block;
+      cursor: pointer;
+      text-decoration: none;
+      box-shadow: 0px 0px 14px 0px rgba(191, 163, 186, 0.2);
+      font-weight: bold;
+      font-size: 20px;
+      text-align: center;
+      background: var(--bg-tab);
+      padding: 25px;
+      width: 50%;
+      height: 30px;
+      color: white;
+      border-radius: 30px 30px 0 0;
+      position: relative;
+    }
   }
-}
+
   .active {
     color: var(--text-color-hover);
-    background: var(--bg-container);
+    background: var(--bg-tab-active);
   }
 
-  &__content {
+  &__form {
     text-align: left;
     display: flex;
-    width: 80%;
-    margin: 0 auto;
+    width: 100%;
+    margin-top: -20px;
+    background: var(--bg-modal);
+    z-index: 99;
+    border-radius: 0 0 20px 20px;
+    position: relative;
   }
 
   &__form-login {
-    width: 100%;
+    width: 80%;
+    margin: 0 auto;
   }
 
   &--label {
