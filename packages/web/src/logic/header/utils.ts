@@ -53,3 +53,15 @@ export function removeDisabledAttribute(node: HTMLElement) {
   }
   return false;
 }
+
+export function setValueLocalStorage(key, value) {
+  localStorage.setItem(key, value);
+}
+
+export function getValueLocalStorage(key: string) {
+  // по другому ругается ес-линт
+  if (Object.hasOwnProperty.call(localStorage, key)) {
+    return localStorage[key];
+  }
+  return false;
+}
