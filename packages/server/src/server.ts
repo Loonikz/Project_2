@@ -78,13 +78,14 @@ import PagesController from './modules/PageRouter';
 import { MySQLRouter } from './modules/MySQLRouter';
 import { MongoDBRouter } from './modules/MongoDBRouter';
 import Application from "./modules/Application";
+import AuthRouter from "./modules/AuthRouter";
 
 // import {MongoDB} from './database/mongoDB';
 // import MongoController from './controllers/mainMongo';
 
 const app = new Application(
   // [new AuthenticationController(), new PagesController(), new MongoController()]
-  [ new MySQLRouter(), new MongoDBRouter(),new PagesController()],
+  [ new MySQLRouter(), new MongoDBRouter(),new PagesController(), new AuthRouter()],
 );
 
 app.start();

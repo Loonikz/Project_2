@@ -2,6 +2,7 @@ import express from 'express';
 import dotenv from 'dotenv';
 // import cookieParser from 'cookie-parser';
 import cors from 'cors';
+import mongoose from 'mongoose';
 
 dotenv.config();
 
@@ -14,6 +15,7 @@ class Application {
     this.middlewares();
     this.routes();
     this.controllers(controllers);
+    mongoose.connect("mongodb+srv://root:kFf3hHpxtjI8PFkN@cluster0.qlr4p.mongodb.net/User?retryWrites=true&w=majority");
   }
 
   settings() {
