@@ -16,8 +16,7 @@
 <section id='modal-create-update' class='modal'>
   <section class='modal__content-modal'>
     <span id='closed-create-update' class='modal--closed'>x</span>
-    <section class='modal__form-create'>
-    <form class='modal__form-login'>
+    <form class='modal__form-create'>
         <label class='modal--label' data-i18n='first_name'></label>
         <input class='modal--input' id='first-name' type='text'>
 
@@ -42,21 +41,20 @@
         <button class='modal--button' type='submit' data-i18n='cancel'></button>
         <button class='modal--button' type='reset' data-i18n='save'></button>
       </form>
-    </section>
   </section>
 </section>
 <section id='modal-security' class='modal'>
   <section class='modal__content-modal'>
     <p class='modal--title' data-i18n='security'></p>
     <span id='closed-modal' class='modal--closed'>x</span>
-    <section class='modal__tab-menu'>
-      <a class='modal__tab-menu--link active'
+    <section class='modal__tab-menu' id="tab">
+      <a class='modal__tab-menu--link active' data-tab='1'
          href='#' data-i18n='label_login'></a>
-      <a class='modal__tab-menu--link' href='#'
+      <a class='modal__tab-menu--link' data-tab='2' href='#'
          data-i18n='password'>password</a>
     </section>
     <section class='modal__form'>
-      <form class='modal__form-login'>
+      <form class='modal__form-edit active-form' data-tab-content="1">
         <label class='modal--label' data-i18n='new_login'></label>
         <input class='modal--input' id='new-login' type='text'>
 
@@ -65,6 +63,20 @@
 
         <label class='modal--label' data-i18n='pass_confir'></label>
         <input class='modal--input' id='confirm-password' type='password'>
+
+        <button class='modal--button' type='submit' data-i18n='cancel'></button>
+        <button class='modal--button' type='reset' data-i18n='save'></button>
+      </form>
+
+      <form class='modal__form-edit' data-tab-content="2">
+        <label class='modal--label' data-i18n='old_pass'></label>
+        <input class='modal--input' id='new-pass' type='password'>
+
+        <label class='modal--label' data-i18n='new_password'></label>
+        <input class='modal--input' id='new-password' type='password'>
+
+        <label class='modal--label' data-i18n='pass_confir'></label>
+        <input class='modal--input' id='confirm-pass-edit' type='password'>
 
         <button class='modal--button' type='submit' data-i18n='cancel'></button>
         <button class='modal--button' type='reset' data-i18n='save'></button>

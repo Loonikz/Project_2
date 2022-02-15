@@ -8,6 +8,8 @@
   "text_need_account": "Need an account? ",
   "btn_sign_up": "Sign up",
   "pass_confir": "Confirm password",
+  "old_pass": "Old password",
+  "new_password": "New password",
   "btn_regis": "Registration",
   "text_have_account": "Do you have an account?",
   "btn_log_in": "Log in",
