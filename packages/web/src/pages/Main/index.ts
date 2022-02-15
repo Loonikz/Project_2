@@ -4,6 +4,8 @@ import { changeLng } from '../../logic/header/localization';
 import { changeTheme } from '../../logic/header/theme';
 import { getLocalStorage } from '../../logic/header/getLocalStorage';
 import { changeTabSecurity } from '../../logic/header/changeTabSecurity';
+import { changeDB, changeSort, loadData } from '../../logic/render';
+
 
 const modalSecurity = document.getElementById('modal-security');
 const btnProfile = document.getElementById('profile');
@@ -33,12 +35,26 @@ closedCreateModal.addEventListener('click', () => {
 });
 
 function init() {
+  const state = {
+    mongoDB: [],
+    mySQL: [],
+  };
   addListener('dropdownLanguage', 'change', changeLng);
   addListener('dropdownTheme', 'change', changeTheme);
+  
   getLocalStorage();
+  
   // addListener('profile', 'click', openModalWindow('modal-security'));
   // addListener('closed-modal', 'click', closedModalWindow('modal-security'));
+  
   changeTabSecurity();
+  
+  addListener('selectDB', 'change', changeDB.bind(null, state));
+  addListener('sort', 'change', changeSort.bind(null, state));
+
+  getLocalStorage();
+  
+  loadData(state);
 }
 
 document.addEventListener('DOMContentLoaded', init);
