@@ -13,41 +13,71 @@
     rel='stylesheet'>
 </head>
 <body>
+<section id='modal-create-update' class='modal'>
+  <span id='closed-create-update' class='modal--closed'>x</span>
+  <section class='modal__content-modal'>
+
+    <section class='modal__content'>
+      <form class='modal__form-login'>
+        <label class='modal--label' data-i18n='first_name'></label>
+        <input class='modal--input' id='first-name' type='text'>
+
+        <label class='modal--label' data-i18n='last_name'></label>
+        <input class='modal--input' id='last-name' type='text'>
+
+        <label class='modal--label' data-i18n='age'></label>
+        <input class='modal--input' id='age' type='text'>
+
+        <label class='modal--label' data-i18n='city'></label>
+        <input class='modal--input' id='city' type='text'>
+
+        <label class='modal--label' data-i18n='number'></label>
+        <input class='modal--input' id='number' type='tel'>
+
+        <label class='modal--label' data-i18n='email'></label>
+        <input class='modal--input' id='email' type='email'>
+
+        <label class='modal--label' data-i18n='company'></label>
+        <input class='modal--input' id='company' type='email'>
+
+        <button class='modal--button' type='submit' data-i18n='cancel'></button>
+        <button class='modal--button' type='reset' data-i18n='save'></button>
+      </form>
+    </section>
+  </section>
+</section>
+<section id='modal-security' class='modal'>
+  <p class='modal--title' data-i18n='security'></p>
+  <span id='closed-modal' class='modal--closed'>x</span>
+  <section class='modal__tab-menu' role='tablist'>
+    <a class='modal__tab-menu--link active'
+       href='#login' data-i18n='label_login'></a>
+    <a class='modal__tab-menu--link' href='#password'
+       data-i18n='password'>password</a>
+  </section>
+  <section class='modal__content'>
+    <form class='modal__form-login'>
+      <label class='modal--label' data-i18n='new_login'></label>
+      <input class='modal--input' id='login-reg' type='text'>
+
+      <label class='modal--label' data-i18n='password'></label>
+      <input class='modal--input' id='password-reg' min='5' type='password'>
+
+      <label class='modal--label' data-i18n='pass_confir'></label>
+      <input class='modal--input' id='password-conf' min='5' type='password'>
+
+      <button class='modal--button' type='submit' data-i18n='cancel'></button>
+      <button class='modal--button' type='reset' data-i18n='save'></button>
+    </form>
+  </section>
+</section>
+
 <header class='nav-container'>
   <section class='nav-container__logo'>
     WWIWD
   </section>
   <section class='nav-container__buttons'>
     <button id='profile' class='nav-container__buttons--profile'></button>
-    <section id='modal-security' class='nav-container__modal'>
-      <p class='nav-container__modal--title' data-i18n='security'></p>
-      <span id='closed-modal' class='nav-container__modal--closed'>x</span>
-      <section class='nav-container__modal--content-modal'>
-        <section class='nav-container__modal--tab-menu' role='tablist'>
-          <a class='nav-container__modal--tab-link active'
-             href='#login' data-i18n='label_login'></a>
-          <a class='nav-container__modal--tab-link' href='#password'
-             data-i18n='password'>password</a>
-        </section>
-
-        <section class='nav-container__modal--tab-content'>
-          <form class='nav-container__modal--form-login'>
-            <label class='nav-container__modal--label' data-i18n='new_login'></label>
-            <input class='nav-container__modal--input' id='login-reg' type='text'>
-
-            <label class='nav-container__modal--label' data-i18n='password'></label>
-            <input class='nav-container__modal--input' id='password-reg' min='5' type='password'>
-
-            <label class='nav-container__modal--label' data-i18n='pass_confir'></label>
-            <input class='nav-container__modal--input' id='password-conf' min='5' type='password'>
-
-            <button class='nav-container__modal--button' type='submit' data-i18n='cancel'></button>
-            <button class='nav-container__modal--button' type='reset' data-i18n='save'></button>
-          </form>
-        </section>
-      </section>
-    </section>
-
     <section id='dropdownTheme'>
       <label for='changeTheme'></label>
       <select id='changeTheme' class='nav-container__buttons--select'>
