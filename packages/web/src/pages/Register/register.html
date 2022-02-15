@@ -1,53 +1,60 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang='en'>
 <head>
-  <meta charset="UTF-8">
-  <title data-i18n="login_title"></title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <meta charset='UTF-8'>
+  <title data-i18n='login_title'></title>
+  <link rel='preconnect' href='https://fonts.googleapis.com'>
+  <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital@1&family=Caveat&family=Montserrat:wght@100;300&family=Nunito:wght@300&display=swap"
-    rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,600&display=swap"
-        rel="stylesheet">
+    href='https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital@1&family=Caveat&family=Montserrat:wght@100;300&family=Nunito:wght@300&display=swap'
+    rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,600&display=swap'
+        rel='stylesheet'>
 </head>
 <body>
-<header class="nav-container">
-  <section class="nav-container__logo">
+<header class='nav-container'>
+  <section class='nav-container__logo'>
     WWIWD
   </section>
-  <section class="nav-container__buttons">
-    <section id="dropdownTheme">
-      <label for="changeTheme"></label>
-      <select id="changeTheme" class="nav-container__buttons--select">
-        <option value="light" data-i18n="light_them"></option>
-        <option value="dark" data-i18n="dark_them"></option>
+  <section class='nav-container__buttons'>
+    <section id='dropdownTheme'>
+      <label for='changeTheme'></label>
+      <select id='changeTheme' class='nav-container__buttons--select'>
+        <option value='light' data-i18n='light_them'></option>
+        <option value='dark' data-i18n='dark_them'></option>
       </select>
     </section>
-    <section id="dropdownLanguage">
-      <label for="changeLanguage" data-i18n="change_language"></label>
-      <select id="changeLanguage" class="nav-container__buttons--select">
-        <option value="en">EN</option>
-        <option value="ru">Ru</option>
+    <section id='dropdownLanguage'>
+      <label for='changeLanguage' data-i18n='change_language'></label>
+      <select id='changeLanguage' class='nav-container__buttons--select'>
+        <option value='en'>EN</option>
+        <option value='ru'>Ru</option>
       </select>
     </section>
   </section>
 </header>
-<main class="container">
-  <form class="container__form">
-    <section class="container__form--avatar">
+<main class='container'>
+  <form class='container__form'>
+    <section class='container__form--avatar'>
     </section>
-    <label class="container__form--label" data-i18n="label_login"></label>
-    <input class="container__form--input" id="login-reg" type="text">
-    <label class="container__form--label" data-i18n="label_password"></label>
-    <input class="container__form--input" id="password-reg" min="5" type="password">
-    <label class="container__form--label" data-i18n="pass_confir"></label>
-    <input class="container__form--input" id="passw-conf-reg" type="password">
-    <button class="container__form--button" data-i18n="btn_regis" type="submit"></button>
-    <section class="container__form--text">
-      <p class="container__form--p" data-i18n="text_have_account"></p>
-      <a href="./login.html" class="container__form--p container__form--sign-up"
-            data-i18n="btn_log_in"></a>
+    <label class='container__form--label' data-i18n='label_login'></label>
+    <input class='container__form--input' id='sign-up-login' type='text'>
+    <p class='container__form__message' id='login-message'></p>
+
+    <label class='container__form--label' data-i18n='label_password'></label>
+    <input class='container__form--input' id='sign-up-password' type='password'>
+    <p class='container__form__message' id='password-message'></p>
+
+    <label class='container__form--label' data-i18n='pass_confir'></label>
+    <input class='container__form--input' id='sign-up-password-confirm' type='password'>
+    <p class='container__form__message' id='password-confirm-message'></p>
+
+    <button class='container__form--button' id='registration-btn' data-i18n='btn_regis'
+            type='submit'></button>
+    <section class='container__form--text'>
+      <p class='container__form--p' data-i18n='text_have_account'></p>
+      <a href='./login.html' class='container__form--p container__form--sign-up'
+         data-i18n='btn_log_in'></a>
     </section>
   </form>
 </main>
