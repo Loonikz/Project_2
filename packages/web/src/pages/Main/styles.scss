@@ -29,7 +29,6 @@ body {
   --bg-modal: #E4E4E4;
   --btn-form: #F00418;
   --text-btn-form: #FFFFFF;
-  --btn-search: url("../../assets/svg/search_black.svg");
 }
 
 .dark {
@@ -59,7 +58,6 @@ body {
   --bg-tab-active: linear-gradient(#590986FF, #461888FF);
   --btn-form: #FFFFFF;
   --text-btn-form: #000000;
-  --btn-search: url("../../assets/svg/search_white.svg");
 }
 
 .modal {
@@ -155,9 +153,10 @@ body {
     display: none;
   }
 
-  .active-form{
+  .active-form {
     display: block;
   }
+
   &--label {
     display: block;
     color: var(--text-color-label);
@@ -201,13 +200,13 @@ body {
 
 .nav-container {
   display: flex;
-  margin: 15px auto;
+  margin: 1% auto;
   width: 90%;
+  justify-content: space-between;
 
   &__logo {
     font-size: 50px;
     color: var(--logo-color);
-    margin-right: 65%;
   }
 
   &__buttons {
@@ -271,8 +270,11 @@ body {
 
     &--option {
       border: none;
-      background: #DBFF00;
-      margin: 55px;
+      padding: 5px;
+
+      &:hover {
+        background: gray;
+      }
     }
 
     &--panel {
@@ -313,20 +315,12 @@ body {
       height: 40px;
     }
 
-    &--search-btn {
-      background: var(--btn-search);
-      cursor: pointer;
-      border: none;
-      width: 45px;
-      height: 45px;
-      margin-right: 5px;
-      padding: 10px;
-    }
   }
 
   &__data {
     border: var(--border-cont);
     border-radius: 15px;
+    width: 100%;
 
     &--table {
       border-radius: 15px;
@@ -334,6 +328,7 @@ body {
       overflow: hidden;
       color: var(--text-color);
       font-size: 15px;
+      width: 100%;
     }
 
     &--items-head {

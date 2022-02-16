@@ -42,13 +42,13 @@ body {
 
 .nav-container {
   display: flex;
-  margin: 15px;
+  margin: 1% auto;
+  width: 90%;
+  justify-content: space-between;
 
   &__logo {
     font-size: 50px;
     color: var(--logo-color);
-    margin-left: 25px;
-    margin-right: 65%;
   }
 
   &__buttons {
