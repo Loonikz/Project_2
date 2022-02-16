@@ -1,4 +1,4 @@
-import { person } from './type';
+import { Person } from './type';
 import { getData } from './request';
 import { getInputValue, getValueLocalStorage, setValueLocalStorage } from './header/utils';
 
@@ -9,9 +9,9 @@ function renderCell(value: string) {
   return th;
 }
 
-function renderRow(arrayData: Array<person>) {
+function renderRow(arrayData: Array<Person>) {
   const fragment = document.createDocumentFragment();
-  arrayData.forEach((row: person) => {
+  arrayData.forEach((row: Person) => {
     const tr = document.createElement('tr');
     tr.setAttribute('class', 'container__data--tr');
     tr.append(renderCell(String(row.id)));
@@ -19,7 +19,7 @@ function renderRow(arrayData: Array<person>) {
     tr.append(renderCell(row.lname));
     tr.append(renderCell(row.age));
     tr.append(renderCell(row.city));
-    tr.append(renderCell(row.number));
+    tr.append(renderCell(row.phoneNumber));
     tr.append(renderCell(row.email));
     tr.append(renderCell(row.company));
     fragment.append(tr);
@@ -79,8 +79,8 @@ export function changeSort(state) {
   }
 }
 
-export function find(arrayData: Array<person>, searchField): Array<person> {
-  return arrayData.filter((value: person) => {
+export function find(arrayData: Array<Person>, searchField): Array<Person> {
+  return arrayData.filter((value: Person) => {
     const isFirstName = value.fname.toLowerCase().indexOf(searchField.toLowerCase()) !== -1;
     const isLastName = value.lname.toLowerCase().indexOf(searchField.toLowerCase()) !== -1;
     return isFirstName || isLastName;
