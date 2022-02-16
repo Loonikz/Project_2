@@ -65,3 +65,20 @@ export function getValueLocalStorage(key: string) {
   }
   return false;
 }
+
+function setNodeSelectedText(id, selectIndex) {
+  const node = <HTMLSelectElement>document.getElementById(id);
+  if (node) {
+    node.selectedIndex = selectIndex;
+    return true;
+  }
+  return false;
+}
+
+export function fromLocaleStorageToDropDown(id, key, arrayValue) {
+  if (getValueLocalStorage(key)) {
+    setNodeSelectedText(id, arrayValue.indexOf(getValueLocalStorage(key)));
+  } else {
+    setValueLocalStorage(key, getInputValue(id));
+  }
+}

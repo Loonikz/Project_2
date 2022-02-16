@@ -1,4 +1,4 @@
-import { person } from './type';
+import { Person } from './type';
 import { getData } from './request';
 import { getInputValue, getValueLocalStorage, setValueLocalStorage } from './header/utils';
 
@@ -9,9 +9,9 @@ function renderCell(value: string) {
   return th;
 }
 
-function renderRow(arrayData: []) {
+function renderRow(arrayData: Array<Person>) {
   const fragment = document.createDocumentFragment();
-  arrayData.forEach((row: person) => {
+  arrayData.forEach((row: Person) => {
     const tr = document.createElement('tr');
     tr.setAttribute('class', 'container__data--tr');
     tr.append(renderCell(String(row.id)));
@@ -19,9 +19,9 @@ function renderRow(arrayData: []) {
     tr.append(renderCell(row.lname));
     tr.append(renderCell(row.age));
     tr.append(renderCell(row.city));
-    tr.append(renderCell(row.number));
+    tr.append(renderCell(row.phoneNumber));
     tr.append(renderCell(row.email));
-    tr.append(renderCell(row.company));
+    tr.append(renderCell(row.companyName));
     fragment.append(tr);
   });
   const table = <HTMLTableElement>document.querySelector('.container__data--table');
@@ -76,5 +76,22 @@ export function changeSort(state) {
     renderRow(sort(arrayData, 'lname'));
   } else {
     renderRow(sort(arrayData, sortField));
+  }
+}
+
+export function find(arrayData: Array<Person>, searchField): Array<Person> {
+  return arrayData.filter((value: Person) => {
+    const isFirstName = value.fname.toLowerCase().indexOf(searchField.toLowerCase()) !== -1;
+    const isLastName = value.lname.toLowerCase().indexOf(searchField.toLowerCase()) !== -1;
+    return isFirstName || isLastName;
+  });
+}
+
+export function renderFind(state) {
+  const searchField = getInputValue('search');
+  if (getInputValue('selectDB') === 'MySQL') {
+    renderRow(find(state.mySQL, searchField));
+  } else {
+    renderRow(find(state.mongoDB, searchField));
   }
 }

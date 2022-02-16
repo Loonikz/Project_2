@@ -1,11 +1,10 @@
 import './styles.scss';
-import { addListener } from '../../logic/header/utils';
+import { addListener, fromLocaleStorageToDropDown, getInputValue } from '../../logic/header/utils';
 import { changeLng } from '../../logic/header/localization';
 import { changeTheme } from '../../logic/header/theme';
 import { getLocalStorage } from '../../logic/header/getLocalStorage';
 import { changeTabSecurity } from '../../logic/header/changeTabSecurity';
-import { changeDB, changeSort, loadData } from '../../logic/render';
-
+import { changeDB, changeSort, loadData, renderFind } from '../../logic/render';
 
 const modalSecurity = document.getElementById('modal-security');
 const btnProfile = document.getElementById('profile');
@@ -39,21 +38,25 @@ function init() {
     mongoDB: [],
     mySQL: [],
   };
+  fromLocaleStorageToDropDown('selectDB', 'DB', ['MySQL', 'MongoDB']);
+  fromLocaleStorageToDropDown('changeTheme', 'theme', ['light', 'dark']);
+  fromLocaleStorageToDropDown('changeLanguage', 'lang', ['en', 'ru']);
+  changeLng();
   addListener('dropdownLanguage', 'change', changeLng);
   addListener('dropdownTheme', 'change', changeTheme);
-  
-  getLocalStorage();
-  
-  // addListener('profile', 'click', openModalWindow('modal-security'));
-  // addListener('closed-modal', 'click', closedModalWindow('modal-security'));
-  
-  changeTabSecurity();
-  
-  addListener('selectDB', 'change', changeDB.bind(null, state));
-  addListener('sort', 'change', changeSort.bind(null, state));
 
   getLocalStorage();
-  
+
+  // addListener('profile', 'click', openModalWindow('modal-security'));
+  // addListener('closed-modal', 'click', closedModalWindow('modal-security'));
+
+  changeTabSecurity();
+
+  addListener('selectDB', 'change', changeDB.bind(null, state));
+  addListener('sort', 'change', changeSort.bind(null, state));
+  addListener('search', 'input', renderFind.bind(null, state));
+
+  getLocalStorage();
   loadData(state);
 }
 
