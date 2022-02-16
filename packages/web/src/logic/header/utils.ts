@@ -7,22 +7,22 @@ export function addListener(id, eventType, callback) {
   return false;
 }
 
-export function getInputValue(id): boolean | string {
+export function getInputValue(id): string {
   const input = <HTMLInputElement>document.getElementById(id);
 
   if (input) {
     return input.value;
   }
-  return false;
+  return '';
 }
 
-export function getElementById(id): HTMLElement | boolean {
+export function getElementById(id): HTMLElement {
   const node = document.getElementById(id);
 
   if (node) {
     return node;
   }
-  return false;
+  return null;
 }
 
 export function setInnerText(id, value): boolean {
@@ -81,4 +81,13 @@ export function fromLocaleStorageToDropDown(id, key, arrayValue) {
   } else {
     setValueLocalStorage(key, getInputValue(id));
   }
+}
+
+export function setStyleDisplay(id: string, value: string): boolean {
+  const node = <HTMLElement>getElementById(id);
+  if (node) {
+    node.style.display = value;
+    return true;
+  }
+  return false;
 }
