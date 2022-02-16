@@ -33,7 +33,7 @@ function renderRow(arrayData: []) {
 
 export function renderTable(db: string, state) {
   const stateObj = state;
-  getData(`http://localhost:3000/${db}`).then((data) => {
+  getData(`https://wannaworkinginwizarddev.herokuapp.com/${db}`).then((data) => {
     renderRow(data);
     if (db.toLowerCase() === 'mysql') {
       stateObj.mySQL = data;
