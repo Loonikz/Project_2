@@ -17,30 +17,30 @@
   <section class='modal__content-modal'>
     <span id='closed-create-update' class='modal--closed'>x</span>
     <form class='modal__form-create'>
-        <label class='modal--label' data-i18n='first_name'></label>
-        <input class='modal--input' id='first-name' type='text'>
+      <label class='modal--label' data-i18n='first_name'></label>
+      <input class='modal--input' id='first-name' type='text'>
 
-        <label class='modal--label' data-i18n='last_name'></label>
-        <input class='modal--input' id='last-name' type='text'>
+      <label class='modal--label' data-i18n='last_name'></label>
+      <input class='modal--input' id='last-name' type='text'>
 
-        <label class='modal--label' data-i18n='age'></label>
-        <input class='modal--input' id='age' type='text'>
+      <label class='modal--label' data-i18n='age'></label>
+      <input class='modal--input' id='age' type='text'>
 
-        <label class='modal--label' data-i18n='city'></label>
-        <input class='modal--input' id='city' type='text'>
+      <label class='modal--label' data-i18n='city'></label>
+      <input class='modal--input' id='city' type='text'>
 
-        <label class='modal--label' data-i18n='number'></label>
-        <input class='modal--input' id='number' type='tel'>
+      <label class='modal--label' data-i18n='number'></label>
+      <input class='modal--input' id='number' type='tel'>
 
-        <label class='modal--label' data-i18n='email'></label>
-        <input class='modal--input' id='email' type='email'>
+      <label class='modal--label' data-i18n='email'></label>
+      <input class='modal--input' id='email' type='email'>
 
-        <label class='modal--label' data-i18n='company'></label>
-        <input class='modal--input' id='company' type='text'>
+      <label class='modal--label' data-i18n='company'></label>
+      <input class='modal--input' id='company' type='text'>
 
-        <button class='modal--button' type='submit' data-i18n='cancel'></button>
-        <button class='modal--button' type='reset' data-i18n='save'></button>
-      </form>
+      <button class='modal--button' type='submit' data-i18n='cancel'></button>
+      <button class='modal--button' type='reset' data-i18n='save'></button>
+    </form>
   </section>
 </section>
 <section id='modal-security' class='modal'>
@@ -107,75 +107,82 @@
   </section>
 </header>
 <section class='container'>
-  <section class='container__content'>
-    <section class='container__content--selects'>
-      <select id='selectDB' class='container__content--list'>
-        <option class='container__content--option' value='MySQL' selected>MySQL</option>
-        <option class='container__content--option' value='MongoDB'>MongoDB</option>
-      </select>
+  <section class="container__content">
+    <section class='container__content__header'>
+      <section class='container__content__header--selects'>
+        <select id='selectDB' class='container__content__header--list'>
+          <option class='container__content__header--option' value='MySQL' selected>MySQL</option>
+          <option class='container__content__header--option' value='MongoDB'>MongoDB</option>
+        </select>
 
-      <select id='sort' class='container__content--list'>
-        <option class='container__content--option' value='' hidden data-i18n='sorting'></option>
-        <option class='container__content--option' value='id' data-i18n='id'></option>
-        <option class='container__content--option' value='first name'
-                data-i18n='first_name'></option>
-        <option class='container__content--option' value='last name' data-i18n='last_name'></option>
-        <option class='container__content--option' value='age' data-i18n='age'></option>
-        <option class='container__content--option' value='city' data-i18n='city'></option>
-        <option class='container__content--option' value='number' data-i18n='number'></option>
-        <option class='container__content--option' value='email' data-i18n='email'></option>
-        <option class='container__content--option' value='number' data-i18n='company'></option>
-      </select>
+        <select id='sort' class='container__content__header--list'>
+          <option class='container__content__header--option' value='' hidden
+                  data-i18n='sorting'></option>
+          <option class='container__content__header--option' value='id' data-i18n='id'></option>
+          <option class='container__content__header--option' value='first name'
+                  data-i18n='first_name'></option>
+          <option class='container__content__header--option' value='last name'
+                  data-i18n='last_name'></option>
+          <option class='container__content__header--option' value='age' data-i18n='age'></option>
+          <option class='container__content__header--option' value='city' data-i18n='city'></option>
+          <option class='container__content__header--option' value='number'
+                  data-i18n='number'></option>
+          <option class='container__content__header--option' value='email'
+                  data-i18n='email'></option>
+          <option class='container__content__header--option' value='number'
+                  data-i18n='company'></option>
+        </select>
+      </section>
+
+      <section class='container__content__header--panel'>
+        <button class='container__content__header--btn' id='create' data-i18n='create'></button>
+        <button class='container__content__header--btn' id='update' data-i18n='update'></button>
+        <button class='container__content__header--btn' id='delete' data-i18n='delete'>Delete</button>
+        <button class='container__content__header--btn' id='clear' data-i18n='clear'>ClearAll</button>
+      </section>
+
+      <input class='container__content__header--search' type='search' name='search'
+             placeholder='Search...' id='search'>
     </section>
 
-    <section class='container__content--panel'>
-      <button class='container__content--btn' id='create' data-i18n='create'></button>
-      <button class='container__content--btn' id='update' data-i18n='update'></button>
-      <button class='container__content--btn' id='delete' data-i18n='delete'>Delete</button>
-      <button class='container__content--btn' id='clear' data-i18n='clear'>ClearAll</button>
+    <section class='container__content__data'>
+      <table class='container__content__data--table'>
+        <thead class='container__content__data--head'>
+        <tr>
+          <th class='container__content__data--items-head' data-i18n='id'></th>
+          <th class='container__content__data--items-head' data-i18n='first_name'></th>
+          <th class='container__content__data--items-head' data-i18n='last_name'></th>
+          <th class='container__content__data--items-head' data-i18n='age'></th>
+          <th class='container__content__data--items-head' data-i18n='city'></th>
+          <th class='container__content__data--items-head' data-i18n='number'></th>
+          <th class='container__content__data--items-head' data-i18n='email'></th>
+          <th class='container__content__data--items-head' data-i18n='company'></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr class='container__content__data--tr'>
+          <th class='container__content__data--items-body'>1</th>
+          <th class='container__content__data--items-body'>Vasia</th>
+          <th class='container__content__data--items-body'>Pupkin</th>
+          <th class='container__content__data--items-body'>28</th>
+          <th class='container__content__data--items-body'>Donetsk</th>
+          <th class='container__content__data--items-body'>+380952334452</th>
+          <th class='container__content__data--items-body'>test@test.com</th>
+          <th class='container__content__data--items-body'>CompanyName</th>
+        </tr>
+        <tr class='container__content__data--tr'>
+          <th class='container__content__data--items-body'>2</th>
+          <th class='container__content__data--items-body'>Vasia</th>
+          <th class='container__content__data--items-body'>Pupkin</th>
+          <th class='container__content__data--items-body'>28</th>
+          <th class='container__content__data--items-body'>Donetsk</th>
+          <th class='container__content__data--items-body'>+380952334452</th>
+          <th class='container__content__data--items-body'>test@test.com</th>
+          <th class='container__content__data--items-body'>CompanyName</th>
+        </tr>
+        </tbody>
+      </table>
     </section>
-
-    <input class='container__content--search' type='search' name='search'
-           placeholder='Search...' id='search'>
-  </section>
-
-  <section class='container__data'>
-    <table class='container__data--table'>
-      <thead class='container__data--head'>
-      <tr>
-        <th class='container__data--items-head' data-i18n='id'></th>
-        <th class='container__data--items-head' data-i18n='first_name'></th>
-        <th class='container__data--items-head' data-i18n='last_name'></th>
-        <th class='container__data--items-head' data-i18n='age'></th>
-        <th class='container__data--items-head' data-i18n='city'></th>
-        <th class='container__data--items-head' data-i18n='number'></th>
-        <th class='container__data--items-head' data-i18n='email'></th>
-        <th class='container__data--items-head' data-i18n='company'></th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr class='container__data--tr'>
-        <th class='container__data--items-body'>1</th>
-        <th class='container__data--items-body'>Vasia</th>
-        <th class='container__data--items-body'>Pupkin</th>
-        <th class='container__data--items-body'>28</th>
-        <th class='container__data--items-body'>Donetsk</th>
-        <th class='container__data--items-body'>+380952334452</th>
-        <th class='container__data--items-body'>test@test.com</th>
-        <th class='container__data--items-body'>CompanyName</th>
-      </tr>
-      <tr class='container__data--tr'>
-        <th class='container__data--items-body'>2</th>
-        <th class='container__data--items-body'>Vasia</th>
-        <th class='container__data--items-body'>Pupkin</th>
-        <th class='container__data--items-body'>28</th>
-        <th class='container__data--items-body'>Donetsk</th>
-        <th class='container__data--items-body'>+380952334452</th>
-        <th class='container__data--items-body'>test@test.com</th>
-        <th class='container__data--items-body'>CompanyName</th>
-      </tr>
-      </tbody>
-    </table>
   </section>
 </section>
 </body>
