@@ -1,4 +1,10 @@
-import { getInputValue, getElementById, setInnerText } from '../../logic/header/utils';
+import {
+  getInputValue,
+  getElementById,
+  setInnerText,
+  collectDataLogin
+} from '../../logic/header/utils';
+import { postLogin } from '../../logic/request';
 
 export function loginValidation(state) {
   const stateObj = state;
@@ -74,4 +80,13 @@ export function validateStatusCheck(state): boolean {
   }
   button.removeAttribute('disabled');
   return true;
+}
+
+export function loginIn(state) {
+  if (loginValidation(state) === false || passwordValidation(state) === false) {
+    return false;
+  }
+  const data = collectDataLogin('login-form');
+
+  postLogin(state.urlLogin, data);
 }

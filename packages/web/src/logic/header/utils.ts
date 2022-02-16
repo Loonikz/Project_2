@@ -54,6 +54,11 @@ export function removeDisabledAttribute(node: HTMLElement) {
   return false;
 }
 
+export function collectDataLogin(id): Object {
+  const user = getInputValue('login-reg');
+  const password = getInputValue('password-reg');
+  return { 'username': user, 'password': password }
+}
 
 export function collectData(id): Object {
   const user = getInputValue('sign-up-login');

@@ -3,11 +3,12 @@ import { changeTheme } from '../../logic/header/theme';
 import { addListener } from '../../logic/header/utils';
 import { changeLng } from '../../logic/header/localization';
 import { getLocalStorage } from '../../logic/header/getLocalStorage';
-import { loginValidation, passwordValidation, validateStatusCheck } from './logic';
+import { loginIn, loginValidation, passwordValidation, validateStatusCheck } from './logic';
+import { sendRegister } from '../Register/logic';
 
 function init() {
   const state = {
-    url: '/login',
+    urlLogin: 'http://localhost:3000/auth/login',
     validateStatus: [false, false],
   };
 
@@ -21,6 +22,7 @@ function init() {
   });
   addListener('dropdownLanguage', 'change', (event) => changeLng(event));
   addListener('dropdownTheme', 'change', (event) => changeTheme(event));
+  addListener('login-btn', 'click', loginIn.bind(null, state));
 
   getLocalStorage();
 }
