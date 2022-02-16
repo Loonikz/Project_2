@@ -82,3 +82,12 @@ export function fromLocaleStorageToDropDown(id, key, arrayValue) {
     setValueLocalStorage(key, getInputValue(id));
   }
 }
+
+export function setStyleDisplay(id: string, value: string): boolean {
+  const node = <HTMLElement>getElementById(id);
+  if (node) {
+    node.style.display = value;
+    return true;
+  }
+  return false;
+}
