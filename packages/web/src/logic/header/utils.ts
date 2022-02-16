@@ -7,22 +7,22 @@ export function addListener(id, eventType, callback) {
   return false;
 }
 
-export function getInputValue(id): boolean | string {
+export function getInputValue(id): string {
   const input = <HTMLInputElement>document.getElementById(id);
 
   if (input) {
     return input.value;
   }
-  return false;
+  return '';
 }
 
-export function getElementById(id): HTMLElement | boolean {
+export function getElementById(id): HTMLElement {
   const node = document.getElementById(id);
 
   if (node) {
     return node;
   }
-  return false;
+  return null;
 }
 
 export function setInnerText(id, value): boolean {

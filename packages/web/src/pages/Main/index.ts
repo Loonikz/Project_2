@@ -9,7 +9,7 @@ import { changeLng } from '../../logic/header/localization';
 import { changeTheme } from '../../logic/header/theme';
 import { getLocalStorage } from '../../logic/header/getLocalStorage';
 import { changeTabSecurity } from '../../logic/header/changeTabSecurity';
-import { changeDB, changeSort, loadData, renderFind } from '../../logic/render';
+import { changeDB, changeSort, createRecord, loadData, renderFind } from '../../logic/render';
 
 function init() {
   const state = {
@@ -43,6 +43,7 @@ function init() {
   addListener('selectDB', 'change', changeDB.bind(null, state));
   addListener('sort', 'change', changeSort.bind(null, state));
   addListener('search', 'input', renderFind.bind(null, state));
+  addListener('save-create', 'click', createRecord);
 
   getLocalStorage();
   loadData(state);

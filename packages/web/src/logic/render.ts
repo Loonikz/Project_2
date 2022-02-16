@@ -1,10 +1,10 @@
 import { Person } from './type';
-import { getData } from './request';
+import { getData, postData } from './request';
 import {
   getElementById,
   getInputValue,
-  getValueLocalStorage,
-  setValueLocalStorage
+  getValueLocalStorage, setStyleDisplay,
+  setValueLocalStorage,
 } from './header/utils';
 
 function renderCell(value: string) {
@@ -38,15 +38,14 @@ function renderRow(arrayData: Array<Person>) {
 
 export function renderTable(db: string, state) {
   const stateObj = state;
-  getData(`https://wannaworkinginwizarddev.herokuapp.com/${db}`)
-    .then((data) => {
-      renderRow(data);
-      if (db.toLowerCase() === 'mysql') {
-        stateObj.mySQL = data;
-      } else {
-        stateObj.mongoDB = data;
-      }
-    });
+  getData(`https://wannaworkinginwizarddev.herokuapp.com/${db}`).then((data) => {
+    renderRow(data);
+    if (db.toLowerCase() === 'mysql') {
+      stateObj.mySQL = data;
+    } else {
+      stateObj.mongoDB = data;
+    }
+  });
 }
 
 export function loadData(state) {
@@ -100,4 +99,20 @@ export function renderFind(state) {
   } else {
     renderRow(find(state.mongoDB, searchField));
   }
+}
+
+export function createRecord() {
+  const person: Person = {
+    phoneNumber: getInputValue('number'),
+    fname: getInputValue('first-name'),
+    lname: getInputValue('last-name'),
+    age: getInputValue('age'),
+    email: getInputValue('email'),
+    companyName: getInputValue('company'),
+    city: getInputValue('city'),
+  };
+  const db = getInputValue('selectDB');
+  postData(`https://wannaworkinginwizarddev.herokuapp.com/${db}`, person).then(() => {
+    setStyleDisplay('modal-create-update', 'none');
+  });
 }
