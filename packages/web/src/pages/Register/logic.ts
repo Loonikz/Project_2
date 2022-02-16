@@ -4,8 +4,9 @@ import {
   setInnerText,
   hasAttribute,
   setDisabledAttribute,
-  removeDisabledAttribute,
+  removeDisabledAttribute, collectData,
 } from '../../logic/header/utils';
+import {postRegister} from "../../logic/request";
 
 export function loginValidate(state): boolean {
   const loginRegex = /^[a-zA-Z0-9_]*$/;
@@ -79,9 +80,7 @@ export function confirmPasswordValidate(state): boolean {
     stateObj.validateStatus[1] = false;
     return false;
   }
-  console.log(valuePassword);
-  console.log(valueConfirmPassword);
-  console.log(valueConfirmPassword !== valuePassword);
+
   if (valueConfirmPassword !== valuePassword) {
     setInnerText(confirmPasswordErrorId, 'Passwords does`t match');
     stateObj.validateStatus[2] = false;
@@ -103,4 +102,18 @@ export function validateStatusCheck(state): boolean {
   }
   removeDisabledAttribute(button);
   return true;
+}
+
+export function sendRegister(state): boolean {
+  if (
+    loginValidate(state) === false ||
+    passwordValidate(state) === false ||
+    confirmPasswordValidate(state) === false
+  ) {
+    return false;
+  }
+
+  const data = collectData('register-form');
+
+  postRegister(state.urlRegister, data)
 }
