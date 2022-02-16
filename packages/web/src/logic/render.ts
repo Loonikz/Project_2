@@ -9,7 +9,7 @@ function renderCell(value: string) {
   return th;
 }
 
-function renderRow(arrayData: []) {
+function renderRow(arrayData: Array<person>) {
   const fragment = document.createDocumentFragment();
   arrayData.forEach((row: person) => {
     const tr = document.createElement('tr');
@@ -76,5 +76,22 @@ export function changeSort(state) {
     renderRow(sort(arrayData, 'lname'));
   } else {
     renderRow(sort(arrayData, sortField));
+  }
+}
+
+export function find(arrayData: Array<person>, searchField): Array<person> {
+  return arrayData.filter((value: person) => {
+    const isFirstName = value.fname.toLowerCase().indexOf(searchField.toLowerCase()) !== -1;
+    const isLastName = value.lname.toLowerCase().indexOf(searchField.toLowerCase()) !== -1;
+    return isFirstName || isLastName;
+  });
+}
+
+export function renderFind(state) {
+  const searchField = getInputValue('search');
+  if (getInputValue('selectDB') === 'MySQL') {
+    renderRow(find(state.mySQL, searchField));
+  } else {
+    renderRow(find(state.mongoDB, searchField));
   }
 }
