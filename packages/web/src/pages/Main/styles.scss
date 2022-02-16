@@ -14,6 +14,7 @@ body {
   --border-input-active: solid 2px #FFFFFF;
   --bg-container: #E4E4E4;
   --btn-profile: url('../../assets/svg/icon-profile-light.svg');
+  --btn-profile-250: url('../../assets/svg/icon-profile-light250.svg');
   --text-select: #000000;
   --text-btn: #FFFFFF;
   --text-color-label: #F08686;
@@ -44,6 +45,7 @@ body {
   --text-color-label: #FFFFFF;
   --bg-container: linear-gradient(#630086, #00408B);
   --btn-profile: url('../../assets/svg/icon-profile-dark.svg');
+  --btn-profile-250: url('../../assets/svg/icon-profile-dark250.svg');
   --text-select: #7F1581;
   --text-btn: #7F1581;
   --bg-btn: #FFFFFF;
@@ -227,10 +229,10 @@ body {
       color: var(--text-color);
       background: transparent;
       border: none;
-      padding: 10px;
       font-family: 'Montserrat', sans-serif;
       font-size: 20px;
       cursor: pointer;
+      margin: 2px;
     }
   }
 }
@@ -315,7 +317,7 @@ body {
         border-radius: 20px;
         background: var(--bg-input);
         opacity: 0.5;
-        width: auto;
+        width: 250px;
         height: 40px;
       }
 
@@ -381,3 +383,70 @@ body {
     }
   }
 }
+
+@media screen and (min-width: 250px) and (max-width: 480px) {
+
+  .nav-container {
+    align-items: center;
+
+    &__logo {
+      font-size: 25px;
+    }
+
+    &__buttons {
+      &--select {
+        font-size: 12px;
+      }
+
+      &--profile {
+        background: var(--btn-profile-250);
+        width: 15px;
+        height: 15px;
+        margin: 15px;
+        padding: 5px;
+      }
+    }
+  }
+
+  .container {
+    height: 30vh;
+
+    &__content {
+      padding: 12px;
+      width: 90%;
+
+      &__header {
+        display: grid;
+
+        &--select {
+          width: 100%;
+        }
+
+        &--list {
+          font-size: 8px;
+          margin-right: 0;
+          width: 161px;
+          height: 28px;
+        }
+
+        &--panell {
+          margin: 0px auto;
+        }
+
+        &--btn {
+          font-size: 8px;
+          padding: 3px;
+          width: 78px;
+          height: 28px;
+        }
+
+        &--search {
+          width: 100%;
+          height: 28px;
+          margin: 5px auto;
+        }
+      }
+    }
+  }
+}
+
