@@ -30,6 +30,7 @@ body {
   --bg-modal: #E4E4E4;
   --btn-form: #F00418;
   --text-btn-form: #FFFFFF;
+  --border-table-click: 3px solid #F08686;
 }
 
 .dark {
@@ -60,6 +61,7 @@ body {
   --bg-tab-active: linear-gradient(#590986FF, #461888FF);
   --btn-form: #FFFFFF;
   --text-btn-form: #000000;
+  --border-table-click: 3px solid #A562DF;
 }
 
 .modal {
@@ -364,6 +366,11 @@ body {
         }
       }
 
+      &--tr-click {
+        border-top: var(--border-table-click);
+        border-bottom: var(--border-table-click);
+      }
+
       &--tr {
         background: var(--bg-tr);
 
@@ -380,6 +387,7 @@ body {
           background: var(--hover-table-color);
         }
       }
+
     }
   }
 }
