@@ -75,3 +75,13 @@ export function validateStatusCheck(state): boolean {
   button.removeAttribute('disabled');
   return true;
 }
+
+export function inputLoginValidation(state) {
+  loginValidation(state);
+  validateStatusCheck(state);
+}
+
+export function inputPasswordValidation(state) {
+  passwordValidation(state);
+  validateStatusCheck(state);
+}
