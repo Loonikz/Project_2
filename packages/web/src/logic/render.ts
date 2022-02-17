@@ -1,9 +1,10 @@
 import { Person } from './type';
-import { getData, postData } from './request';
+import { getData, sendData } from './request';
 import {
   getElementById,
   getInputValue,
-  getValueLocalStorage, setStyleDisplay,
+  getValueLocalStorage, setNodeValue,
+  setStyleDisplay,
   setValueLocalStorage,
 } from './header/utils';
 
@@ -101,8 +102,9 @@ export function renderFind(state) {
   }
 }
 
-export function createRecord() {
+export function createRecord(state) {
   const person: Person = {
+    id: state.currentRecordId,
     phoneNumber: getInputValue('number'),
     fname: getInputValue('first-name'),
     lname: getInputValue('last-name'),
@@ -112,7 +114,32 @@ export function createRecord() {
     city: getInputValue('city'),
   };
   const db = getInputValue('selectDB');
-  postData(`https://wannaworkinginwizarddev.herokuapp.com/${db}`, person).then(() => {
+  let userMethod = 'POST';
+  if (state.isUpdate) {
+    userMethod = 'PUT';
+  }
+  sendData(`https://wannaworkinginwizarddev.herokuapp.com/${db}`, person, userMethod).then(() => {
     setStyleDisplay('modal-create-update', 'none');
+    renderTable(db, state);
   });
+}
+
+export function updateRecord(state) {
+  if (state.currentRecordId) {
+    state.setIsUpdate(true);
+    let record: Person;
+    if (getInputValue('selectDB') === 'MySQL') {
+      record = state.mySQL.find((person: Person) => String(person.id) === state.currentRecordId);
+    } else {
+      record = state.mongoDB.find((person: Person) => String(person.id) === state.currentRecordId);
+    }
+    setNodeValue('number', record.phoneNumber);
+    setNodeValue('first-name', record.fname);
+    setNodeValue('last-name', record.lname);
+    setNodeValue('age', record.age);
+    setNodeValue('email', record.email);
+    setNodeValue('company', record.companyName);
+    setNodeValue('city', record.city);
+    setStyleDisplay('modal-create-update', 'block');
+  }
 }
