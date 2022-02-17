@@ -91,3 +91,23 @@ export function setStyleDisplay(id: string, value: string): boolean {
   }
   return false;
 }
+
+export function selectRow(state, event: { target: HTMLTableElement }) {
+  if (state.currentNode) {
+    state.currentNode.style.backgroundColor = '';
+  }
+  const node: Node = event.target.parentNode;
+  node.style.backgroundColor = 'red';
+  state.setCurrentNode(node);
+  const nodeId: HTMLTableElement = <HTMLTableElement>node.firstChild;
+  state.setCurrentRecordId(nodeId.innerText);
+}
+
+export function setNodeValue(id: string, value = '') {
+  const node = <HTMLInputElement>document.getElementById(id);
+  if (node) {
+    node.value = value;
+    return true;
+  }
+  return false;
+}

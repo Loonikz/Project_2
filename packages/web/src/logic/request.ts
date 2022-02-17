@@ -1,5 +1,3 @@
-import { Person } from './type';
-
 export function getData(url: string) {
   return new Promise<[]>((resolve, reject) => {
     fetch(url, {
@@ -15,11 +13,11 @@ export function getData(url: string) {
   });
 }
 
-export function postData(url: string, value: Person) {
+export function sendData(url: string, data, userMethod = 'POST') {
   return new Promise<void>((resolve, reject) => {
     fetch(url, {
-      method: 'POST',
-      body: JSON.stringify(value),
+      method: userMethod,
+      body: JSON.stringify(data),
       headers: {
         'Content-Type': 'application/json',
       },
