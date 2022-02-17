@@ -3,7 +3,7 @@ import { changeTheme } from '../../logic/header/theme';
 import { addListener } from '../../logic/header/utils';
 import { changeLng } from '../../logic/header/localization';
 import { getLocalStorage } from '../../logic/header/getLocalStorage';
-import { loginValidation, passwordValidation, validateStatusCheck } from './logic';
+import { inputLoginValidation, inputPasswordValidation } from './logic';
 
 function init() {
   const state = {
@@ -11,20 +11,12 @@ function init() {
     validateStatus: [false, false],
   };
 
-  addListener('login-reg', 'input', () => {
-    loginValidation.call(null, state);
-    validateStatusCheck.call(null, state);
-  });
-  addListener('password-reg', 'input', () => {
-    passwordValidation.call(null, state);
-    validateStatusCheck.call(null, state);
-  });
-  addListener('dropdownLanguage', 'change', (event) => changeLng(event));
-  addListener('dropdownTheme', 'change', (event) => changeTheme(event));
+  addListener('login-reg', 'input', inputLoginValidation.bind(null, state));
+  addListener('password-reg', 'input', inputPasswordValidation.bind(null, state));
+  addListener('dropdownLanguage', 'change', changeLng);
+  addListener('dropdownTheme', 'change', changeTheme);
 
   getLocalStorage();
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-  init();
-});
+document.addEventListener('DOMContentLoaded', init);
