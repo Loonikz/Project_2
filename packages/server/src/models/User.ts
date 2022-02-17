@@ -1,6 +1,7 @@
 const {Schema, model} = require('mongoose')
 
-interface user {
+export type User = {
+  id: string,
   login: string,
   password: string
 }
@@ -10,4 +11,4 @@ const UserSchema = new Schema({
   password: {type: String}
 });
 
-module.exports.User = model('User', UserSchema)
+export default model('User', UserSchema)

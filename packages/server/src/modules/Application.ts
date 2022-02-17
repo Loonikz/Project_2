@@ -1,6 +1,6 @@
 import express from 'express';
 import dotenv from 'dotenv';
-// import cookieParser from 'cookie-parser';
+import cookieParser from 'cookie-parser';
 import cors from 'cors';
 import mongoose from 'mongoose';
 
@@ -26,7 +26,7 @@ class Application {
     // парсер
     this.app.use(express.urlencoded({ extended: true }));
     this.app.use(express.json());
-    // this.app.use(cookieParser());
+    this.app.use(cookieParser());
     this.app.use(cors());
   }
 

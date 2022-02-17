@@ -1,5 +1,9 @@
 import { Request, Response, Router } from 'express';
 import path from 'node:path';
+import jwt from 'jsonwebtoken';
+import SchemaUser, { User } from '../models/User';
+
+
 // import Controller from '../interfaces/controller.interface';
 // import authMiddleware from '../middleware/auth.middleware';
 
@@ -15,7 +19,7 @@ class PagesRouter {
   private checkRoutes() {
     this.router.get('/login', PagesRouter.login);
     this.router.get('/register', PagesRouter.register);
-    this.router.get('/main', PagesRouter.main);
+    this.router.get('/main',authMiddleware, PagesRouter.main);
     this.router.get('/*', PagesRouter.redirect);
   }
 
@@ -37,3 +41,26 @@ class PagesRouter {
 }
 
 export default PagesRouter;
+
+async function authMiddleware(req: Request, res: Response, next) {
+  try {
+    console.log(req.cookies)
+    const jwtCookie = req.cookies.jwt;
+    if (jwtCookie) {
+      const decoded: User = jwt.verify(jwtCookie, <string>process.env.JWT_SECRET);
+
+      const value = await SchemaUser.findOne({ _id: decoded.id })
+      console.log(value);
+
+      if (value) {
+        console.log(value);
+        next();
+      }
+    } else {
+      res.redirect(303, '/login');
+    }
+  } catch(e) {
+    console.log(e)
+    res.redirect(303, '/login');
+  }
+}

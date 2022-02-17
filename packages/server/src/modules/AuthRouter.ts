@@ -15,6 +15,7 @@ class AuthRouter {
   private checkRoutes() {
     this.router.post('/registration', controller.registration);
     this.router.post('/login', controller.login);
+    this.router.post('/logout', controller.logout);
   }
 }
 
