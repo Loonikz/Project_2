@@ -13,7 +13,6 @@ body {
   --text-color-label: #F08686;
   --bg-avatar: url("../../assets/svg/icon_user_light.svg");
   --bg-avatar-250: url("../../assets/svg/icon_user_light-250.svg");
-
   --btn-registr: #F00418;
   --opacity-container: 1;
   --bg-container: #E4E4E4;
@@ -54,6 +53,7 @@ body {
 
   &__logo {
     color: var(--logo-color);
+    user-select: none;
   }
 
   &__buttons {
