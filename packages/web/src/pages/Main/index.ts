@@ -18,18 +18,30 @@ import {
   renderFind,
   updateRecord,
 } from '../../logic/render';
+import { inputLoginValidation } from '../Register/logic';
+import {
+  validationAge,
+  validationCity, validationCompany,
+  validationEmail,
+  validationName,
+  validationPhone
+} from './validation';
+import { closeCreateModal } from './modal'
+import { sendData } from '../../logic/request';
 
 function init() {
   const state = {
+    baseURL: 'http://localhost:3000',
     mongoDB: [],
     mySQL: [],
     currentRecordId: undefined,
     currentNode: null,
     isUpdate: false,
+    validateStatus: [],
     setCurrentNode(node: Node): void {
       this.currentNode = node;
     },
-    setCurrentRecordId(id: string): void {
+    setCurrentRecordId(id: string | undefined): void {
       this.currentRecordId = id;
     },
     setIsUpdate(value: boolean): void {
@@ -50,13 +62,16 @@ function init() {
   addListener('delete', 'click', setStyleDisplay.bind(null, 'modal-delete', 'block'));
   addListener('closed-modal-delete', 'click', setStyleDisplay.bind(null, 'modal-delete', 'none'));
   addListener('update', 'click', updateRecord.bind(null, state));
-  addListener('delete', 'click', deleteRecord.bind(null, state));
-  addListener('clear', 'click', clearAllRecord);
-  addListener(
-    'closed-create-update',
-    'click',
-    setStyleDisplay.bind(null, 'modal-create-update', 'none'),
-  );
+  addListener('deleteRecord', 'click', deleteRecord.bind(null, state));
+  addListener('clear', 'click', clearAllRecord.bind(null, state));
+  addListener('logout', 'click', () => {
+    sendData(`${state.baseURL}/auth/logout`, {}).then(()=>{
+      window.location.href='/login';
+    }).catch(()=>{
+      console.log('err')
+    })
+  });
+  addListener('closed-create-update', 'click', closeCreateModal);
   getLocalStorage();
 
   // addListener('profile', 'click', openModalWindow('modal-security'));
@@ -69,6 +84,14 @@ function init() {
   addListener('search', 'input', renderFind.bind(null, state));
   addListener('save-create', 'click', createRecord.bind(null, state));
   addListener('table', 'click', selectRow.bind(null, state));
+
+  addListener('first-name', 'input', validationName.bind(null, state, 'first-name', 0));
+  addListener('last-name', 'input', validationName.bind(null, state, 'last-name', 1));
+  addListener('age', 'input', validationAge.bind(null, state));
+  addListener('city', 'input', validationCity.bind(null, state));
+  addListener('number', 'input', validationPhone.bind(null, state));
+  addListener('email', 'input', validationEmail.bind(null, state));
+  addListener('company', 'input', validationCompany.bind(null, state));
 
   getLocalStorage();
   loadData(state);
