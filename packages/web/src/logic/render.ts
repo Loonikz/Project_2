@@ -143,3 +143,19 @@ export function updateRecord(state) {
     setStyleDisplay('modal-create-update', 'block');
   }
 }
+
+export function deleteRecord(state) {
+  if (state.currentRecordId) {
+    const db = getInputValue('selectDB');
+    sendData(`https://wannaworkinginwizarddev.herokuapp.com/${db}/${state.currentRecordId}`, {}, 'DELETE').then(() => {
+      renderTable(db, state);
+    });
+  }
+}
+
+export function clearAllRecord() {
+  const db = getInputValue('selectDB');
+  sendData(`https://wannaworkinginwizarddev.herokuapp.com/${db}/clear`, {}, 'DELETE').then(() => {
+    renderTable(db, { mongoDB: [], mySQL: [] });
+  });
+}

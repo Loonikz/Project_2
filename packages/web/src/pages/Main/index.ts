@@ -12,8 +12,8 @@ import { getLocalStorage } from '../../logic/header/getLocalStorage';
 import { changeTabSecurity } from '../../logic/header/changeTabSecurity';
 import {
   changeDB,
-  changeSort,
-  createRecord,
+  changeSort, clearAllRecord,
+  createRecord, deleteRecord,
   loadData,
   renderFind,
   updateRecord,
@@ -48,6 +48,8 @@ function init() {
   addListener('closed-modal', 'click', setStyleDisplay.bind(null, 'modal-security', 'none'));
   addListener('create', 'click', setStyleDisplay.bind(null, 'modal-create-update', 'block'));
   addListener('update', 'click', updateRecord.bind(null, state));
+  addListener('delete', 'click', deleteRecord.bind(null, state));
+  addListener('clear', 'click', clearAllRecord);
   addListener(
     'closed-create-update',
     'click',
