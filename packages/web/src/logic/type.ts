@@ -1,10 +1,10 @@
-export type person = {
-  id: string;
+export type Person = {
+  id?: string;
   fname: string;
   lname: string;
   age: string;
   city: string;
-  number: string;
+  phoneNumber: string;
   email: string;
-  company: string;
+  companyName: string;
 };
