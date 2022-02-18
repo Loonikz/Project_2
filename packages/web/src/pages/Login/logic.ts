@@ -90,7 +90,8 @@ export function inputLoginValidation(state) {
 export function inputPasswordValidation(state) {
   passwordValidation(state);
   validateStatusCheck(state);
-  }
+}
+
 export function loginIn(state) {
   if (loginValidation(state) === false || passwordValidation(state) === false) {
     return false;

@@ -4,16 +4,19 @@ import { changeLng } from '../../logic/header/localization';
 import { changeTheme } from '../../logic/header/theme';
 import { getLocalStorage } from '../../logic/header/getLocalStorage';
 import {
-  confirmPasswordValidate,
+  inputLoginValidation,
+  inputPasswordConfirmValidation,
+  inputPasswordValidation,
   loginValidate,
-  passwordValidate, sendRegister,
+  sendRegister,
   validateStatusCheck,
 } from './logic';
 
 function init() {
   const state = {
     urlRegister: 'http://localhost:3000/auth/registration',
-    validateStatus: [false, false, false] };
+    validateStatus: [false, false, false]
+  };
   addListener('sign-up-login', 'input', () => {
     loginValidate.call(null, state);
     validateStatusCheck.call(null, state);
