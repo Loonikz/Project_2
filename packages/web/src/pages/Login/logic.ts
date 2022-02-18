@@ -4,7 +4,7 @@ import {
   setInnerText,
   collectDataLogin
 } from '../../logic/header/utils';
-import { postLogin } from '../../logic/request';
+import { sendData } from '../../logic/request';
 
 export function loginValidation(state) {
   const stateObj = state;
@@ -97,6 +97,11 @@ export function loginIn(state) {
     return false;
   }
   const data = collectDataLogin('login-form');
-
-  postLogin(state.urlLogin, data);
+  sendData(state.urlLogin, data).then((response: Response) => {
+    if (response.status === 200) {
+      window.location.href = response.url;
+    } else if (response.status === 400) {
+      setInnerText('password-message','Wrong login or password')
+    }
+  });
 }
