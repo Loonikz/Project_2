@@ -7,6 +7,8 @@ import {
   setStyleDisplay,
   setValueLocalStorage,
 } from './header/utils';
+import { checkValidation } from '../pages/Main/validation';
+import { closeCreateModal } from '../pages/Main/modal';
 
 function renderCell(value: string) {
   const th = document.createElement('th');
@@ -39,7 +41,7 @@ function renderRow(arrayData: Array<Person>) {
 
 export function renderTable(db: string, state) {
   const stateObj = state;
-  getData(`https://wannaworkinginwizarddev.herokuapp.com/${db}`).then((data) => {
+  getData(`${state.baseURL}/${db}`).then((data) => {
     renderRow(data);
     if (db.toLowerCase() === 'mysql') {
       stateObj.mySQL = data;
@@ -103,25 +105,29 @@ export function renderFind(state) {
 }
 
 export function createRecord(state) {
-  const person: Person = {
-    id: state.currentRecordId,
-    phoneNumber: getInputValue('number'),
-    fname: getInputValue('first-name'),
-    lname: getInputValue('last-name'),
-    age: getInputValue('age'),
-    email: getInputValue('email'),
-    companyName: getInputValue('company'),
-    city: getInputValue('city'),
-  };
-  const db = getInputValue('selectDB');
-  let userMethod = 'POST';
-  if (state.isUpdate) {
-    userMethod = 'PUT';
+  if (checkValidation(state)) {
+    const person: Person = {
+      id: state.currentRecordId,
+      phoneNumber: getInputValue('number'),
+      fname: getInputValue('first-name'),
+      lname: getInputValue('last-name'),
+      age: getInputValue('age'),
+      email: getInputValue('email'),
+      companyName: getInputValue('company'),
+      city: getInputValue('city'),
+    };
+    const db = getInputValue('selectDB');
+    let userMethod = 'POST';
+    if (state.isUpdate) {
+      userMethod = 'PUT';
+    }
+    sendData(`${state.baseURL}/${db}`, person, userMethod).then(() => {
+      closeCreateModal();
+      renderTable(db, state);
+    });
+  } else {
+    window.alert('Validation error');
   }
-  sendData(`https://wannaworkinginwizarddev.herokuapp.com/${db}`, person, userMethod).then(() => {
-    setStyleDisplay('modal-create-update', 'none');
-    renderTable(db, state);
-  });
 }
 
 export function updateRecord(state) {
@@ -147,15 +153,16 @@ export function updateRecord(state) {
 export function deleteRecord(state) {
   if (state.currentRecordId) {
     const db = getInputValue('selectDB');
-    sendData(`https://wannaworkinginwizarddev.herokuapp.com/${db}/${state.currentRecordId}`, {}, 'DELETE').then(() => {
+    sendData(`${state.baseURL}/${db}/${state.currentRecordId}`, {}, 'DELETE').then(() => {
       renderTable(db, state);
     });
   }
+  setStyleDisplay('modal-delete', 'none');
 }
 
-export function clearAllRecord() {
+export function clearAllRecord(state) {
   const db = getInputValue('selectDB');
-  sendData(`https://wannaworkinginwizarddev.herokuapp.com/${db}/clear`, {}, 'DELETE').then(() => {
-    renderTable(db, { mongoDB: [], mySQL: [] });
+  sendData(`${state.baseURL}/${db}/clear`, {}, 'DELETE').then(() => {
+    renderTable(db, state);
   });
 }
