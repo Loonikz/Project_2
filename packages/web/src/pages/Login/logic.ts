@@ -82,6 +82,15 @@ export function validateStatusCheck(state): boolean {
   return true;
 }
 
+export function inputLoginValidation(state) {
+  loginValidation(state);
+  validateStatusCheck(state);
+}
+
+export function inputPasswordValidation(state) {
+  passwordValidation(state);
+  validateStatusCheck(state);
+  }
 export function loginIn(state) {
   if (loginValidation(state) === false || passwordValidation(state) === false) {
     return false;

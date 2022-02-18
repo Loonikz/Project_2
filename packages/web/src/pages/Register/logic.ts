@@ -104,6 +104,21 @@ export function validateStatusCheck(state): boolean {
   return true;
 }
 
+export function inputLoginValidation(state) {
+  loginValidate(state);
+  validateStatusCheck(state);
+}
+
+export function inputPasswordConfirmValidation(state) {
+  confirmPasswordValidate(state);
+  validateStatusCheck(state);
+}
+
+export function inputPasswordValidation(state) {
+  passwordValidate(state);
+  confirmPasswordValidate(state);
+  validateStatusCheck(state);
+  }
 export function sendRegister(state): boolean {
   if (
     loginValidate(state) === false ||
