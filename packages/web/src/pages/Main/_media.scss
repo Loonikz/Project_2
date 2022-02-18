@@ -1,0 +1,224 @@
+@media (min-width: 280px) and (max-width: 768px) {
+
+  .nav-container {
+    align-items: center;
+
+    &__logo {
+      font-size: 25px;
+    }
+
+    &__buttons {
+      &--select {
+        font-size: 12px;
+      }
+
+      &--profile {
+        background: var(--btn-profile-250);
+        width: 15px;
+        height: 15px;
+        margin: 15px;
+        padding: 5px;
+      }
+    }
+  }
+
+  .container {
+
+    &__content {
+      padding: 12px;
+      width: 90%;
+
+      &__header {
+        display: grid;
+
+        &--select {
+          width: 100%;
+        }
+
+        &--list {
+          font-size: 11px;
+          margin-right: 0;
+          width: 100%;
+          height: 29px;
+        }
+
+        &--panell {
+          width: 100%;
+        }
+
+        &--btn {
+          font-size: 12px;
+          padding: 3px;
+          height: 28px;
+          width: 100%;
+        }
+
+        &--search {
+          width: 100%;
+          height: 28px;
+          margin: 5px auto;
+        }
+      }
+
+      &__data {
+        font-size: 12px;
+
+        table {
+          width: 100%;
+        }
+
+        table thead {
+          display: none;
+        }
+
+        table tbody tr {
+          box-shadow: 0 0 0.5em #666666;
+          border: none;
+          display: block;
+        }
+
+        table tbody tr th {
+          padding: 0.4em;
+          text-align: right;
+          display: block;
+          width: 97%;
+        }
+
+        table tbody tr th[data-label]:before {
+          content: attr(data-label);
+          float: left;
+          font-weight: bold;
+        }
+
+        table tbody tr th.numeric {
+          text-align: left;
+        }
+      }
+    }
+  }
+
+  .modal {
+    &__tab-menu {
+      &--link {
+        font-size: 12px;
+        height: 15px;
+      }
+    }
+
+    &--closed {
+      font-size: 20px;
+    }
+
+    &--title {
+      font-size: 20px;
+    }
+
+    &__content-modal {
+      margin: 15% auto;
+      width: 90%;
+      font-size: 12px;
+    }
+
+    &--button {
+      margin-left: 17px;
+      font-size: 12px;
+    }
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+
+  .container {
+
+    &__content {
+
+      &__header {
+        display: grid;
+
+        &--select {
+          margin: 5px 0;
+          width: 100%;
+        }
+
+        &--list {
+          width: 49%;
+        }
+
+        &--panell {
+          width: 100%;
+        }
+
+        &--btn {
+          margin: 5px 0;
+          width: 49%;
+        }
+
+        &--search {
+          margin: 5px 0;
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .modal {
+    &__tab-menu {
+      &--link {
+        font-size: 12px;
+        height: 12px;
+        padding: 20px;
+      }
+    }
+
+    &--closed {
+      font-size: 20px;
+    }
+
+    &--title {
+      margin: 14px auto;
+      font-size: 12px;
+    }
+
+    &__content-modal {
+      width: 60%;
+      font-size: 12px;
+    }
+
+    &--button {
+      margin-left: 30px;
+      font-size: 12px;
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+
+  .container {
+
+    &__content {
+
+      &__header {
+
+        &--selects {
+          width: 30%;
+        }
+
+        &--list {
+          width: 45%;
+        }
+
+        &--panel {
+          width: 50%;
+        }
+
+        &--btn {
+          width: 22%;
+        }
+
+        &--search {
+          width: 20%;
+        }
+      }
+    }
+  }
+}
