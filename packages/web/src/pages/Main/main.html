@@ -116,9 +116,7 @@
         </select>
 
         <select id='sort' class='container__content__header--list'>
-          <option class='container__content__header--option' value='' hidden
-                  data-i18n='sorting'></option>
-          <option class='container__content__header--option' value='id' data-i18n='id'></option>
+          <option class='container__content__header--option' value='id' selected data-i18n='id'></option>
           <option class='container__content__header--option' value='first name'
                   data-i18n='first_name'></option>
           <option class='container__content__header--option' value='last name'
@@ -148,7 +146,7 @@
     <section class='container__content__data'>
       <table class='container__content__data--table'>
         <thead class='container__content__data--head'>
-        <tr>
+        <tr class='container__content__data--head'>
           <th class='container__content__data--items-head' data-i18n='id'></th>
           <th class='container__content__data--items-head' data-i18n='first_name'></th>
           <th class='container__content__data--items-head' data-i18n='last_name'></th>
@@ -161,24 +159,24 @@
         </thead>
         <tbody>
         <tr class='container__content__data--tr-click container__content__data--tr'>
-          <th class='container__content__data--items-body'>1</th>
-          <th class='container__content__data--items-body'>Vasia</th>
-          <th class='container__content__data--items-body'>Pupkin</th>
-          <th class='container__content__data--items-body'>28</th>
-          <th class='container__content__data--items-body'>Donetsk</th>
-          <th class='container__content__data--items-body'>+380952334452</th>
-          <th class='container__content__data--items-body'>test@test.com</th>
-          <th class='container__content__data--items-body'>CompanyName</th>
+          <th class='container__content__data--items-body' data-label='Id'>1</th>
+          <th class='container__content__data--items-body' data-label='First name'>Vasia</th>
+          <th class='container__content__data--items-body' data-label='Last name'>Pupkin</th>
+          <th class='container__content__data--items-body' data-label='Age'>28</th>
+          <th class='container__content__data--items-body' data-label='City'>Donetsk</th>
+          <th class='container__content__data--items-body' data-label='Mob. number'>+380952334452</th>
+          <th class='container__content__data--items-body' data-label='Email'>test@test.com</th>
+          <th class='container__content__data--items-body' data-label='Company'>CompanyName</th>
         </tr>
         <tr class='container__content__data--tr'>
-          <th class='container__content__data--items-body'>2</th>
-          <th class='container__content__data--items-body'>Vasia</th>
-          <th class='container__content__data--items-body'>Pupkin</th>
-          <th class='container__content__data--items-body'>28</th>
-          <th class='container__content__data--items-body'>Donetsk</th>
-          <th class='container__content__data--items-body'>+380952334452</th>
-          <th class='container__content__data--items-body'>test@test.com</th>
-          <th class='container__content__data--items-body'>CompanyName</th>
+          <th class='container__content__data--items-body' data-label='Id'>2</th>
+          <th class='container__content__data--items-body' data-label='First name'>Vasia</th>
+          <th class='container__content__data--items-body' data-label='Last name'>Pupkin</th>
+          <th class='container__content__data--items-body' data-label='Age'>28</th>
+          <th class='container__content__data--items-body' data-label='City'>Donetsk</th>
+          <th class='container__content__data--items-body' data-label='Mob. number'>+380952334452</th>
+          <th class='container__content__data--items-body' data-label='Email'>test@test.com</th>
+          <th class='container__content__data--items-body' data-label='Company'>CompanyName</th>
         </tr>
         </tbody>
       </table>
