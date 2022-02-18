@@ -49,6 +49,7 @@ body {
   &__logo {
     font-size: 50px;
     color: var(--logo-color);
+    user-select: none;
   }
 
   &__buttons {
