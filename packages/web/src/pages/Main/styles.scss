@@ -85,7 +85,7 @@ body {
 
   &__content-modal {
     font-family: 'Montserrat', sans-serif;
-    font-size: 20px;
+    font-size: 10px;
     background: var(--bg-container);
     width: 550px;
     margin: 3% auto;
@@ -207,6 +207,38 @@ body {
     background: var(--btn-form);
     color: var(--text-btn-form);
   }
+
+  &--message {
+    font-size: 25px;
+    padding: 5%;
+  }
+
+  &__content-modal-delete {
+    font-family: 'Montserrat', sans-serif;
+    background: var(--bg-container);
+    width: 550px;
+    height: auto;
+    color: var(--text-color);
+    border-radius: 20px;
+    margin: 15% auto;
+  }
+
+  &__active {
+    display: flex;
+
+    &--btn {
+      text-decoration: none;
+      background: var(--btn-form);
+      color: var(--text-btn);
+      width: 50%;
+      font-size: 25px;
+      align-items: center;
+      height: 35px;
+      margin: 15px;
+      padding: 8px;
+    }
+  }
+
 }
 
 .nav-container {
@@ -233,7 +265,8 @@ body {
       height: 35px;
       margin: 15px;
       padding: 10px;
-      &:hover{
+
+      &:hover {
         background: var(--btn-profile-hover);
       }
     }
@@ -256,7 +289,8 @@ body {
       height: 35px;
       margin: 15px;
       padding: 10px;
-      &:hover{
+
+      &:hover {
         background: var(--btn-logout-hover);
       }
     }
@@ -284,7 +318,7 @@ body {
       display: flex;
       margin-bottom: 15px;
 
-      &--selects{
+      &--selects {
       }
 
       &--list {
