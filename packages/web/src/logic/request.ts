@@ -8,7 +8,7 @@ export function getData(url: string) {
         resolve(data);
       })
       .catch(() => {
-        reject(new Error('Error'));
+        reject();
       });
   });
 }
