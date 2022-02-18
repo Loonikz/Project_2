@@ -54,10 +54,9 @@ export class UserController {
     }
   }
 
-  static async logout(req: Request, res: Response): Promise<Response> {
+  static async logout(req: Request, res: Response) {
     res.clearCookie('jwt');
     res.redirect('/login');
-    return res.status(200);
   }
 
   static async changeLogin(req: Request, res: Response): Promise<Response> {

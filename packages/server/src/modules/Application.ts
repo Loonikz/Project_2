@@ -24,7 +24,25 @@ class Application {
   }
 
   routes() {
-    this.app.use(express.static('./../web/dist/'));
+    // this.app.use(express.static('./../web/dist/data'));
+
+    const statics = express.static('./../web/dist/');
+
+    function secureStatic(pathsToSecure = []) {
+      return function (req, res, next) {
+
+        if (pathsToSecure.length === 0) {
+          return statics(req, res, next); // Do not secure, forward to static route
+        }
+        if (pathsToSecure.indexOf(req.path) > -1) {
+          return res.redirect('/');
+        }
+
+        return statics(req, res, next); // forward to static route
+      };
+    }
+
+    this.app.use((secureStatic(['/main.html', '/login.html', '/register.html'])));
   }
 
   controllers(controllers: any) {
@@ -39,3 +57,4 @@ class Application {
 }
 
 export default Application;
+
