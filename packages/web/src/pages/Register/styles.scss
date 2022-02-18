@@ -1,6 +1,6 @@
 body {
   background: var(--background);
-  background-size: cover;
+  background-size: 100%;
   font-family: 'Montserrat', sans-serif;
   font-size: 25px;
   --logo-color: #F00418;
@@ -79,7 +79,7 @@ body {
     font-family: 'Montserrat', sans-serif;
     font-size: 20px;
     background: var(--bg-container);
-    width: 550px;
+    width: 40%;
     margin: 1% auto;
     padding: 45px;
     height: auto;
