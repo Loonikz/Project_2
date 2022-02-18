@@ -3,11 +3,11 @@ import { changeTheme } from '../../logic/header/theme';
 import { addListener, fromLocaleStorageToDropDown } from '../../logic/header/utils';
 import { changeLng } from '../../logic/header/localization';
 import { getLocalStorage } from '../../logic/header/getLocalStorage';
-import { inputLoginValidation, inputPasswordValidation } from './logic';
+import { inputLoginValidation, inputPasswordValidation, loginIn } from './logic';
 
 function init() {
   const state = {
-    url: '/login',
+    urlLogin: 'https://wannaworkinginwizarddev.herokuapp.com/auth/login',
     validateStatus: [false, false],
   };
   fromLocaleStorageToDropDown('changeTheme', 'theme', ['light', 'dark']);
@@ -18,6 +18,7 @@ function init() {
   addListener('password-reg', 'input', inputPasswordValidation.bind(null, state));
   addListener('dropdownLanguage', 'change', changeLng);
   addListener('dropdownTheme', 'change', changeTheme);
+  addListener('login-btn', 'click', loginIn.bind(null, state));
 
   getLocalStorage();
 }

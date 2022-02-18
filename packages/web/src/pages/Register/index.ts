@@ -7,10 +7,20 @@ import {
   inputLoginValidation,
   inputPasswordConfirmValidation,
   inputPasswordValidation,
+  loginValidate,
+  sendRegister,
+  validateStatusCheck,
 } from './logic';
 
 function init() {
-  const state = { urlRegister: '/register', validateStatus: [false, false, false] };
+  const state = {
+    urlRegister: 'https://wannaworkinginwizarddev.herokuapp.com/auth/registration',
+    validateStatus: [false, false, false]
+  };
+  addListener('sign-up-login', 'input', () => {
+    loginValidate.call(null, state);
+    validateStatusCheck.call(null, state);
+  });
   fromLocaleStorageToDropDown('changeTheme', 'theme', ['light', 'dark']);
   fromLocaleStorageToDropDown('changeLanguage', 'lang', ['en', 'ru']);
   changeLng();
@@ -25,6 +35,8 @@ function init() {
 
   addListener('dropdownLanguage', 'change', changeLng);
   addListener('dropdownTheme', 'change', changeTheme);
+
+  addListener('registration-btn', 'click', sendRegister.bind(null, state));
 
   getLocalStorage();
 }

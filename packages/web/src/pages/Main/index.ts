@@ -47,6 +47,8 @@ function init() {
   addListener('profile', 'click', setStyleDisplay.bind(null, 'modal-security', 'block'));
   addListener('closed-modal', 'click', setStyleDisplay.bind(null, 'modal-security', 'none'));
   addListener('create', 'click', setStyleDisplay.bind(null, 'modal-create-update', 'block'));
+  addListener('delete', 'click', setStyleDisplay.bind(null, 'modal-delete', 'block'));
+  addListener('closed-modal-delete', 'click', setStyleDisplay.bind(null, 'modal-delete', 'none'));
   addListener('update', 'click', updateRecord.bind(null, state));
   addListener('delete', 'click', deleteRecord.bind(null, state));
   addListener('clear', 'click', clearAllRecord);

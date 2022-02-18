@@ -1,4 +1,10 @@
-import { getInputValue, getElementById, setInnerText } from '../../logic/header/utils';
+import {
+  getInputValue,
+  getElementById,
+  setInnerText,
+  collectDataLogin
+} from '../../logic/header/utils';
+import { postLogin } from '../../logic/request';
 
 export function loginValidation(state) {
   const stateObj = state;
@@ -84,4 +90,13 @@ export function inputLoginValidation(state) {
 export function inputPasswordValidation(state) {
   passwordValidation(state);
   validateStatusCheck(state);
+}
+
+export function loginIn(state) {
+  if (loginValidation(state) === false || passwordValidation(state) === false) {
+    return false;
+  }
+  const data = collectDataLogin('login-form');
+
+  postLogin(state.urlLogin, data);
 }
