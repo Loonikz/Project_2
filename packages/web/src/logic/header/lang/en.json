@@ -34,5 +34,14 @@
   "clear": "ClearAll",
   "message_delete": "Are you sure to continue?",
   "yes": "Yes",
-  "no": "No"
+  "no": "No",
+  "error_length": "Min length 3 letters!",
+  "error_length_val_zero": "Min length 3 letters and value not equal 0!",
+  "error_only_letter": "Min length 3 letters and value contains only letters!",
+  "error_phone": "Insert phone number!",
+  "error_email": "Insert email!",
+  "error_login": "Login may be contain only letters, numbers, and underscores. Login at least 6 characters",
+  "error_password": "Password must contain letters, numbers, and special symbols. Password at least 8 characters",
+  "error_confirm_pass": "Passwords does`t match",
+  "error_wrong_pass_login": "Wrong login or password"
 }

@@ -42,6 +42,7 @@ body {
   --border-table-click: 3px solid #F08686;
   --hover-button: 2px 7px 8px 0px rgba(34, 60, 80, 0.31);
   --active-button: 0px -1px 10px 2px rgba(34, 60, 80, 0.2) inset;
+  --bg-option: #FFFFFF;
 }
 
 .dark {
@@ -84,7 +85,6 @@ body {
   --border-table-click: 3px solid #A562DF;
   --hover-button: 5px 5px 5px 1px rgba(34, 60, 80, 0.6);
   --active-button: 0px -1px 10px 2px rgba(34, 60, 80, 0.71) inset;
-
 }
 
 .modal {
@@ -101,7 +101,7 @@ body {
 
   &__message{
     font-size: 15px;
-    color: #F00418;
+    color: #ff5d5d;
     margin: 5px;
   }
 
@@ -312,6 +312,11 @@ body {
       font-family: 'Montserrat', sans-serif;
       cursor: pointer;
       margin: 2px;
+    }
+
+    &--option{
+      color: #000000;
+      line-height: 1em;
     }
 
     &--logout {
