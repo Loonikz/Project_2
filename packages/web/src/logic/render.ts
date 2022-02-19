@@ -3,7 +3,8 @@ import { getData, sendData } from './request';
 import {
   getElementById,
   getInputValue,
-  getValueLocalStorage, setNodeValue,
+  getValueLocalStorage,
+  setNodeValue,
   setStyleDisplay,
   setValueLocalStorage,
 } from './header/utils';
@@ -41,14 +42,18 @@ function renderRow(arrayData: Array<Person>) {
 
 export function renderTable(db: string, state) {
   const stateObj = state;
-  getData(`${state.baseURL}/${db}`).then((data) => {
-    renderRow(data);
-    if (db.toLowerCase() === 'mysql') {
-      stateObj.mySQL = data;
-    } else {
-      stateObj.mongoDB = data;
-    }
-  });
+  getData(`${state.baseURL}/${db}`)
+    .then((data) => {
+      renderRow(data);
+      if (db.toLowerCase() === 'mysql') {
+        stateObj.mySQL = data;
+      } else {
+        stateObj.mongoDB = data;
+      }
+    })
+    .catch(() => {
+      console.log('err');
+    });
 }
 
 export function loadData(state) {

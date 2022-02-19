@@ -1,6 +1,6 @@
+import { getValueLocalStorage } from './utils';
+
 export function getLocalStorage() {
-  const theme = window.localStorage.getItem('theme');
+  const theme = getValueLocalStorage('theme');
   if (theme === 'dark') document.body.classList.add('dark');
-  const selectedLang = (<HTMLSelectElement>document.getElementById('dropdownLanguage')).value;
-  const lang = window.localStorage.getItem('lang');
 }

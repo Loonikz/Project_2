@@ -2,11 +2,16 @@
 module.exports = {
   preset: 'ts-jest',
   testEnvironment: 'jsdom',
+  collectCoverage: true,
   coveragePathIgnorePatterns: [
-    "\\\\node_modules\\\\",
+    '\\\\node_modules\\\\',
     '../../utils/styles/*.scss'
   ],
-  "moduleNameMapper": {
-    "^.+.(css|styl|less|sass|scss|png|jpg|ttf|woff|woff2)$": "jest-transform-stub"
+  // 'moduleNameMapper': {
+  //   '^.+.(css|styl|less|sass|scss|png|jpg|ttf|woff|woff2)$': 'jest-transform-stub',
+  // },
+  transform: {
+    '^.+\\.ts?$': 'ts-jest',
+    '.(css|scss)$': '<rootDir>/src/jest-config/style-mock.js',
   },
 };
