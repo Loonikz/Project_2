@@ -83,6 +83,12 @@ body {
   text-align: center;
   height: 100%;
 
+  &__message{
+    font-size: 15px;
+    color: #F00418;
+    margin: 5px;
+  }
+
   &__content-modal {
     font-family: 'Montserrat', sans-serif;
     font-size: 10px;
@@ -206,11 +212,6 @@ body {
     font-size: 15px;
     background: var(--btn-form);
     color: var(--text-btn-form);
-  }
-
-  &--message {
-    font-size: 25px;
-    padding: 5%;
   }
 
   &__content-modal-delete {
