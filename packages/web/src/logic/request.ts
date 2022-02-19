@@ -3,7 +3,7 @@ export function getData(url: string) {
     fetch(url, {
       method: 'GET',
     })
-      .then((data) => data.json())
+      .then((response) => response.json())
       .then((data) => {
         resolve(data);
       })
@@ -14,7 +14,7 @@ export function getData(url: string) {
 }
 
 export function sendData(url: string, data, userMethod = 'POST') {
-  return new Promise<void>((resolve, reject) => {
+  return new Promise((resolve, reject) => {
     fetch(url, {
       method: userMethod,
       body: JSON.stringify(data),
@@ -22,47 +22,11 @@ export function sendData(url: string, data, userMethod = 'POST') {
         'Content-Type': 'application/json',
       },
     })
-      .then(() => {
-        resolve();
+      .then((response) => {
+        resolve(response);
       })
       .catch(() => {
         reject();
       });
   });
-}
-
-export function postRegister(url: string, data) {
-  fetch(url, {
-    method: 'POST',
-    body: JSON.stringify(data),
-    headers: {
-      'Content-Type': 'application/json',
-    },
-  })
-    .then((response) => {
-      if (response.status === 200) {
-        window.location.href = response.url;
-      }
-    })
-    .catch((err) => {
-      console.log(err);
-    });
-}
-
-export function postLogin(url: string, data) {
-  fetch(url, {
-    method: 'POST',
-    body: JSON.stringify(data),
-    headers: {
-      'Content-Type': 'application/json',
-    },
-  })
-    .then((response) => {
-      if (response.status === 200) {
-        window.location.href = response.url;
-      }
-    })
-    .catch((err) => {
-      console.log(err);
-    });
 }

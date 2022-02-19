@@ -14,7 +14,7 @@ import {
 
 function init() {
   const state = {
-    urlRegister: 'https://wannaworkinginwizarddev.herokuapp.com/auth/registration',
+    urlRegister: 'http://localhost:3000/auth/registration',
     validateStatus: [false, false, false]
   };
   addListener('sign-up-login', 'input', () => {

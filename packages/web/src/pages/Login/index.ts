@@ -7,7 +7,7 @@ import { inputLoginValidation, inputPasswordValidation, loginIn } from './logic'
 
 function init() {
   const state = {
-    urlLogin: 'https://wannaworkinginwizarddev.herokuapp.com/auth/login',
+    urlLogin: 'http://localhost:3000/auth/login',
     validateStatus: [false, false],
   };
   fromLocaleStorageToDropDown('changeTheme', 'theme', ['light', 'dark']);
