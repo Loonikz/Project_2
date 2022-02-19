@@ -45,7 +45,7 @@
       <input class='modal--input' id='company' type='text'>
       <p class='container__form__message' id='company-message'></p>
 
-      <button class='modal--button' type='button' data-i18n='cancel'></button>
+      <button class='modal--button' type='button' data-i18n='cancel' id="cancel-create"></button>
       <button class='modal--button' type='button' data-i18n='save' id='save-create'></button>
     </form>
   </section>
@@ -63,30 +63,38 @@
     <section class='modal__form'>
       <form class='modal__form-edit active-form' data-tab-content="1">
         <label class='modal--label' data-i18n='new_login'></label>
-        <input class='modal--input' id='new-login' type='text'>
+        <input class='modal--input' id='new-login' type='text' maxlength="20">
+        <p class='container__form__message' id='changeLogin-message'></p>
 
         <label class='modal--label' data-i18n='label_password'></label>
         <input class='modal--input' id='password' type='password'>
+        <p class='container__form__message' id='password-message'></p>
 
         <label class='modal--label' data-i18n='pass_confir'></label>
         <input class='modal--input' id='confirm-password' type='password'>
+        <p class='container__form__message' id='confirm-password-message'></p>
+        <p class='container__form__message' id='change-login-message'></p>
 
-        <button class='modal--button' type='submit' data-i18n='cancel'></button>
-        <button class='modal--button' type='reset' data-i18n='save'></button>
+        <button class='modal--button' type='button' data-i18n='cancel' id="cancelS"></button>
+        <button class='modal--button' type='button' data-i18n='save' id="changeLogin"></button>
       </form>
 
       <form class='modal__form-edit' data-tab-content="2">
         <label class='modal--label' data-i18n='old_pass'></label>
         <input class='modal--input' id='new-pass' type='password'>
+        <p class='container__form__message' id='new-pass-message'></p>
 
         <label class='modal--label' data-i18n='new_password'></label>
         <input class='modal--input' id='new-password' type='password'>
+        <p class='container__form__message' id='new-password-message'></p>
 
         <label class='modal--label' data-i18n='pass_confir'></label>
         <input class='modal--input' id='confirm-pass-edit' type='password'>
+        <p class='container__form__message' id='confirm-pass-edit-message'></p>
+        <p class='container__form__message' id='change-password-message'></p>
 
-        <button class='modal--button' type='submit' data-i18n='cancel'></button>
-        <button class='modal--button' type='reset' data-i18n='save'></button>
+        <button class='modal--button' type='button' data-i18n='cancel' id="cancel"></button>
+        <button class='modal--button' type='button' data-i18n='save' id='changePassword'></button>
       </form>
     </section>
   </section>
@@ -96,7 +104,8 @@
     <span id='closed-modal-delete' class='modal--closed'>x</span>
     <p class="modal--message" data-i18n='message_delete'></p>
     <section class="modal__active">
-      <button class="modal__active--btn modal__active--yes" data-i18n='yes' href="#" id="deleteRecord"></button>
+      <button class="modal__active--btn modal__active--yes" data-i18n='yes' href="#"
+              id="deleteRecord"></button>
       <button class="modal__active--btn modal__active--no" data-i18n='no' href="#"></button>
     </section>
   </section>
