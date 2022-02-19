@@ -39,7 +39,7 @@
       <input class='modal--input' id='company' type='text'>
 
       <button class='modal--button' type='button' data-i18n='cancel'></button>
-      <button class='modal--button' type='button' data-i18n='save' id='save-create'></button>
+      <button class='modal--button' type='button' data-i18n='save' id='save-create' disabled></button>
     </form>
   </section>
 </section>
@@ -65,7 +65,7 @@
         <input class='modal--input' id='confirm-password' type='password'>
 
         <button class='modal--button' type='submit' data-i18n='cancel'></button>
-        <button class='modal--button' type='reset' data-i18n='save'></button>
+        <button class='modal--button' type='reset' data-i18n='save' disabled></button>
       </form>
 
       <form class='modal__form-edit' data-tab-content="2">
@@ -79,7 +79,7 @@
         <input class='modal--input' id='confirm-pass-edit' type='password'>
 
         <button class='modal--button' type='submit' data-i18n='cancel'></button>
-        <button class='modal--button' type='reset' data-i18n='save'></button>
+        <button class='modal--button' type='reset' data-i18n='save' disabled></button>
       </form>
     </section>
   </section>
@@ -149,10 +149,8 @@
       <section class='container__content__header--panel'>
         <button class='container__content__header--btn' id='create' data-i18n='create'></button>
         <button class='container__content__header--btn' id='update' data-i18n='update' disabled></button>
-        <button class='container__content__header--btn' id='delete' data-i18n='delete' disabled>Delete
-        </button>
-        <button class='container__content__header--btn' id='clear' data-i18n='clear'>ClearAll
-        </button>
+        <button class='container__content__header--btn' id='delete' data-i18n='delete' disabled></button>
+        <button class='container__content__header--btn' id='clear' data-i18n='clear'></button>
       </section>
 
       <input class='container__content__header--search' type='search' name='search'

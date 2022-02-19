@@ -179,29 +179,23 @@
   .modal {
     &__tab-menu {
       &--link {
-        font-size: 12px;
-        height: 12px;
-        padding: 20px;
+
       }
     }
 
     &--closed {
-      font-size: 20px;
     }
 
     &--title {
-      margin: 14px auto;
-      font-size: 12px;
+
     }
 
     &__content-modal {
-      width: 60%;
-      font-size: 12px;
+
     }
 
     &--button {
-      margin-left: 30px;
-      font-size: 12px;
+
     }
   }
 }
@@ -234,6 +228,29 @@
           width: 20%;
         }
       }
+    }
+  }
+
+  .modal {
+    &__tab-menu {
+      &--link {
+
+      }
+    }
+
+    &--closed {
+    }
+
+    &--title {
+
+    }
+
+    &__content-modal {
+
+    }
+
+    &--button {
+
     }
   }
 }
