@@ -82,7 +82,7 @@ export function checkValidation(state): boolean {
 
 export function loginValidate(idLogin) {
   const loginRegex = /^[a-zA-Z0-9_]*$/;
-  const value: string = getInputValue('new-login');
+  const value: string = getInputValue(idLogin);
   if (value.length >= 6 && value.length <= 20 && value.match(loginRegex)) {
     setInnerText(`${idLogin}-message`, '');
     return true;
