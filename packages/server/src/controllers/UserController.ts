@@ -69,20 +69,20 @@ export class UserController {
           const { username, password } = req.body;
           const candidate: User = await SchemaUser.findOne({ login: username });
           if (candidate) {
-            return res.status(400).json({ message: 'Пользователь с таким именем уже существует' });
+            return res.status(418).json({ message: 'Пользователь с таким именем уже существует' });
           }
           const validPassword = bcrypt.compareSync(password, user.password);
           if (!validPassword) {
-            return res.status(400).json({ message: `Введен неверный пароль` });
+            return res.status(419).json({ message: `Введен неверный пароль` });
           }
           await SchemaUser.updateOne({ _id: decoded.id }, { $set: { login: username } });
           return res.status(200).json({ message: `Все оки` });
         }
         return res.status(400).json({ message: `Пользователь не найден` });
       }
-      return res.status(400).json({ message: `Пользователь не авторизован` });
+      return res.status(401).json({ message: `Пользователь не авторизован` });
     } catch (e) {
-      return res.status(400).json({ message: `Change login error ${e}` });
+      return res.status(500).json({ message: `Change login error ${e}` });
     }
   }
 
@@ -96,7 +96,7 @@ export class UserController {
           const { password, newPassword } = req.body;
           const validPassword = bcrypt.compareSync(password, user.password);
           if (!validPassword) {
-            return res.status(400).json({ message: `Введен неверный пароль` });
+            return res.status(419).json({ message: `Введен неверный пароль` });
           }
           const hashPassword = bcrypt.hashSync(newPassword, 7);
           await SchemaUser.updateOne({ _id: decoded.id }, { $set: { password: hashPassword } });
@@ -104,9 +104,9 @@ export class UserController {
         }
         return res.status(400).json({ message: `Пользователь не найден` });
       }
-      return res.status(400).json({ message: `Пользователь не авторизован` });
+      return res.status(401).json({ message: `Пользователь не авторизован` });
     } catch (e) {
-      return res.status(400).json({ message: `Change login error ${e}` });
+      return res.status(500).json({ message: `Change login error ${e}` });
     }
   }
 }
