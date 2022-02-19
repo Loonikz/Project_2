@@ -3,18 +3,18 @@ export function getData(url: string) {
     fetch(url, {
       method: 'GET',
     })
-      .then((data) => data.json())
+      .then((response) => response.json())
       .then((data) => {
         resolve(data);
       })
       .catch(() => {
-        reject(new Error('Error'));
+        reject();
       });
   });
 }
 
 export function sendData(url: string, data, userMethod = 'POST') {
-  return new Promise<void>((resolve, reject) => {
+  return new Promise((resolve, reject) => {
     fetch(url, {
       method: userMethod,
       body: JSON.stringify(data),
@@ -22,8 +22,8 @@ export function sendData(url: string, data, userMethod = 'POST') {
         'Content-Type': 'application/json',
       },
     })
-      .then(() => {
-        resolve();
+      .then((response) => {
+        resolve(response);
       })
       .catch(() => {
         reject();

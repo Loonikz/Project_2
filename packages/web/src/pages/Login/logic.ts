@@ -1,4 +1,10 @@
-import { getInputValue, getElementById, setInnerText } from '../../logic/header/utils';
+import {
+  getInputValue,
+  getElementById,
+  setInnerText,
+  collectDataLogin
+} from '../../logic/header/utils';
+import { sendData } from '../../logic/request';
 
 export function loginValidation(state) {
   const stateObj = state;
@@ -84,4 +90,18 @@ export function inputLoginValidation(state) {
 export function inputPasswordValidation(state) {
   passwordValidation(state);
   validateStatusCheck(state);
+}
+
+export function loginIn(state) {
+  if (loginValidation(state) === false || passwordValidation(state) === false) {
+    return false;
+  }
+  const data = collectDataLogin('login-form');
+  sendData(state.urlLogin, data).then((response: Response) => {
+    if (response.status === 200) {
+      window.location.href = response.url;
+    } else if (response.status === 400) {
+      setInnerText('password-message','Wrong login or password')
+    }
+  });
 }
