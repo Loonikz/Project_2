@@ -1,4 +1,4 @@
-const { changeLogin, changePassword, logout } = require('../logic');
+const { changeLogin, changePassword, logout, clickClear, clickDelete } = require('../logic');
 const validation = require('../validation');
 //
 // jest.mock('../validation', () => {
@@ -127,5 +127,17 @@ describe('changeLogin', () => {
       }),
     );
     expect(changeLogin(state)).toBeUndefined();
+  });
+});
+
+describe('clickDelete', () => {
+  test('clickDelete', () => {
+    expect(clickDelete(state)).toBeUndefined();
+  });
+});
+
+describe('clickClear', () => {
+  test('clickClear', () => {
+    expect(clickClear(state)).toBeUndefined();
   });
 });

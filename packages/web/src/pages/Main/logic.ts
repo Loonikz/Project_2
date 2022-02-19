@@ -60,3 +60,13 @@ export function changePassword(state) {
     });
   }
 }
+
+export function clickDelete(state) {
+  state.isDelete = true;
+  setStyleDisplay('modal-delete', 'block');
+}
+
+export function clickClear(state) {
+  state.isDelete = false;
+  setStyleDisplay('modal-delete', 'block');
+}

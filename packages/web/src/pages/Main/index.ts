@@ -20,6 +20,7 @@ import {
   updateRecord,
 } from '../../logic/render';
 import {
+  checkValidation,
   confirmPasswordValidate,
   loginValidate,
   passwordValidate,
@@ -31,7 +32,7 @@ import {
   validationPhone,
 } from './validation';
 import { closeCreateModal, closeSecurity } from './modal';
-import { changeLogin, changePassword, logout } from './logic';
+import { changeLogin, changePassword, clickClear, clickDelete, logout } from './logic';
 
 export function init() {
   const state = {
@@ -41,7 +42,8 @@ export function init() {
     currentRecordId: undefined,
     currentNode: null,
     isUpdate: false,
-    validateStatus: [],
+    isDelete: false,
+    validateStatus: [false, false, true, true, true, true, true],
     setCurrentNode(node: Node): void {
       this.currentNode = node;
     },
@@ -69,12 +71,13 @@ export function init() {
   addListener('cancelS', 'click', closeSecurity);
 
   addListener('create', 'click', setStyleDisplay.bind(null, 'modal-create-update', 'block'));
-  addListener('delete', 'click', setStyleDisplay.bind(null, 'modal-delete', 'block'));
+  addListener('delete', 'click', clickDelete.bind(null, state));
+  addListener('clear', 'click', clickClear.bind(null, state));
   addListener('closed-modal-delete', 'click', setStyleDisplay.bind(null, 'modal-delete', 'none'));
+  addListener('closeDelete', 'click', setStyleDisplay.bind(null, 'modal-delete', 'none'));
 
   addListener('update', 'click', updateRecord.bind(null, state));
   addListener('deleteRecord', 'click', deleteRecord.bind(null, state));
-  addListener('clear', 'click', clearAllRecord.bind(null, state));
   addListener('logout', 'click', logout.bind(null, state));
   addListener('closed-create-update', 'click', closeCreateModal);
   addListener('cancel-create', 'click', closeCreateModal);
@@ -87,13 +90,13 @@ export function init() {
   addListener('save-create', 'click', createRecord.bind(null, state));
   addListener('table', 'click', selectRow.bind(null, state));
   // validation
-  addListener('first-name', 'input', validationName.bind(null, state, 'first-name', 0));
-  addListener('last-name', 'input', validationName.bind(null, state, 'last-name', 1));
-  addListener('age', 'input', validationAge.bind(null, state));
-  addListener('city', 'input', validationCity.bind(null, state));
-  addListener('number', 'input', validationPhone.bind(null, state));
-  addListener('email', 'input', validationEmail.bind(null, state));
-  addListener('company', 'input', validationCompany.bind(null, state));
+  addListener('first-name', 'input', checkValidation.bind(null, state));
+  addListener('last-name', 'input', checkValidation.bind(null, state));
+  addListener('age', 'input', checkValidation.bind(null, state));
+  addListener('city', 'input', checkValidation.bind(null, state));
+  addListener('number', 'input', checkValidation.bind(null, state));
+  addListener('email', 'input', checkValidation.bind(null, state));
+  addListener('company', 'input', checkValidation.bind(null, state));
   // security
   addListener('changeLogin', 'click', changeLogin.bind(null, state));
   addListener('new-login', 'input', loginValidate.bind(null, 'new-login'));

@@ -77,7 +77,13 @@ export function checkValidation(state): boolean {
   validationCompany(state);
   validationEmail(state);
   validationPhone(state);
-  return state.validateStatus.reduce((acc, status) => acc && status, true);
+  const result = state.validateStatus.reduce((acc, status) => acc && status, true);
+  if (result) {
+    removeDisabledAttribute(getElementById('save-create'));
+  } else {
+    setDisabledAttribute(getElementById('save-create'));
+  }
+  return result;
 }
 
 export function loginValidate(idLogin) {
