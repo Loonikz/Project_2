@@ -101,7 +101,7 @@ body {
 
   &__message{
     font-size: 15px;
-    color: #F00418;
+    color: #ff5d5d;
     margin: 5px;
   }
 
@@ -316,6 +316,7 @@ body {
 
     &--option{
       color: #000000;
+      line-height: 1em;
     }
 
     &--logout {
