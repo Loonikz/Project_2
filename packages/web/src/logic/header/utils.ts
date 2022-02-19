@@ -104,9 +104,16 @@ export function setStyleDisplay(id: string, value: string): boolean {
   return false;
 }
 
-export function setBackground(node, color) {
+export function setClass(node, className) {
   if (node) {
-    (<HTMLElement>node).style.backgroundColor = color;
+    (<HTMLElement>node).classList.add(className);
+    return true;
+  }
+  return false;
+}
+export function removeClass(node, className) {
+  if (node) {
+    (<HTMLElement>node).classList.remove(className);
     return true;
   }
   return false;
@@ -114,13 +121,15 @@ export function setBackground(node, color) {
 
 export function selectRow(state, event: { target: HTMLTableElement }) {
   if (state.currentNode) {
-    setBackground(state.currentNode, '');
+    removeClass(state.currentNode, 'red');
   }
   const node: Node = event.target.parentNode;
-  setBackground(state.currentNode, 'red');
+  setClass(node, 'red');
   state.setCurrentNode(node);
   const nodeId: HTMLTableElement = <HTMLTableElement>node.firstChild;
   state.setCurrentRecordId(nodeId.innerText);
+  removeDisabledAttribute(getElementById('update'));
+  removeDisabledAttribute(getElementById('delete'));
 }
 
 export function setNodeValue(id: string, value = '') {
