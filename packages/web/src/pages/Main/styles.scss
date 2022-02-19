@@ -17,8 +17,9 @@ body {
   --btn-profile-hover: url('../../assets/svg/icon-profile-light-hover.svg');
   --btn-profile-250: url('../../assets/svg/icon-profile-light250.svg');
   --btn-logout: url('../../assets/svg/logout_light.svg');
+  --btn-logout-250: url('../../assets/svg/logout_light-250.svg');
   --btn-logout-hover: url('../../assets/svg/logout_light-hover.svg');
-
+  --btn-logout-hover-250: url('../../assets/svg/logout_light-hover-250.svg');
   --text-select: #000000;
   --text-btn: #FFFFFF;
   --text-color-label: #F08686;
@@ -53,8 +54,9 @@ body {
   --btn-profile-hover: url('../../assets/svg/icon-profile-dark-hover.svg');
   --btn-profile-250: url('../../assets/svg/icon-profile-dark250.svg');
   --btn-logout: url('../../assets/svg/logout_dark.svg');
+  --btn-logout-250: url('../../assets/svg/logout_dark-250.svg');
   --btn-logout-hover: url('../../assets/svg/logout_dark-hover.svg');
-
+  --btn-logout-hover-250: url('../../assets/svg/logout_dark-hover-250.svg');
   --text-select: #7F1581;
   --text-btn: #7F1581;
   --bg-btn: #FFFFFF;
@@ -249,7 +251,6 @@ body {
   justify-content: space-between;
 
   &__logo {
-    font-size: 50px;
     color: var(--logo-color);
     user-select: none;
   }
@@ -262,10 +263,7 @@ body {
       background: var(--btn-profile);
       cursor: pointer;
       border: none;
-      width: 35px;
-      height: 35px;
-      margin: 15px;
-      padding: 10px;
+
 
       &:hover {
         background: var(--btn-profile-hover);
@@ -277,7 +275,6 @@ body {
       background: transparent;
       border: none;
       font-family: 'Montserrat', sans-serif;
-      font-size: 20px;
       cursor: pointer;
       margin: 2px;
     }
@@ -286,10 +283,6 @@ body {
       background: var(--btn-logout);
       cursor: pointer;
       border: none;
-      width: 35px;
-      height: 35px;
-      margin: 15px;
-      padding: 10px;
 
       &:hover {
         background: var(--btn-logout-hover);
@@ -310,8 +303,6 @@ body {
     background: var(--bg-container);
     border-radius: 15px;
     margin: 25px auto;
-    padding: 30px;
-    width: 82%;
     opacity: var(--opacity-container);
     border: var(--border-cont);
 
@@ -325,10 +316,8 @@ body {
       &--list {
         border-radius: 10px;
         font-family: 'Montserrat', sans-serif;
-        font-size: 15px;
         border: none;
         padding: 8px;
-        height: 40px;
         color: var(--text-select);
         cursor: pointer;
 
@@ -346,13 +335,14 @@ body {
         }
       }
 
+      &--panel{
+      }
+
       &--btn {
         border-radius: 10px;
         border: none;
         font-family: 'Montserrat', sans-serif;
         font-size: 15px;
-        padding: 8px;
-        height: 40px;
         justify-content: center;
         color: var(--text-btn);
         background: var(--bg-btn);
@@ -376,7 +366,6 @@ body {
         border-radius: 10px;
         background: var(--bg-input);
         opacity: 0.5;
-        height: 40px;
       }
 
     }
@@ -389,7 +378,6 @@ body {
       &--table {
         border-collapse: collapse;
         color: var(--text-color);
-        font-size: 12px;
         width: 100%;
       }
 
@@ -421,12 +409,6 @@ body {
           border-right: 1px solid #FFFFFF;
         }
       }
-
-      //
-      //&--tr-click {
-      //  border-top: var(--border-table-click);
-      //  border-bottom: var(--border-table-click);
-      //}
 
       &--tr {
         background: var(--bg-tr);
