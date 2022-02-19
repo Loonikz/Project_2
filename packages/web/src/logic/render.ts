@@ -3,7 +3,7 @@ import { getData, sendData } from './request';
 import {
   getElementById,
   getInputValue,
-  getValueLocalStorage,
+  getValueLocalStorage, removeDisabledAttribute, setDisabledAttribute,
   setNodeValue,
   setStyleDisplay,
   setValueLocalStorage,
@@ -11,9 +11,10 @@ import {
 import { checkValidation } from '../pages/Main/validation';
 import { closeCreateModal } from '../pages/Main/modal';
 
-function renderCell(value: string) {
+function renderCell(value: string, attribute: string) {
   const th = document.createElement('th');
   th.setAttribute('class', 'container__content__data--items-body');
+  th.setAttribute('data-label', attribute);
   th.innerHTML = value;
   return th;
 }
@@ -23,21 +24,23 @@ function renderRow(arrayData: Array<Person>) {
   arrayData.forEach((row: Person) => {
     const tr = document.createElement('tr');
     tr.setAttribute('class', 'container__content__data--tr');
-    tr.append(renderCell(String(row.id)));
-    tr.append(renderCell(row.fname));
-    tr.append(renderCell(row.lname));
-    tr.append(renderCell(row.age));
-    tr.append(renderCell(row.city));
-    tr.append(renderCell(row.phoneNumber));
-    tr.append(renderCell(row.email));
-    tr.append(renderCell(row.companyName));
+    tr.append(renderCell(String(row.id), 'Id'));
+    tr.append(renderCell(row.fname, 'First name'));
+    tr.append(renderCell(row.lname, 'Last name'));
+    tr.append(renderCell(row.age, 'Age'));
+    tr.append(renderCell(row.city, 'City'));
+    tr.append(renderCell(row.phoneNumber, 'Mob. number'));
+    tr.append(renderCell(row.email, 'Email'));
+    tr.append(renderCell(row.companyName, 'Company'));
     fragment.append(tr);
   });
   const table = <HTMLTableElement>getElementById('table');
   while (table.rows.length > 1) {
     table.deleteRow(1);
   }
-  table.append(fragment);
+  const tbody = document.createElement('tbody');
+  tbody.append(fragment);
+  table.append(tbody);
 }
 
 export function renderTable(db: string, state) {
@@ -50,6 +53,8 @@ export function renderTable(db: string, state) {
       } else {
         stateObj.mongoDB = data;
       }
+      setDisabledAttribute(getElementById('update'));
+      setDisabledAttribute(getElementById('delete'));
     })
     .catch(() => {
       console.log('err');
@@ -152,17 +157,8 @@ export function updateRecord(state) {
     setNodeValue('company', record.companyName);
     setNodeValue('city', record.city);
     setStyleDisplay('modal-create-update', 'block');
+    checkValidation(state);
   }
-}
-
-export function deleteRecord(state) {
-  if (state.currentRecordId) {
-    const db = getInputValue('selectDB');
-    sendData(`${state.baseURL}/${db}/${state.currentRecordId}`, {}, 'DELETE').then(() => {
-      renderTable(db, state);
-    });
-  }
-  setStyleDisplay('modal-delete', 'none');
 }
 
 export function clearAllRecord(state) {
@@ -171,3 +167,18 @@ export function clearAllRecord(state) {
     renderTable(db, state);
   });
 }
+
+export function deleteRecord(state) {
+  if (state.isDelete) {
+    if (state.currentRecordId) {
+      const db = getInputValue('selectDB');
+      sendData(`${state.baseURL}/${db}/${state.currentRecordId}`, {}, 'DELETE').then(() => {
+        renderTable(db, state);
+      });
+    }
+  } else {
+    clearAllRecord(state);
+  }
+  setStyleDisplay('modal-delete', 'none');
+}
+

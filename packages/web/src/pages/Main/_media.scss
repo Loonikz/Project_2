@@ -43,7 +43,7 @@
       &__header {
         display: grid;
 
-        &--select {
+        &--selects {
           width: 100%;
         }
 
@@ -110,6 +110,32 @@
   }
 
   .modal {
+
+    &__content-modal-delete {
+      margin: 25% auto;
+      width: 60%;
+      font-size: 13px;
+      height: 112px;
+      padding-bottom: 25px;
+
+      &--dialog {
+        padding: 25px;
+        margin: 0;
+      }
+    }
+
+    &__active {
+      padding-bottom: 25px;
+      margin-bottom: 25px;
+
+      &--btn {
+        width: 60%;
+        font-size: 12px;
+        padding: 3px;
+        height: 25px;
+      }
+    }
+
     &__tab-menu {
       &--link {
         font-size: 12px;
@@ -147,7 +173,7 @@
       &__header {
         display: grid;
 
-        &--select {
+        &--selects {
           margin: 5px 0;
           width: 100%;
         }
@@ -170,16 +196,44 @@
           width: 100%;
         }
       }
+
       &__data {
       }
-
+      &--closed {
+        font-size: 20px;
+      }
     }
   }
 
   .modal {
+    &__content-modal-delete {
+      margin: 30% auto;
+      width: 60%;
+      font-size: 13px;
+      padding-bottom: 25px;
+
+      &--dialog {
+        padding: 25px;
+        margin: 0;
+      }
+    }
+
+    &__active {
+      padding-bottom: 25px;
+      margin-bottom: 25px;
+
+      &--btn {
+        width: 60%;
+        font-size: 12px;
+        padding: 3px;
+        height: 25px;
+      }
+    }
+
     &__tab-menu {
       &--link {
-
+        font-size: 18px;
+        height: 18px;
       }
     }
 
@@ -187,24 +241,64 @@
     }
 
     &--title {
-
+      font-size: 20px;
     }
 
     &__content-modal {
-
+      width: 60%;
+      margin: 5% auto;
+      font-size: 18px;
     }
 
     &--button {
-
+      margin-top: 10px;
+      margin-left: 35px;
+      margin-bottom: 15px;
+      font-size: 18px;
     }
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1024px) and (max-width: 1920px) {
+
+  .nav-container {
+    align-items: center;
+
+    &__logo {
+      font-size: 50px;
+    }
+
+    &__buttons {
+      &--select {
+        font-size: 20px;
+      }
+
+      &--profile {
+        background: var(--btn-profile);
+        width: 35px;
+        height: 35px;
+        margin: 15px;
+        padding: 10px;
+      }
+
+      &--logout {
+        background: var(--btn-logout);
+        width: 35px;
+        height: 35px;
+        margin: 15px;
+        padding: 10px;
+
+        &:hover {
+          background: var(--btn-logout-hover-250);
+        }
+      }
+    }
+  }
 
   .container {
 
     &__content {
+      padding: 30px;
 
       &__header {
 
@@ -213,44 +307,231 @@
         }
 
         &--list {
-          width: 45%;
+          width: 48%;
+          font-size: 15px;
+          height: 40px;
         }
 
         &--panel {
+          margin: 0 15px;
           width: 50%;
+          align-items: center;
         }
 
         &--btn {
-          width: 22%;
+          font-size: 12px;
+          padding: 8px;
+          height: 40px;
+          width: 23%;
         }
 
         &--search {
           width: 20%;
+          height: 40px;
+          margin: 5px auto;
+        }
+      }
+
+      &__data {
+        font-size: 18px;
+
+        table {
+          width: 100%;
         }
       }
     }
   }
 
   .modal {
-    &__tab-menu {
-      &--link {
+    &__content-modal-delete {
+      margin: 15% auto;
+      width: 40%;
+      font-size: 25px;
+      padding-bottom: 15px;
 
+      &--dialog {
+        padding: 25px;
+        margin: 0;
+      }
+    }
+
+    &__active {
+
+      &--btn {
+        width: 60%;
+        font-size: 18px;
+        padding: 8px;
+      }
+    }
+    &--closed {
+      font-size: 25px;
+    }
+  }
+}
+
+@media (min-width: 1921px) {
+
+  .nav-container {
+    align-items: center;
+
+    &__logo {
+      font-size: 70px;
+    }
+
+    &__buttons {
+      &--select {
+        font-size: 30px;
+      }
+
+      &--profile {
+        background: var(--btn-profile-big);
+        width: 50px;
+        height: 50px;
+        margin: 15px;
+        padding: 10px;
+        &:hover {
+          background: var(--btn-profile-hover-big);
+        }
+      }
+
+      &--logout {
+        background: var(--btn-logout-big);
+        width: 50px;
+        height: 50px;
+        margin: 15px;
+        padding: 10px;
+
+        &:hover {
+          background: var(--btn-logout-hover-big);
+        }
+      }
+    }
+  }
+
+  .container {
+
+    &__content {
+      padding: 40px;
+
+      &__header {
+
+        &--selects {
+          width: 30%;
+        }
+
+        &--list {
+          width: 48%;
+          font-size: 25px;
+          height: 50px;
+        }
+
+        &--panel {
+          margin: 0 15px;
+          width: 50%;
+          align-items: center;
+        }
+
+        &--btn {
+          font-size: 25px;
+          padding: 8px;
+          height: 50px;
+          width: 23%;
+        }
+
+        &--search {
+          width: 20%;
+          font-size: 25px;
+          height: 50px;
+        }
+      }
+
+      &__data {
+        margin-top: 25px;
+
+        &--table {
+          font-size: 35px;
+          width: 100%;
+        }
+        &--items-head {
+          height: 100px;
+        }
+
+          &--items-body {
+          padding: 20px;
+        }
+      }
+    }
+  }
+
+  .modal {
+    &__content-modal-delete {
+      margin: 15% auto;
+      width: 40%;
+      font-size: 45px;
+      padding-bottom: 15px;
+      height: 315px;
+
+      &--dialog {
+        padding: 68px 0;
+        margin: 0;
       }
     }
 
     &--closed {
+      font-size: 45px;
     }
 
-    &--title {
+    &__active {
+      margin-top: 25px;
 
+      &--btn {
+        width: 60%;
+        font-size: 38px;
+        padding: 8px;
+        margin: 20px;
+      }
+    }
+
+    &__message{
+      font-size: 25px;
     }
 
     &__content-modal {
+      font-size: 40px;
+      margin: 8% auto;
+      width: 30%;
+    }
 
+    &__form-create {
+      margin: 5px auto;
+      padding-top: 15px;
+    }
+
+    &--title {
+      font-size: 45px;
+      margin: 35px;
+    }
+
+    &__tab-menu {
+
+      &--link {
+        padding: 25px;
+        height: 60px;
+        font-size: 35px;
+      }
+    }
+
+    &--input {
+      height: 45px;
     }
 
     &--button {
-
+      margin-top: 35px;
+      margin-left: 55px;
+      margin-bottom: 45px;
+      padding: 10px;
+      font-size: 35px;
     }
   }
 }
+
