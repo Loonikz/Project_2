@@ -21,7 +21,7 @@ body {
   --text-btn-sign-up: #000000;
 }
 
-.dark{
+.dark {
   --background: url('../../assets/svg/background_dark.svg');
   --logo-color: #FFFFFF;
   --btn-them: url("../../assets/svg/icon_light.svg");
@@ -143,6 +143,19 @@ body {
       width: 100%;
       cursor: pointer;
       box-shadow: var(--btn-shadow);
+
+      &:hover {
+        box-shadow: var(--hover-button);
+      }
+
+      &:active {
+        box-shadow: var(--active-button);
+      }
+
+      &:disabled {
+        cursor: none;
+        color: #FFFFFF;
+      }
     }
 
     &--text {
@@ -155,7 +168,7 @@ body {
       flex-wrap: wrap;
     }
 
-    &--p{
+    &--p {
       margin: 5px 0 0 5px;
       color: var(--text-btn-color);
     }
