@@ -50,7 +50,6 @@ body {
   width: 90%;
   justify-content: space-between;
 
-
   &__logo {
     color: var(--logo-color);
     user-select: none;
@@ -66,7 +65,6 @@ body {
       border: none;
       padding: 10px;
       font-family: 'Montserrat', sans-serif;
-      font-size: 20px;
       cursor: pointer;
     }
   }
@@ -83,12 +81,9 @@ body {
 
   &__form {
     font-family: 'Montserrat', sans-serif;
-    font-size: 20px;
-    width: 40%;
     margin: auto;
     background: var(--bg-container);
     padding: 40px;
-    height: auto;
     color: var(--text-color);
     border-radius: 20px;
     justify-content: center;
@@ -162,11 +157,6 @@ body {
       &:active {
         box-shadow: var(--active-button);
       }
-
-      &:disabled {
-        cursor: none;
-        color: #FFFFFF;
-      }
     }
 
     &--text {
@@ -194,3 +184,5 @@ body {
     }
   }
 }
+
+@import "media";
