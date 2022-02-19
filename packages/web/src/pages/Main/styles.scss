@@ -2,7 +2,7 @@ body {
   background: var(--background);
   background-size: cover;
   font-family: 'Montserrat', sans-serif;
-  font-size: 25px;
+  font-size: 30px;
   --logo-color: #F00418;
   --background: url("../../assets/svg/backgroud_light.svg");
   --btn-them: url("../../assets/svg/icon_dark.svg");
@@ -17,6 +17,8 @@ body {
   --btn-profile-hover: url('../../assets/svg/icon-profile-light-hover.svg');
   --btn-profile-250: url('../../assets/svg/icon-profile-light250.svg');
   --btn-logout: url('../../assets/svg/logout_light.svg');
+  --btn-logout-250: url('../../assets/svg/logout_light-250.svg');
+  --btn-logout-hover-250: url('../../assets/svg/logout_light-hover-250.svg');
   --btn-logout-hover: url('../../assets/svg/logout_light-hover.svg');
 
   --text-select: #000000;
@@ -53,6 +55,8 @@ body {
   --btn-profile-hover: url('../../assets/svg/icon-profile-dark-hover.svg');
   --btn-profile-250: url('../../assets/svg/icon-profile-dark250.svg');
   --btn-logout: url('../../assets/svg/logout_dark.svg');
+  --btn-logout-250: url('../../assets/svg/logout_dark-250.svg');
+  --btn-logout-hover-250: url('../../assets/svg/logout_dark-hover-250.svg');
   --btn-logout-hover: url('../../assets/svg/logout_dark-hover.svg');
 
   --text-select: #7F1581;
@@ -227,15 +231,14 @@ body {
     display: flex;
 
     &--btn {
-      text-decoration: none;
       background: var(--btn-form);
       color: var(--text-btn);
       width: 50%;
       font-size: 25px;
       align-items: center;
-      height: 35px;
       margin: 15px;
       padding: 8px;
+      border: none;
     }
   }
 
@@ -364,10 +367,17 @@ body {
         &:active {
 
         }
+
+        &:disabled{
+          cursor: none;
+          background: #55608F;
+          color: #FFFFFF;
+        }
       }
 
       &--search {
         margin-left: 5px;
+        margin-right: 10px;
         border: none;
         padding: 8px;
         font-family: "Montserrat", sans-serif;
@@ -388,7 +398,7 @@ body {
       &--table {
         border-collapse: collapse;
         color: var(--text-color);
-        font-size: 12px;
+        font-size: 18px;
         width: 100%;
       }
 

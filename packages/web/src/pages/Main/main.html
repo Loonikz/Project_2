@@ -89,8 +89,8 @@
     <span id='closed-modal-delete' class='modal--closed'>x</span>
     <p class="modal--message" data-i18n='message_delete'></p>
     <section class="modal__active">
-      <a class="modal__active--btn modal__active--yes" data-i18n='yes' href="#"></a>
-      <a class="modal__active--btn modal__active--no" data-i18n='no' href="#"></a>
+      <button class="modal__active--btn modal__active--yes" data-i18n='yes'></button>
+      <button class="modal__active--btn modal__active--no" data-i18n='no'></button>
     </section>
   </section>
 </section>
@@ -116,7 +116,7 @@
         <option value='ru'>Ru</option>
       </select>
     </section>
-    <button id='logout' class='nav-container__buttons--logout' alt></button>
+    <button id='logout' class='nav-container__buttons--logout'></button>
   </section>
 </header>
 <section class='container'>
@@ -148,8 +148,8 @@
 
       <section class='container__content__header--panel'>
         <button class='container__content__header--btn' id='create' data-i18n='create'></button>
-        <button class='container__content__header--btn' id='update' data-i18n='update'></button>
-        <button class='container__content__header--btn' id='delete' data-i18n='delete'>Delete
+        <button class='container__content__header--btn' id='update' data-i18n='update' disabled></button>
+        <button class='container__content__header--btn' id='delete' data-i18n='delete' disabled>Delete
         </button>
         <button class='container__content__header--btn' id='clear' data-i18n='clear'>ClearAll
         </button>

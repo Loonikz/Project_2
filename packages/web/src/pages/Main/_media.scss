@@ -19,6 +19,18 @@
         margin: 15px;
         padding: 5px;
       }
+
+      &--logout {
+        background: var(--btn-logout-250);
+        width: 15px;
+        height: 15px;
+        margin: 15px;
+        padding: 5px;
+
+        &:hover {
+          background: var(--btn-logout-hover-250);
+        }
+      }
     }
   }
 
