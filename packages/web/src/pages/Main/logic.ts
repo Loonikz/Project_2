@@ -1,12 +1,12 @@
 import { sendData } from '../../logic/request';
 import { confirmPasswordValidate, loginValidate, passwordValidate } from './validation';
-import { getInputValue, setInnerText, setStyleDisplay } from '../../logic/header/utils';
+import { getInputValue, setHref, setInnerText, setStyleDisplay } from '../../logic/header/utils';
 import { closeSecurity } from './modal';
 
 export function logout(state) {
   sendData(`${state.baseURL}/auth/logout`, {})
     .then(() => {
-      window.location.href = '/login';
+      setHref('/login');
     })
     .catch((err) => {
       console.log(err);

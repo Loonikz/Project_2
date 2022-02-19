@@ -75,7 +75,7 @@ export function getValueLocalStorage(key: string) {
   if (Object.hasOwnProperty.call(localStorage, key)) {
     return localStorage[key];
   }
-  return false;
+  return '';
 }
 
 function setNodeSelectedText(id, selectIndex) {
@@ -104,12 +104,20 @@ export function setStyleDisplay(id: string, value: string): boolean {
   return false;
 }
 
+export function setBackground(node, color) {
+  if (node) {
+    (<HTMLElement>node).style.backgroundColor = color;
+    return true;
+  }
+  return false;
+}
+
 export function selectRow(state, event: { target: HTMLTableElement }) {
   if (state.currentNode) {
-    state.currentNode.style.backgroundColor = '';
+    setBackground(state.currentNode, '');
   }
   const node: Node = event.target.parentNode;
-  node.style.backgroundColor = 'red';
+  setBackground(state.currentNode, 'red');
   state.setCurrentNode(node);
   const nodeId: HTMLTableElement = <HTMLTableElement>node.firstChild;
   state.setCurrentRecordId(nodeId.innerText);
@@ -119,6 +127,14 @@ export function setNodeValue(id: string, value = '') {
   const node = <HTMLInputElement>document.getElementById(id);
   if (node) {
     node.value = value;
+    return true;
+  }
+  return false;
+}
+
+export function setHref(link: string): boolean {
+  if (window.location) {
+    window.location.href = link;
     return true;
   }
   return false;

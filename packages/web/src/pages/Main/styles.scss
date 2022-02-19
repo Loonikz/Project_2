@@ -2,7 +2,7 @@ body {
   background: var(--background);
   background-size: cover;
   font-family: 'Montserrat', sans-serif;
-  font-size: 25px;
+  font-size: 30px;
   --logo-color: #F00418;
   --background: url("../../assets/svg/backgroud_light.svg");
   --btn-them: url("../../assets/svg/icon_dark.svg");
@@ -25,7 +25,7 @@ body {
   --text-color-label: #F08686;
   --bg-btn: #F00418;
   --border-cont: none;
-  --bg-input: #DAD7D7;
+  --bg-input: #c2bfbf;
   --bg-head-table: #999999;
   --hover-table-color: #FFFFFF;
   --bg-tr-odd: #DAD7D7;
@@ -36,6 +36,8 @@ body {
   --btn-form: #F00418;
   --text-btn-form: #FFFFFF;
   --border-table-click: 3px solid #F08686;
+  --hover-button: 2px 7px 8px 0px rgba(34, 60, 80, 0.31);
+  --active-button: 0px -1px 10px 2px rgba(34, 60, 80, 0.2) inset;
 }
 
 .dark {
@@ -72,6 +74,9 @@ body {
   --btn-form: #FFFFFF;
   --text-btn-form: #000000;
   --border-table-click: 3px solid #A562DF;
+  --hover-button: 5px 5px 5px 1px rgba(34, 60, 80, 0.6);
+  --active-button: 0px -1px 10px 2px rgba(34, 60, 80, 0.71) inset;
+
 }
 
 .modal {
@@ -93,7 +98,7 @@ body {
 
   &__content-modal {
     font-family: 'Montserrat', sans-serif;
-    font-size: 10px;
+    font-size: 20px;
     background: var(--bg-container);
     width: 550px;
     margin: 3% auto;
@@ -214,6 +219,20 @@ body {
     font-size: 15px;
     background: var(--btn-form);
     color: var(--text-btn-form);
+
+    &:disabled {
+      cursor: none;
+      background: var(--bg-tr);
+      color: #FFFFFF;
+    }
+
+    &:hover {
+      box-shadow: var(--hover-button);
+    }
+
+    &:active {
+      box-shadow: var(--active-button);
+    }
   }
 
   &__content-modal-delete {
@@ -230,15 +249,14 @@ body {
     display: flex;
 
     &--btn {
-      text-decoration: none;
       background: var(--btn-form);
       color: var(--text-btn);
       width: 50%;
       font-size: 25px;
       align-items: center;
-      height: 35px;
       margin: 15px;
       padding: 8px;
+      border: none;
     }
   }
 
@@ -349,16 +367,23 @@ body {
         cursor: pointer;
 
         &:hover {
-
+          box-shadow: var(--hover-button);
         }
 
         &:active {
+          box-shadow: var(--active-button);
+        }
 
+        &:disabled {
+          cursor: none;
+          background: var(--bg-tr);
+          color: #FFFFFF;
         }
       }
 
       &--search {
         margin-left: 5px;
+        margin-right: 10px;
         border: none;
         padding: 8px;
         font-family: "Montserrat", sans-serif;
@@ -378,6 +403,7 @@ body {
       &--table {
         border-collapse: collapse;
         color: var(--text-color);
+        font-size: 18px;
         width: 100%;
       }
 

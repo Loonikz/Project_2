@@ -33,9 +33,9 @@ import {
 import { closeCreateModal, closeSecurity } from './modal';
 import { changeLogin, changePassword, logout } from './logic';
 
-function init() {
+export function init() {
   const state = {
-    baseURL: 'http://localhost:3000',
+    baseURL: 'https://wannaworkinginwizarddev.herokuapp.com',
     mongoDB: [],
     mySQL: [],
     currentRecordId: undefined,
@@ -52,6 +52,9 @@ function init() {
       this.isUpdate = value;
     },
   };
+  state.setCurrentNode(null);
+  state.setIsUpdate(false);
+  state.setCurrentRecordId(undefined);
   // drop down
   fromLocaleStorageToDropDown('selectDB', 'DB', ['MySQL', 'MongoDB']);
   fromLocaleStorageToDropDown('changeTheme', 'theme', ['light', 'dark']);
