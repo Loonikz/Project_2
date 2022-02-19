@@ -21,7 +21,7 @@ export function sendRegister(state): boolean {
     } else if (response.status === 400) {
       setInnerText('sign-up-login-message', 'This login already in use');
     }
-  });
+  }).catch((err) => console.log(err));
   return true;
   // postRegister(state.urlRegister, data)
 }

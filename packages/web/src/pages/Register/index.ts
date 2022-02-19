@@ -8,7 +8,7 @@ import {
 } from './logic';
 import { confirmPasswordValidate, passwordValidate, loginValidate } from '../Main/validation';
 
-function init() {
+export function init() {
   const state = {
     baseURL: 'https://wannaworkinginwizarddev.herokuapp.com',
   };

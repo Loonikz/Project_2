@@ -10,13 +10,12 @@ export function loginIn(state): boolean {
     return false;
   }
   const data = collectDataLogin('login-form');
-  console.log(data)
   sendData(`${state.baseURL}/auth/login`, data).then((response: Response) => {
     if (response.status === 200) {
       window.location.href = response.url;
     } else if (response.status === 400) {
       setInnerText('password-reg-message','Wrong login or password')
     }
-  });
+  }).catch((err) => console.log(err));
   return true;
 }
