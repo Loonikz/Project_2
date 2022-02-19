@@ -89,6 +89,12 @@ body {
     justify-content: center;
     text-align: left;
 
+    &__message{
+      font-size: 15px;
+      color: #F00418;
+      margin: 5px;
+    }
+
     &--avatar {
       display: block;
       background-image: var(--bg-avatar);
@@ -184,3 +190,5 @@ body {
     }
   }
 }
+
+@import "media";
