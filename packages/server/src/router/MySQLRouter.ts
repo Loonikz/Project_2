@@ -31,6 +31,7 @@ export class MySQLRouter {
         .catch(() => {
           res.status(409).end();
         });
+      mySQL.close();
     } catch (e) {
       res
         .status(400)
@@ -51,6 +52,7 @@ export class MySQLRouter {
         .catch(() => {
           res.status(409).end();
         });
+      mySQL.close();
     } catch (e) {
       res
         .status(400)
@@ -71,6 +73,7 @@ export class MySQLRouter {
         .catch(() => {
           res.status(409).end();
         });
+      mySQL.close();
     } catch (e) {
       res
         .status(400)
@@ -90,6 +93,7 @@ export class MySQLRouter {
         .catch(() => {
           res.status(409).end();
         });
+      mySQL.close();
     } catch (e) {
       res
         .status(400)
@@ -109,6 +113,7 @@ export class MySQLRouter {
         .catch(() => {
           res.status(409).end();
         });
+      mySQL.close();
     } catch (e) {
       res
         .status(400)
