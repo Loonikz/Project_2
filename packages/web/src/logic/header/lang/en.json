@@ -25,14 +25,14 @@
   "last_name": "Last name",
   "age": "Age",
   "city": "City",
-  "number": "Number",
+  "number": "Phone",
   "email": "Email",
   "company": "Company",
   "create": "Create",
   "update": "Update",
   "delete": "Delete",
   "clear": "ClearAll",
-  "message_delete": "Are you sure you want to continue?",
+  "message_delete": "Are you sure to continue?",
   "yes": "Yes",
   "no": "No"
 }
