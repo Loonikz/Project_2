@@ -181,4 +181,3 @@ export function deleteRecord(state) {
   }
   setStyleDisplay('modal-delete', 'none');
 }
-

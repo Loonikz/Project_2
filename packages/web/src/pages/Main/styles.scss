@@ -99,7 +99,7 @@ body {
   height: 100%;
   overflow: auto;
 
-  &__message{
+  &__message {
     font-size: 15px;
     color: #ff5d5d;
     margin: 5px;
@@ -314,7 +314,7 @@ body {
       margin: 2px;
     }
 
-    &--option{
+    &--option {
       color: #000000;
       line-height: 1em;
     }
@@ -376,7 +376,7 @@ body {
         }
       }
 
-      &--panel{
+      &--panel {
       }
 
       &--btn {
@@ -448,6 +448,40 @@ body {
         }
       }
 
+      @-webkit-keyframes moving-gradient {
+        0% {
+          background-position: -250px 0;
+        }
+        100% {
+          background-position: 250px 0;
+        }
+      }
+
+      &--loading {
+        padding: 10px;
+        height: 50px;
+
+        &:nth-child(odd) {
+          border-right: 1px solid #FFFFFF;
+        }
+
+        &:nth-of-type(even) {
+          border-right: 1px solid #FFFFFF;
+        }
+      }
+
+      &--span {
+        display: block;
+        height: 15px;
+        background: linear-gradient(to right, #cccccc 20%, #ababab 50%, #cccccc 80%);
+        background-size: 500px 100px;
+        animation-name: moving-gradient;
+        animation-duration: 1s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+        animation-fill-mode: forwards;
+      }
+
       &--items-body {
         padding: 10px;
 
@@ -479,7 +513,9 @@ body {
     }
   }
 }
+
 .red {
   background-color: red !important;
 }
+
 @import 'media';
