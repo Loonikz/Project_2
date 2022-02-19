@@ -15,7 +15,7 @@ export function logout(state) {
 
 export function changeLogin(state) {
   if (
-    loginValidate() &&
+    loginValidate('new-login') &&
     passwordValidate('password') &&
     confirmPasswordValidate('password', 'confirm-password')
   ) {

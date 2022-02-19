@@ -93,7 +93,7 @@ function init() {
   addListener('company', 'input', validationCompany.bind(null, state));
   // security
   addListener('changeLogin', 'click', changeLogin.bind(null, state));
-  addListener('new-login', 'input', loginValidate);
+  addListener('new-login', 'input', loginValidate.bind(null, 'new-login'));
   addListener('password', 'input', passwordValidate.bind(null, 'password'));
   addListener('confirm-password', 'input', confirmPasswordValidate.bind(null, 'confirm-password'));
 

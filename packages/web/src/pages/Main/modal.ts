@@ -26,7 +26,7 @@ export function closeSecurity() {
   setNodeValue('new-pass');
   setNodeValue('new-password');
   setNodeValue('confirm-pass-edit');
-  setInnerText(`changeLogin-message`, '');
+  setInnerText(`new-pass-message`, '');
   setInnerText(`password-message`, '');
   setInnerText(`confirm-password-message`, '');
   setInnerText(`change-login-message`, '');

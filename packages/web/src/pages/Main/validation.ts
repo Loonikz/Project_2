@@ -80,15 +80,15 @@ export function checkValidation(state): boolean {
   return state.validateStatus.reduce((acc, status) => acc && status, true);
 }
 
-export function loginValidate() {
+export function loginValidate(idLogin) {
   const loginRegex = /^[a-zA-Z0-9_]*$/;
   const value: string = getInputValue('new-login');
   if (value.length >= 6 && value.length <= 20 && value.match(loginRegex)) {
-    setInnerText('changeLogin-message', '');
+    setInnerText(`${idLogin}-message`, '');
     return true;
   }
   setInnerText(
-    'changeLogin-message',
+    `${idLogin}-message`,
     'Login may be contain only letters, numbers, and underscores. Login at least 6 characters',
   );
   return false;
