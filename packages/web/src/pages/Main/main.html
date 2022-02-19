@@ -46,7 +46,9 @@
       <p class='container__form__message' id='company-message'></p>
 
       <button class='modal--button' type='button' data-i18n='cancel' id="cancel-create"></button>
-      <button class='modal--button' type='button' data-i18n='save' id='save-create'></button>
+
+      <button class='modal--button' type='button' data-i18n='save' id='save-create' disabled></button>
+
     </form>
   </section>
 </section>
@@ -58,7 +60,7 @@
       <a class='modal__tab-menu--link active' data-tab='1'
          href='#' data-i18n='label_login'></a>
       <a class='modal__tab-menu--link' data-tab='2' href='#'
-         data-i18n='password'>password</a>
+         data-i18n='label_password'></a>
     </section>
     <section class='modal__form'>
       <form class='modal__form-edit active-form' data-tab-content="1">
@@ -77,6 +79,7 @@
 
         <button class='modal--button' type='button' data-i18n='cancel' id="cancelS"></button>
         <button class='modal--button' type='button' data-i18n='save' id="changeLogin"></button>
+
       </form>
 
       <form class='modal__form-edit' data-tab-content="2">
@@ -94,7 +97,9 @@
         <p class='container__form__message' id='change-password-message'></p>
 
         <button class='modal--button' type='button' data-i18n='cancel' id="cancel"></button>
+
         <button class='modal--button' type='button' data-i18n='save' id='changePassword'></button>
+
       </form>
     </section>
   </section>
@@ -104,9 +109,10 @@
     <span id='closed-modal-delete' class='modal--closed'>x</span>
     <p class="modal--message" data-i18n='message_delete'></p>
     <section class="modal__active">
-      <button class="modal__active--btn modal__active--yes" data-i18n='yes' href="#"
-              id="deleteRecord"></button>
-      <button class="modal__active--btn modal__active--no" data-i18n='no' href="#"></button>
+      
+      <button class="modal__active--btn modal__active--yes" data-i18n='yes' id="deleteRecord"></button>
+      <button class="modal__active--btn modal__active--no" data-i18n='no'></button>
+
     </section>
   </section>
 </section>
@@ -132,7 +138,7 @@
         <option value='ru'>Ru</option>
       </select>
     </section>
-    <button id='logout' class='nav-container__buttons--logout' alt></button>
+    <button id='logout' class='nav-container__buttons--logout'></button>
   </section>
 </header>
 <section class='container'>
@@ -164,11 +170,9 @@
 
       <section class='container__content__header--panel'>
         <button class='container__content__header--btn' id='create' data-i18n='create'></button>
-        <button class='container__content__header--btn' id='update' data-i18n='update'></button>
-        <button class='container__content__header--btn' id='delete' data-i18n='delete'>Delete
-        </button>
-        <button class='container__content__header--btn' id='clear' data-i18n='clear'>ClearAll
-        </button>
+        <button class='container__content__header--btn' id='update' data-i18n='update' disabled></button>
+        <button class='container__content__header--btn' id='delete' data-i18n='delete' disabled></button>
+        <button class='container__content__header--btn' id='clear' data-i18n='clear'></button>
       </section>
 
       <input class='container__content__header--search' type='search' name='search'

@@ -148,6 +148,19 @@ body {
       width: 100%;
       cursor: pointer;
       box-shadow: var(--btn-shadow);
+
+      &:hover {
+        box-shadow: var(--hover-button);
+      }
+
+      &:active {
+        box-shadow: var(--active-button);
+      }
+
+      &:disabled {
+        cursor: none;
+        color: #FFFFFF;
+      }
     }
 
     &--text {

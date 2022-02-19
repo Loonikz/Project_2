@@ -19,6 +19,18 @@
         margin: 15px;
         padding: 5px;
       }
+
+      &--logout {
+        background: var(--btn-logout-250);
+        width: 15px;
+        height: 15px;
+        margin: 15px;
+        padding: 5px;
+
+        &:hover {
+          background: var(--btn-logout-hover-250);
+        }
+      }
     }
   }
 
@@ -158,35 +170,32 @@
           width: 100%;
         }
       }
+      &__data {
+      }
+
     }
   }
 
   .modal {
     &__tab-menu {
       &--link {
-        font-size: 12px;
-        height: 12px;
-        padding: 20px;
+
       }
     }
 
     &--closed {
-      font-size: 20px;
     }
 
     &--title {
-      margin: 14px auto;
-      font-size: 12px;
+
     }
 
     &__content-modal {
-      width: 60%;
-      font-size: 12px;
+
     }
 
     &--button {
-      margin-left: 30px;
-      font-size: 12px;
+
     }
   }
 }
@@ -219,6 +228,29 @@
           width: 20%;
         }
       }
+    }
+  }
+
+  .modal {
+    &__tab-menu {
+      &--link {
+
+      }
+    }
+
+    &--closed {
+    }
+
+    &--title {
+
+    }
+
+    &__content-modal {
+
+    }
+
+    &--button {
+
     }
   }
 }

@@ -4,39 +4,29 @@ import { changeLng } from '../../logic/header/localization';
 import { changeTheme } from '../../logic/header/theme';
 import { getLocalStorage } from '../../logic/header/getLocalStorage';
 import {
-  inputLoginValidation,
-  inputPasswordConfirmValidation,
-  inputPasswordValidation,
-  loginValidate,
   sendRegister,
-  validateStatusCheck,
 } from './logic';
+import { confirmPasswordValidate, passwordValidate, loginValidate } from '../Main/validation';
 
 function init() {
   const state = {
-    urlRegister: 'http://localhost:3000/auth/registration',
-    validateStatus: [false, false, false]
+    baseURL: 'https://wannaworkinginwizarddev.herokuapp.com',
   };
-  addListener('sign-up-login', 'input', () => {
-    loginValidate.call(null, state);
-    validateStatusCheck.call(null, state);
-  });
   fromLocaleStorageToDropDown('changeTheme', 'theme', ['light', 'dark']);
   fromLocaleStorageToDropDown('changeLanguage', 'lang', ['en', 'ru']);
   changeLng();
 
-  addListener('sign-up-login', 'input', inputLoginValidation.bind(null, state));
-  addListener('sign-up-password', 'input', inputPasswordValidation.bind(null, state));
+  addListener('registration-btn', 'click', sendRegister.bind(null, state));
+  addListener('sign-up-login', 'input', loginValidate.bind(null, 'sign-up-login'));
+  addListener('sign-up-password', 'input', passwordValidate.bind(null, 'sign-up-password'));
   addListener(
     'sign-up-password-confirm',
     'change',
-    inputPasswordConfirmValidation.bind(null, state),
+    confirmPasswordValidate.bind(null, 'sign-up-password', 'sign-up-password-confirm'),
   );
 
   addListener('dropdownLanguage', 'change', changeLng);
   addListener('dropdownTheme', 'change', changeTheme);
-
-  addListener('registration-btn', 'click', sendRegister.bind(null, state));
 
   getLocalStorage();
 }

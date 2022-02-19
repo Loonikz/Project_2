@@ -35,7 +35,7 @@ import { changeLogin, changePassword, logout } from './logic';
 
 export function init() {
   const state = {
-    baseURL: 'http://localhost:3000',
+    baseURL: 'https://wannaworkinginwizarddev.herokuapp.com',
     mongoDB: [],
     mySQL: [],
     currentRecordId: undefined,
