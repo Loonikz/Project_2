@@ -4,9 +4,10 @@ import {
   setInnerText,
   hasAttribute,
   setDisabledAttribute,
-  removeDisabledAttribute, collectData,
+  removeDisabledAttribute,
+  collectData,
 } from '../../logic/header/utils';
-import { sendData } from "../../logic/request";
+import { sendData } from '../../logic/request';
 
 export function loginValidate(state): boolean {
   const loginRegex = /^[a-zA-Z0-9_]*$/;
@@ -134,8 +135,9 @@ export function sendRegister(state): boolean {
     if (response.status === 200) {
       window.location.href = response.url;
     } else if (response.status === 400) {
-      setInnerText('login-message','Login busy')
+      setInnerText('login-message', 'Login busy');
     }
   });
+  return true;
   // postRegister(state.urlRegister, data)
 }
