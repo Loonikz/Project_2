@@ -75,15 +75,19 @@
       &__data {
         font-size: 12px;
 
-        table {
+        &--span{
+          height: 100%;
+        }
+
+        &--table {
           width: 100%;
         }
 
-        table thead {
+        &--head {
           display: none;
         }
 
-        table tbody tr {
+        &--tr {
           box-shadow: 0 0 0.5em #666666;
           border: none;
           display: block;
