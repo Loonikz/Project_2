@@ -35,7 +35,6 @@
   }
 
   .container {
-
     &__form {
       font-size: 18px;
       padding: 30px;
@@ -145,58 +144,135 @@
       }
     }
 
-    .modal {
+    &__content {
+      padding: 12px;
+      width: 90%;
 
-      &__content-modal-delete {
-        margin: 25% auto;
-        width: 60%;
-        font-size: 13px;
-        height: 112px;
-        padding-bottom: 25px;
+      &__header {
+        display: grid;
 
-        &--dialog {
-          padding: 25px;
-          margin: 0;
+        &--selects {
+          width: 100%;
         }
-      }
 
-      &__active {
-        padding-bottom: 25px;
-        margin-bottom: 25px;
+        &--list {
+          font-size: 11px;
+          margin-right: 0;
+          width: 100%;
+          height: 29px;
+        }
+
+        &--panell {
+          width: 100%;
+        }
 
         &--btn {
-          width: 60%;
           font-size: 12px;
           padding: 3px;
-          height: 25px;
+          height: 28px;
+          width: 100%;
+        }
+
+        &--search {
+          width: 100%;
+          height: 28px;
+          margin: 5px auto;
         }
       }
 
-      &__tab-menu {
-        &--link {
-          font-size: 12px;
-          height: 15px;
+      &__data {
+        font-size: 12px;
+
+        &--span{
+          height: 80%;
+          width: 90%;
+          margin: 0 auto;
+        }
+
+        table {
+          width: 100%;
+        }
+
+        table thead {
+          display: none;
+        }
+
+        table tbody tr {
+          box-shadow: 0 0 0.5em #666666;
+          border: none;
+          display: block;
+        }
+
+        table tbody tr th {
+          padding: 0.4em;
+          text-align: right;
+          display: block;
+          width: 97%;
+        }
+
+        table tbody tr th[data-label]:before {
+          content: attr(data-label);
+          float: left;
+          font-weight: bold;
+        }
+
+        table tbody tr th.numeric {
+          text-align: left;
         }
       }
+    }
+  }
 
-      &--closed {
-        font-size: 20px;
+  .modal {
+    &__content-modal-delete {
+      margin: 25% auto;
+      width: 60%;
+      font-size: 13px;
+      height: 112px;
+      padding-bottom: 25px;
+
+      &--dialog {
+        padding: 25px;
+        margin: 0;
       }
+    }
 
-      &--title {
-        font-size: 20px;
-      }
+    &__active {
+      padding-bottom: 25px;
+      margin-bottom: 25px;
 
-      &__content-modal {
-        margin: 15% auto;
-        width: 90%;
+      &--btn {
+        width: 60%;
         font-size: 12px;
+        padding: 3px;
+        height: 25px;
       }
+    }
 
-      &--button {
-        margin-left: 17px;
+    &__tab-menu {
+      &--link {
         font-size: 12px;
+        height: 15px;
       }
+    }
+
+    &--closed {
+      font-size: 20px;
+    }
+
+    &--title {
+      font-size: 20px;
+    }
+
+    &__content-modal {
+      margin: 15% auto;
+      width: 90%;
+      font-size: 12px;
+    }
+
+    &--button {
+      margin-left: 17px;
+      font-size: 12px;
     }
   }
 }
@@ -208,10 +284,10 @@
     &__form {
       font-size: 18px;
       padding: 30px;
-      width: 35%;
+      width: 40%;
 
-      &__message{
-        font-size: 12px;
+      &__message {
+        font-size: 10px;
         margin: 5px;
       }
 
@@ -226,13 +302,13 @@
 
       &--input {
         font-size: 18px;
-        height: 25px;
+        height: 20px;
       }
 
       &--button {
         padding: 10px;
-        margin-top: 35px;
-        margin-left: 15px;
+        margin-top: 25px;
+        margin-left: 10px;
         font-size: 18px;
       }
 
@@ -377,7 +453,7 @@
       padding: 40px;
       width: 35%;
 
-      &__message{
+      &__message {
         font-size: 15px;
         margin: 5px;
       }
@@ -529,7 +605,7 @@
       font-size: 40px;
       padding: 60px;
 
-      &__message{
+      &__message {
         font-size: 20px;
         margin: 5px;
       }
