@@ -125,3 +125,5 @@ export function confirmPasswordValidate(idPass, idConfirmPass) {
   setInnerText(`${idConfirmPass}-message`, i18next.t('error_confirm_pass'));
   return false;
 }
+
+export default { loginValidate, confirmPasswordValidate, passwordValidate }
