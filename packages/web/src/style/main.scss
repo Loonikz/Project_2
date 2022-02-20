@@ -92,7 +92,7 @@
     &__data {
       border: var(--border-cont);
       border-radius: 15px;
-      overflow: hidden;
+      overflow: auto;
 
       &--table {
         border-collapse: collapse;
