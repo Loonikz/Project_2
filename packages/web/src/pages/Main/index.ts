@@ -31,7 +31,7 @@ import {
   validationName,
   validationPhone,
 } from './validation';
-import { closeCreateModal, closeSecurity } from './modal';
+import { closeCreateModal, closeSecurity, eventClickWithoutModal } from './modal';
 import { changeLogin, changePassword, clickClear, clickDelete, logout } from './logic';
 // import { eventClickWithoutModal } from '../../logic/header/eventClickWithoutModal';
 
@@ -113,6 +113,21 @@ export function init() {
     'confirm-pass-edit',
     'input',
     confirmPasswordValidate.bind(null, 'confirm-pass-edit'),
+  );
+  addListener(
+    'modal-create-update',
+    'click',
+    eventClickWithoutModal.bind(null, 'modal-create-update', 'modal__content-modal'),
+  );
+  addListener(
+    'modal-security',
+    'click',
+    eventClickWithoutModal.bind(null, 'modal-security', 'modal__content-modal'),
+  );
+  addListener(
+    'modal-delete',
+    'click',
+    eventClickWithoutModal.bind(null, 'modal-delete', 'modal__content-modal-delete') ,
   );
   getLocalStorage();
   loadData(state);

@@ -36,3 +36,20 @@ export function closeSecurity() {
   setInnerText(`change-password-message`, '');
   setStyleDisplay('modal-security', 'none');
 }
+
+export function eventClickWithoutModal(id, className, event) {
+  let targetNode = event.target;
+  while (!targetNode.classList.contains(className) && targetNode.localName !== 'body') {
+    targetNode = targetNode.parentNode;
+  }
+  if (targetNode.classList.contains(className)) {
+    return;
+  }
+  if (id === 'modal-create-update') {
+    closeCreateModal();
+  } else if (id === 'modal-security') {
+    closeSecurity();
+  } else {
+    setStyleDisplay(id, 'none');
+  }
+}
