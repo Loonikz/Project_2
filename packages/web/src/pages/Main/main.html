@@ -34,7 +34,7 @@
       <p class='modal__message' id='city-message'></p>
 
       <label class='modal--label' data-i18n='number'></label>
-      <input class='modal--input' id='number' type='tel' pattern="((\+38)?)[ .-]?(039|050|063|066|067|068|091|092|093|094|095|096|097|098|099|031|032|033|034|035|036|037|038|041|042|043|044|046|047|048|049|051|052|053|054|055|056|057|058|059|061|062|064|065|069)[ .-]?\d{2}[ .-]?\d{2}[ .-]?\d{3}">
+      <input class='modal--input' id='number' type='tel' placeholder="+380_ _ _ _ _ _ _ _ _" pattern="((\+38)?)[ .-]?(039|050|063|066|067|068|091|092|093|094|095|096|097|098|099|031|032|033|034|035|036|037|038|041|042|043|044|046|047|048|049|051|052|053|054|055|056|057|058|059|061|062|064|065|069)[ .-]?\d{2}[ .-]?\d{2}[ .-]?\d{3}">
       <p class='modal__message' id='number-message'></p>
 
       <label class='modal--label' data-i18n='email'></label>
@@ -65,15 +65,15 @@
     <section class='modal__form'>
       <form class='modal__form-edit active-form' data-tab-content="1">
         <label class='modal--label' data-i18n='new_login'></label>
-        <input class='modal--input' id='new-login' type='text' maxlength="20">
+        <input class='modal--input' id='new-login' type='text' pattern="^[a-zA-Z0-9_]*$" maxlength="20" minlength="6">
         <p class='modal__message' id='new-login-message'></p>
 
         <label class='modal--label' data-i18n='label_password'></label>
-        <input class='modal--input' id='password' type='password'>
+        <input class='modal--input' id='password' type='password' pattern="^(?=.*\d)(?=.*[a-zA-Z])(?=.*[!@#$%^&*]).*$" maxlength="25" minlength="8">
         <p class='modal__message' id='password-message'></p>
 
         <label class='modal--label' data-i18n='pass_confir'></label>
-        <input class='modal--input' id='confirm-password' type='password'>
+        <input class='modal--input' id='confirm-password' type='password' pattern="^(?=.*\d)(?=.*[a-zA-Z])(?=.*[!@#$%^&*]).*$" maxlength="25" minlength="8">
         <p class='modal__message' id='confirm-password-message'></p>
         <p class='modal__message' id='change-login-message'></p>
 
@@ -84,15 +84,15 @@
 
       <form class='modal__form-edit' data-tab-content="2">
         <label class='modal--label' data-i18n='old_pass'></label>
-        <input class='modal--input' id='new-pass' type='password'>
+        <input class='modal--input' id='new-pass' type='password' pattern="^[a-zA-Z0-9_]*$" maxlength="20" minlength="6">
         <p class='modal__message' id='new-pass-message'></p>
 
         <label class='modal--label' data-i18n='new_password'></label>
-        <input class='modal--input' id='new-password' type='password'>
+        <input class='modal--input' id='new-password' type='password' pattern="^(?=.*\d)(?=.*[a-zA-Z])(?=.*[!@#$%^&*]).*$" maxlength="25" minlength="8">
         <p class='modal__message' id='new-password-message'></p>
 
         <label class='modal--label' data-i18n='pass_confir'></label>
-        <input class='modal--input' id='confirm-pass-edit' type='password'>
+        <input class='modal--input' id='confirm-pass-edit' type='password' pattern="^(?=.*\d)(?=.*[a-zA-Z])(?=.*[!@#$%^&*]).*$" maxlength="25" minlength="8">
         <p class='modal__message' id='confirm-pass-edit-message'></p>
         <p class='modal__message' id='change-password-message'></p>
 
