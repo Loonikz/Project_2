@@ -2,6 +2,7 @@ import { sendData } from '../../logic/request';
 import { confirmPasswordValidate, loginValidate, passwordValidate } from './validation';
 import { getInputValue, setHref, setInnerText, setStyleDisplay } from '../../logic/header/utils';
 import { closeSecurity } from './modal';
+import i18next from 'i18next';
 
 export function logout(state) {
   sendData(`${state.baseURL}/auth/logout`, {})
@@ -27,11 +28,11 @@ export function changeLogin(state) {
         setInnerText('change-login-message', '');
         closeSecurity();
       } else if (response.status === 418) {
-        setInnerText('change-login-message', 'Пользователь с таким именем уже существует');
+        setInnerText('change-login-message', i18next.t('error_change_name'));
       } else if (response.status === 419) {
-        setInnerText('change-login-message', 'Неверный пароль');
+        setInnerText('change-login-message', i18next.t('error_change_wrong_password'));
       } else if (response.status === 500) {
-        setInnerText('change-login-message', 'Попробуйте позже');
+        setInnerText('change-login-message', i18next.t('error_change_try_later'));
       }
     });
   }
@@ -51,11 +52,11 @@ export function changePassword(state) {
         setInnerText('change-password-message', '');
         closeSecurity();
       } else if (response.status === 418) {
-        setInnerText('change-password-message', 'Пользователь с таким именем уже существует');
+        setInnerText('change-password-message', i18next.t('error_change_name'));
       } else if (response.status === 419) {
-        setInnerText('change-password-message', 'Неверный пароль');
+        setInnerText('change-password-message', i18next.t('error_change_wrong_password'));
       } else if (response.status === 500) {
-        setInnerText('change-password-message', 'Попробуйте позже');
+        setInnerText('change-password-message', i18next.t('error_change_try_later'));
       }
     });
   }
