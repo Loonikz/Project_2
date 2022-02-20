@@ -18,23 +18,23 @@
     <span id='closed-create-update' class='modal--closed'>x</span>
     <form class='modal__form-create'>
       <label class='modal--label' data-i18n='first_name'></label>
-      <input class='modal--input' id='first-name' type='text'>
+      <input class='modal--input' id='first-name' type='text' maxlength="20" minlength="3">
       <p class='modal__message' id='first-name-message'></p>
 
       <label class='modal--label' data-i18n='last_name'></label>
-      <input class='modal--input' id='last-name' type='text'>
+      <input class='modal--input' id='last-name' type='text' maxlength="20" minlength="3">
       <p class='modal__message' id='last-name-message'></p>
 
       <label class='modal--label' data-i18n='age'></label>
-      <input class='modal--input' id='age' type='number'>
+      <input class='modal--input' id='age' type='number' min="18" max="120">
       <p class='modal__message' id='age-message'></p>
 
       <label class='modal--label' data-i18n='city'></label>
-      <input class='modal--input' id='city' type='text'>
+      <input class='modal--input' id='city' type='text' maxlength="20" minlength="3" pattern="^[a-zA-Zа-яА-я]*$">
       <p class='modal__message' id='city-message'></p>
 
       <label class='modal--label' data-i18n='number'></label>
-      <input class='modal--input' id='number' type='tel'>
+      <input class='modal--input' id='number' type='tel' pattern="((\+38)?)[ .-]?(039|050|063|066|067|068|091|092|093|094|095|096|097|098|099|031|032|033|034|035|036|037|038|041|042|043|044|046|047|048|049|051|052|053|054|055|056|057|058|059|061|062|064|065|069)[ .-]?\d{2}[ .-]?\d{2}[ .-]?\d{3}">
       <p class='modal__message' id='number-message'></p>
 
       <label class='modal--label' data-i18n='email'></label>
@@ -42,7 +42,7 @@
       <p class='modal__message' id='email-message'></p>
 
       <label class='modal--label' data-i18n='company'></label>
-      <input class='modal--input' id='company' type='text'>
+      <input class='modal--input' id='company' type='text' maxlength="20" minlength="3" >
       <p class='modal__message' id='company-message'></p>
 
       <button class='modal--button' type='button' data-i18n='cancel' id="cancel-create"></button>
