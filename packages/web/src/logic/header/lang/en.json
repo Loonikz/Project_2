@@ -36,7 +36,7 @@
   "yes": "Yes",
   "no": "No",
   "error_length": "Min length 3 letters!",
-  "error_length_val_zero": "Min length 3 letters and value not equal 0!",
+  "error_length_val_zero": "Age from 18 to 120!",
   "error_only_letter": "Min length 3 letters and value contains only letters!",
   "error_phone": "Insert phone number!",
   "error_email": "Insert email!",
