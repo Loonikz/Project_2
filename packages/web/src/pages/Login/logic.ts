@@ -9,7 +9,7 @@ export function loginIn(state): boolean {
   if (loginValidate('login-reg') === false || passwordValidate('password-reg') === false) {
     return false;
   }
-  const data = collectDataLogin('login-form');
+  const data = collectDataLogin();
   console.log(data)
   sendData(`${state.baseURL}/auth/login`, data).then((response: Response) => {
     if (response.status === 200) {

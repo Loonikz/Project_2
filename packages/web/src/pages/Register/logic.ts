@@ -14,7 +14,7 @@ export function sendRegister(state): boolean {
     return false;
   }
 
-  const data = collectData('register-form');
+  const data = collectData();
   sendData(`${state.baseURL}/auth/registration`, data).then((response: Response) => {
     if (response.status === 200) {
       window.location.href = response.url;
