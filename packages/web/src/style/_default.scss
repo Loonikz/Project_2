@@ -7,7 +7,7 @@ body {
   font-size: 30px;
 }
 
-:root{
+:root {
   --background: url(#{$background_light});
   --btn-profile: url(#{$icon_profile_light});
   --btn-profile-big: url(#{$icon_profile_light-big});
@@ -52,6 +52,7 @@ body {
   --text-btn-color: #8A8A8A;
   --text-btn-sign-up: #000000;
   --loader: linear-gradient(to right, #cccccc 20%, #ababab 50%, #cccccc 80%);
+  --btn-cancel: #c2bfbf;
 }
 
 .dark {
@@ -98,6 +99,7 @@ body {
   --text-btn-color: #FFFFFF;
   --text-btn-sign-up: #FAFF00;
   --loader: linear-gradient(to right, #A562DF 20%, #646FA1 50%, #A562DF 80%);
+  --btn-cancel: #7436b4;
 }
 
 .nav-container {
@@ -135,7 +137,7 @@ body {
       margin: 2px;
     }
 
-    &--option{
+    &--option {
       color: #000000;
       line-height: 1em;
     }

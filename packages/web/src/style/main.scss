@@ -1,5 +1,6 @@
 @import 'variables';
 @import 'default';
+@import 'media';
 
 .container {
   top: 0;
@@ -18,7 +19,6 @@
     border: var(--border-cont);
 
     &__header {
-      display: flex;
       margin-bottom: 15px;
 
       &--selects {
@@ -76,7 +76,6 @@
       }
 
       &--search {
-        margin-left: 5px;
         margin-right: 10px;
         border: none;
         padding: 8px;
@@ -95,14 +94,10 @@
       border-radius: 15px;
       overflow: hidden;
 
-      .id{
-        width: 9%;
-      }
-
       &--table {
         border-collapse: collapse;
         color: var(--text-color);
-        font-size: 18px;
+        font-size: 15px;
         width: 100%;
       }
 
@@ -189,4 +184,6 @@
   }
 }
 
-@import 'media';
+.red {
+  background-color: red;
+}
