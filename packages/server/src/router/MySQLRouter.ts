@@ -1,6 +1,7 @@
 import { Request, Response, Router } from 'express';
 import { MySQL } from '../controllers/MySQL';
 import { authMiddleware } from '../middleware/authMiddleware';
+import { Validation } from '../middleware/Validation';
 
 export class MySQLRouter {
   path = '/mysql';
@@ -22,16 +23,23 @@ export class MySQLRouter {
   static postData(req: Request, res: Response): void {
     try {
       const mySQL = new MySQL();
-      const { fname, lname, age, city, phoneNumber, email, companyName } = req.body;
-      mySQL
-        .insert(fname, lname, age, city, phoneNumber, email, companyName)
-        .then(() => {
-          res.status(200).end();
-        })
-        .catch(() => {
-          res.status(409).end();
-        });
-      mySQL.close();
+      if (new Validation(req.body).isValid()) {
+        const { fname, lname, age, city, phoneNumber, email, companyName } = req.body;
+        mySQL
+          .insert(fname, lname, age === '' ? null : age, city, phoneNumber, email, companyName)
+          .then(() => {
+            res.status(200).end();
+          })
+          .catch((e) => {
+            res
+              .status(409)
+              .json({ message: `Error ${e}` })
+              .end();
+          });
+        mySQL.close();
+      } else {
+        res.status(400).json({ message: `Error validation` }).end();
+      }
     } catch (e) {
       res
         .status(400)
@@ -43,16 +51,20 @@ export class MySQLRouter {
   static putData(req: Request, res: Response): void {
     try {
       const mySQL = new MySQL();
-      const { id, fname, lname, age, city, phoneNumber, email, companyName } = req.body;
-      mySQL
-        .update(id, fname, lname, age, city, phoneNumber, email, companyName)
-        .then(() => {
-          res.status(200).end();
-        })
-        .catch(() => {
-          res.status(409).end();
-        });
-      mySQL.close();
+      if (new Validation(req.body).isValid()) {
+        const { id, fname, lname, age, city, phoneNumber, email, companyName } = req.body;
+        mySQL
+          .update(id, fname, lname, age === '' ? null : age, city, phoneNumber, email, companyName)
+          .then(() => {
+            res.status(200).end();
+          })
+          .catch(() => {
+            res.status(409).end();
+          });
+        mySQL.close();
+      } else {
+        res.status(400).json({ message: `Error validation` }).end();
+      }
     } catch (e) {
       res
         .status(400)
