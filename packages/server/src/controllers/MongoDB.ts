@@ -17,30 +17,32 @@ export class MongoDB {
     phoneNumber: string,
     email: string,
     companyName: string,
-  ) {
-    const person = {
-      id: '',
-      fname: `${fname}`,
-      lname: `${lname}`,
-      age,
-      city: `${city}`,
-      phoneNumber: `${phoneNumber}`,
-      email: `${email}`,
-      companyName: `${companyName}`,
-    };
-    return new Promise((resolve, reject) => {
-      this.client.connect((e, client) => {
-        if (e) {
-          reject(e);
-        }
-        const collection = client
-          .db(process.env.MONGODB_DATABASE || 'person')
-          .collection(process.env.MONGODB_COLLECTION || 'persons');
-        collection.insertOne(person, async (err, result) => {
-          if (err) {
-            reject(err);
+  ): Promise<any> {
+    return this.updateId('id').then((id) => {
+      const person = {
+        id,
+        fname: `${fname}`,
+        lname: `${lname}`,
+        age,
+        city: `${city}`,
+        phoneNumber: `${phoneNumber}`,
+        email: `${email}`,
+        companyName: `${companyName}`,
+      };
+      return new Promise((resolve, reject) => {
+        this.client.connect((e, client) => {
+          if (e) {
+            reject(e);
           }
-          resolve(this.updateId(result.insertedId));
+          const collection = client
+            .db(process.env.MONGODB_DATABASE || 'person')
+            .collection(process.env.MONGODB_COLLECTION || 'persons');
+          collection.insertOne(person, async (err, result) => {
+            if (err) {
+              reject(err);
+            }
+            resolve(result);
+          });
         });
       });
     });
@@ -66,26 +68,30 @@ export class MongoDB {
     });
   }
 
-  private updateId(id) {
+  private updateId(name) {
     return new Promise((resolve, reject) => {
-      const collection = this.client
-        .db(process.env.MONGODB_DATABASE)
-        .collection(process.env.MONGODB_COLLECTION);
-      collection.updateOne(
-        { _id: id },
-        {
-          $set: {
-            id: `${id}`,
-          },
-        },
-        (error, result) => {
-          if (error) {
-            reject(error);
-          } else {
-            resolve(result);
-          }
-        },
-      );
+      this.client.connect((e, client) => {
+        if (e) {
+          console.log(e);
+        }
+        this.client
+          .db(process.env.MONGODB_DATABASE)
+          .collection('counters')
+          .findOneAndUpdate(
+            { id: name },
+            { $inc: { seq: 1 } },
+            {
+              // new: true,
+              upsert: true,
+            },
+          )
+          .then((result) => {
+            resolve(result['value']['seq']);
+          })
+          .catch(() => {
+            reject();
+          });
+      });
     });
   }
 
