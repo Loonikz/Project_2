@@ -11,7 +11,7 @@ const {
   validationName,
 } = require('../validation');
 const utils = require('../../../logic/header/utils');
-
+// @ts-ignore
 const state = {
   baseURL: 'http://localhost:3000',
   mongoDB: [],
@@ -30,6 +30,7 @@ const state = {
     this.isUpdate = value;
   },
 };
+
 describe('loginValidate', () => {
   test('loginValidate false', () => {
     expect(loginValidate('')).toBe(false);
