@@ -295,7 +295,7 @@ body {
     color: var(--text-btn-form);
 
     &:disabled {
-      cursor: none;
+      cursor: no-drop;
       background: var(--bg-tr);
       color: #FFFFFF;
     }
