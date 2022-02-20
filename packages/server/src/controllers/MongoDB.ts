@@ -20,7 +20,7 @@ export class MongoDB {
   ): Promise<any> {
     return this.updateId('id').then((id) => {
       const person = {
-        id,
+        id: `${id}`,
         fname: `${fname}`,
         lname: `${lname}`,
         age,
