@@ -22,3 +22,5 @@ export function changeTabSecurity() {
     tabNavs[i].addEventListener('click', addClass.bind(null, tabPanes, tabNavs));
   }
 }
+
+export default { addClass };

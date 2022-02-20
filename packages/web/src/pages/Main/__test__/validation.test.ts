@@ -1,15 +1,16 @@
-const {
+import {
+  checkValidation,
+  confirmPasswordValidate,
   loginValidate,
   passwordValidate,
-  confirmPasswordValidate,
-  validationPhone,
-  validationEmail,
-  validationCompany,
-  validationCity,
-  checkValidation,
   validationAge,
+  validationCity,
+  validationCompany,
+  validationEmail,
   validationName,
-} = require('../validation');
+  validationPhone,
+} from '../validation';
+
 const utils = require('../../../logic/header/utils');
 // @ts-ignore
 const state = {
@@ -130,7 +131,10 @@ describe('checkValidation', () => {
     expect(checkValidation(state)).toBe(false);
   });
   test('checkValidation', () => {
-    utils.getInputValue = jest.fn(() => '').mockReturnValueOnce('let').mockReturnValueOnce('let');
+    utils.getInputValue = jest
+      .fn(() => '')
+      .mockReturnValueOnce('let')
+      .mockReturnValueOnce('let');
     expect(checkValidation(state)).toBe(true);
   });
 });

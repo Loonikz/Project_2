@@ -1,13 +1,12 @@
-const { changeTabSecurity, addClass } = require('../changeTabSecurity');
+import { addClass, changeTabSecurity } from '../changeTabSecurity';
 
 describe('changeTabSecurity', () => {
   global.document.querySelectorAll = jest.fn(
     () => <NodeListOf<any>>(<unknown>[
-      {
-        addEventListener: () => {
+        {
+          addEventListener: () => {},
         },
-      },
-    ]),
+      ]),
   );
   test('changeTabSecurity', () => {
     expect(changeTabSecurity()).toBeUndefined();
@@ -20,29 +19,25 @@ describe('addClass', () => {
       addClass(
         [
           {
-            addEventListener: () => {
-            },
+            addEventListener: () => {},
             getAttribute: () => '',
             classList: {
-              add: () => {
-              },
-            }
+              add: () => {},
+            },
           },
         ],
         [
           {
-            addEventListener: () => {
-            },
+            addEventListener: () => {},
             getAttribute: () => '',
             classList: {
-              add: () => {
-              },
-            }
+              add: () => {},
+            },
           },
         ],
         {
           target: { getAttribute: () => '' },
-          preventDefault:()=>{},
+          preventDefault: () => {},
         },
       ),
     ).toBeUndefined();
@@ -52,29 +47,25 @@ describe('addClass', () => {
       addClass(
         [
           {
-            addEventListener: () => {
-            },
+            addEventListener: () => {},
             getAttribute: () => '',
             classList: {
-              remove: () => {
-              },
-            }
+              remove: () => {},
+            },
           },
         ],
         [
           {
-            addEventListener: () => {
-            },
+            addEventListener: () => {},
             getAttribute: () => '',
             classList: {
-              remove: () => {
-              },
-            }
+              remove: () => {},
+            },
           },
         ],
         {
           target: { getAttribute: () => 'ddddd' },
-          preventDefault:()=>{},
+          preventDefault: () => {},
         },
       ),
     ).toBeUndefined();

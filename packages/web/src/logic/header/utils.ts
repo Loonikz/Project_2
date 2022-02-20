@@ -129,8 +129,13 @@ export function selectRow(state, event: { target: HTMLTableElement }) {
   state.setCurrentNode(node);
   const nodeId: HTMLTableElement = <HTMLTableElement>node.firstChild;
   state.setCurrentRecordId(nodeId.innerText);
-  removeDisabledAttribute(getElementById('update'));
-  removeDisabledAttribute(getElementById('delete'));
+  if (typeof nodeId.innerText === 'undefined') {
+    setDisabledAttribute(getElementById('update'));
+    setDisabledAttribute(getElementById('delete'));
+  } else {
+    removeDisabledAttribute(getElementById('update'));
+    removeDisabledAttribute(getElementById('delete'));
+  }
 }
 
 export function setNodeValue(id: string, value = '') {
@@ -145,3 +150,5 @@ export function setNodeValue(id: string, value = '') {
 export function setHref(link: string) {
   window.location.href = link;
 }
+
+export default { getValueLocalStorage };

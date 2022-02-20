@@ -1,9 +1,9 @@
 import { init } from '../index';
-const changeTab = require('../../../logic/header/changeTabSecurity');
+import changeTab from '../../../logic/header/changeTabSecurity';
 
 changeTab.addClass = jest.fn();
-// @ts-ignore
-global.fetch = jest.fn(() => Promise.resolve({}));
+
+global.fetch = jest.fn(() => <Promise<Response>>Promise.resolve({}));
 describe('init', () => {
   test('init', () => {
     expect(init()).toBeUndefined();

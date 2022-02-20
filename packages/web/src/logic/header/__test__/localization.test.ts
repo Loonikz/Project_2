@@ -1,10 +1,10 @@
-const { changeLng } = require('../localization');
+import { changeLng } from '../localization';
 
 describe('changeLng', () => {
   test('changeLng', () => {
-    expect(changeLng({ target: { value: 'ru' } })).toBeUndefined();
+    expect(changeLng({ target: <HTMLInputElement>(<unknown>{ value: 'ru' }) })).toBeUndefined();
   });
   test('changeLng', () => {
-    expect(changeLng({})).toBeUndefined();
+    expect(changeLng({ target: <HTMLInputElement>(<unknown>undefined) })).toBeUndefined();
   });
 });

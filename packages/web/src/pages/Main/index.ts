@@ -70,7 +70,6 @@ export function init() {
   addListener('closed-modal', 'click', closeSecurity);
   addListener('cancel', 'click', closeSecurity);
   addListener('cancelS', 'click', closeSecurity);
-  // addListener('modal-security', 'click', eventClickWithoutModal('modal', 'click'));
 
   addListener('create', 'click', setStyleDisplay.bind(null, 'modal-create-update', 'block'));
   addListener('delete', 'click', clickDelete.bind(null, state));

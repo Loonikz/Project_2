@@ -22,5 +22,4 @@ export function sendRegister(state): boolean {
     })
     .catch((err) => console.log(err));
   return true;
-  // postRegister(state.urlRegister, data)
 }

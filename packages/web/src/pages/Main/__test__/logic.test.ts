@@ -1,24 +1,15 @@
-const { changeLogin, changePassword, logout, clickClear, clickDelete } = require('../logic');
+import { changeLogin, changePassword, clickClear, clickDelete, logout } from '../logic';
+
 const validation = require('../validation');
-//
-// jest.mock('../validation', () => {
-//   const originalModule = jest.requireActual('../validation');
-//   return {
-//     __esModule: true,
-//     ...originalModule,
-//     loginValidate: jest.fn(() => true),
-//     passwordValidate: jest.fn(() => true),
-//     confirmPasswordValidate: jest.fn(() => true),
-//   };
-// });
+
 validation.loginValidate = jest.fn(() => true);
 validation.passwordValidate = jest.fn(() => true);
 validation.confirmPasswordValidate = jest.fn(() => true);
 const assignMock = jest.fn();
 delete window.location;
-// @ts-ignore
-window.location = { assign: assignMock };
+window.location = <Location>(<unknown>{ assign: assignMock });
 
+// @ts-ignore
 const state = {
   baseURL: 'http://localhost:3000',
   mongoDB: [],
@@ -40,10 +31,7 @@ const state = {
 
 describe('logout', () => {
   test('logout resolve', () => {
-    // @ts-ignore
-    global.fetch = jest.fn(() =>
-      Promise.resolve([]),
-    );
+    global.fetch = jest.fn(() => <Promise<Response>>(<unknown>Promise.resolve([])));
     expect(logout(state)).toBeUndefined();
   });
   test('logout reject', () => {
@@ -54,38 +42,34 @@ describe('logout', () => {
 
 describe('changePassword', () => {
   test('changePassword status 200', () => {
-    // @ts-ignore
-    global.fetch = jest.fn(() =>
-      Promise.resolve({
-        status: 200,
-      }),
+    global.fetch = jest.fn(
+      () => <Promise<Response>>(<unknown>Promise.resolve({
+          status: 200,
+        })),
     );
     expect(changePassword(state)).toBeUndefined();
   });
   test('changePassword status 418', () => {
-    // @ts-ignore
-    global.fetch = jest.fn(() =>
-      Promise.resolve({
-        status: 418,
-      }),
+    global.fetch = jest.fn(
+      () => <Promise<Response>>(<unknown>Promise.resolve({
+          status: 418,
+        })),
     );
     expect(changePassword(state)).toBeUndefined();
   });
   test('changePassword status 419', () => {
-    // @ts-ignore
-    global.fetch = jest.fn(() =>
-      Promise.resolve({
-        status: 419,
-      }),
+    global.fetch = jest.fn(
+      () => <Promise<Response>>(<unknown>Promise.resolve({
+          status: 419,
+        })),
     );
     expect(changePassword(state)).toBeUndefined();
   });
   test('changePassword status 500', () => {
-    // @ts-ignore
-    global.fetch = jest.fn(() =>
-      Promise.resolve({
-        status: 500,
-      }),
+    global.fetch = jest.fn(
+      () => <Promise<Response>>(<unknown>Promise.resolve({
+          status: 500,
+        })),
     );
     expect(changePassword(state)).toBeUndefined();
   });
@@ -93,46 +77,42 @@ describe('changePassword', () => {
 
 describe('changeLogin', () => {
   test('changeLogin status 200', () => {
-    // @ts-ignore
-    global.fetch = jest.fn(() =>
-      Promise.resolve({
-        text: () => '',
-        json: () => '',
-        status: 200,
-      }),
+    global.fetch = jest.fn(
+      () => <Promise<Response>>(<unknown>Promise.resolve({
+          text: () => '',
+          json: () => '',
+          status: 200,
+        })),
     );
     expect(changeLogin(state)).toBeUndefined();
   });
   test('changeLogin status 418', () => {
-    // @ts-ignore
-    global.fetch = jest.fn(() =>
-      Promise.resolve({
-        text: () => '',
-        json: () => '',
-        status: 418,
-      }),
+    global.fetch = jest.fn(
+      () => <Promise<Response>>(<unknown>Promise.resolve({
+          text: () => '',
+          json: () => '',
+          status: 418,
+        })),
     );
     expect(changeLogin(state)).toBeUndefined();
   });
   test('changeLogin status 419', () => {
-    // @ts-ignore
-    global.fetch = jest.fn(() =>
-      Promise.resolve({
-        text: () => '',
-        json: () => '',
-        status: 419,
-      }),
+    global.fetch = jest.fn(
+      () => <Promise<Response>>(<unknown>Promise.resolve({
+          text: () => '',
+          json: () => '',
+          status: 419,
+        })),
     );
     expect(changeLogin(state)).toBeUndefined();
   });
   test('changeLogin status 500', () => {
-    // @ts-ignore
-    global.fetch = jest.fn(() =>
-      Promise.resolve({
-        text: () => '',
-        json: () => '',
-        status: 500,
-      }),
+    global.fetch = jest.fn(
+      () => <Promise<Response>>(<unknown>Promise.resolve({
+          text: () => '',
+          json: () => '',
+          status: 500,
+        })),
     );
     expect(changeLogin(state)).toBeUndefined();
   });

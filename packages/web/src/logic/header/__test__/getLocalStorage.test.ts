@@ -1,4 +1,5 @@
-const { getLocalStorage } = require('../getLocalStorage');
+import { getLocalStorage } from '../getLocalStorage';
+
 const utils = require('../utils');
 
 describe('getLocalStorage', () => {
