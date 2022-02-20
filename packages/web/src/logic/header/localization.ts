@@ -15,7 +15,7 @@ export function updateContent() {
 export function changeLng(evt?: { target: HTMLInputElement }) {
   let selectedLang;
   if (typeof evt !== 'undefined') {
-    selectedLang = evt ? evt.target.value : 'en';
+    selectedLang = evt.target ? evt.target.value : 'en';
     setValueLocalStorage('lang', selectedLang);
   } else {
     selectedLang = getValueLocalStorage('lang');

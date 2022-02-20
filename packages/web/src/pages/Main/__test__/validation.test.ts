@@ -129,4 +129,8 @@ describe('checkValidation', () => {
   test('checkValidation', () => {
     expect(checkValidation(state)).toBe(false);
   });
+  test('checkValidation', () => {
+    utils.getInputValue = jest.fn(() => '').mockReturnValueOnce('let').mockReturnValueOnce('let');
+    expect(checkValidation(state)).toBe(true);
+  });
 });
