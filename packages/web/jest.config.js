@@ -14,4 +14,5 @@ module.exports = {
     '^.+\\.ts?$': 'ts-jest',
     '.(css|scss)$': '<rootDir>/src/jest-config/style-mock.js',
   },
+  setupFiles: ['<rootDir>/src/jest-config/LocalStorageMock.ts']
 };

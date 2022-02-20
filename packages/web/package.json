@@ -43,6 +43,7 @@
   },
   "devDependencies": {
     "@types/jest": "27.4.0",
+    "@types/typescript": "2.0.0",
     "@types/webpack": "5.28.0",
     "@types/webpack-dev-server": "4.7.2",
     "jest": "27.5.1",

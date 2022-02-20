@@ -54,13 +54,13 @@ export function removeDisabledAttribute(node: HTMLElement) {
   return false;
 }
 
-export function collectDataLogin(id): Object {
+export function collectDataLogin(): Object {
   const user = getInputValue('login-reg');
   const password = getInputValue('password-reg');
   return { 'username': user, 'password': password }
 }
 
-export function collectData(id): Object {
+export function collectData(): Object {
   const user = getInputValue('sign-up-login');
   const password = getInputValue('sign-up-password');
   return { 'username': user, 'password': password }
@@ -73,12 +73,12 @@ export function setValueLocalStorage(key, value) {
 export function getValueLocalStorage(key: string) {
   // по другому ругается ес-линт
   if (Object.hasOwnProperty.call(localStorage, key)) {
-    return localStorage[key];
+    return localStorage.getItem(key);
   }
   return '';
 }
 
-function setNodeSelectedText(id, selectIndex) {
+export function setNodeSelectedText(id, selectIndex) {
   const node = <HTMLSelectElement>document.getElementById(id);
   if (node) {
     node.selectedIndex = selectIndex;
@@ -111,6 +111,7 @@ export function setClass(node, className) {
   }
   return false;
 }
+
 export function removeClass(node, className) {
   if (node) {
     (<HTMLElement>node).classList.remove(className);
@@ -141,10 +142,6 @@ export function setNodeValue(id: string, value = '') {
   return false;
 }
 
-export function setHref(link: string): boolean {
-  if (window.location) {
-    window.location.href = link;
-    return true;
-  }
-  return false;
+export function setHref(link: string) {
+  window.location.href = link;
 }
