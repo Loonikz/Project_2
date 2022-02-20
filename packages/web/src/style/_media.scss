@@ -36,130 +36,167 @@
 
   .container {
 
-    &__content {
-      padding: 12px;
-      width: 90%;
+    &__form {
+      font-size: 18px;
+      padding: 30px;
+      width: 55%;
 
-      &__header {
-        display: grid;
-
-        &--selects {
-          width: 100%;
-        }
-
-        &--list {
-          font-size: 11px;
-          margin-right: 0;
-          width: 100%;
-          height: 29px;
-        }
-
-        &--panell {
-          width: 100%;
-        }
-
-        &--btn {
-          font-size: 12px;
-          padding: 3px;
-          height: 28px;
-          width: 100%;
-        }
-
-        &--search {
-          width: 100%;
-          height: 28px;
-          margin: 5px auto;
-        }
-      }
-
-      &__data {
+      &__message {
         font-size: 12px;
-
-        table {
-          width: 100%;
-        }
-
-        table thead {
-          display: none;
-        }
-
-        table tbody tr {
-          box-shadow: 0 0 0.5em #666666;
-          border: none;
-          display: block;
-        }
-
-        table tbody tr th {
-          padding: 0.4em;
-          text-align: right;
-          display: block;
-          width: 97%;
-        }
-
-        table tbody tr th[data-label]:before {
-          content: attr(data-label);
-          float: left;
-          font-weight: bold;
-        }
-
-        table tbody tr th.numeric {
-          text-align: left;
-        }
+        margin: 5px;
       }
-    }
-  }
 
-  .modal {
-
-    &__content-modal-delete {
-      margin: 25% auto;
-      width: 60%;
-      font-size: 13px;
-      height: 112px;
-      padding-bottom: 25px;
-
-      &--dialog {
-        padding: 25px;
-        margin: 0;
+      &--avatar {
+        height: 87px;
+        width: 87px;
       }
-    }
 
-    &__active {
-      padding-bottom: 25px;
-      margin-bottom: 25px;
+      &--label {
+        padding: 8px;
+      }
 
-      &--btn {
-        width: 60%;
-        font-size: 12px;
-        padding: 3px;
+      &--input {
+        font-size: 18px;
         height: 25px;
       }
-    }
 
-    &__tab-menu {
-      &--link {
-        font-size: 12px;
-        height: 15px;
+      &--button {
+        padding: 10px;
+        margin-top: 35px;
+        margin-left: 15px;
+        font-size: 18px;
+      }
+
+      &--text {
+        margin-top: 15px;
+        font-size: 20px;
+      }
+
+      &__content {
+        padding: 12px;
+        width: 90%;
+
+        &__header {
+          display: grid;
+
+          &--selects {
+            width: 100%;
+          }
+
+          &--list {
+            font-size: 11px;
+            margin-right: 0;
+            width: 100%;
+            height: 29px;
+          }
+
+          &--panell {
+            width: 100%;
+          }
+
+          &--btn {
+            font-size: 12px;
+            padding: 3px;
+            height: 28px;
+            width: 100%;
+          }
+
+          &--search {
+            width: 100%;
+            height: 28px;
+            margin: 5px auto;
+          }
+        }
+
+        &__data {
+          font-size: 12px;
+
+          table {
+            width: 100%;
+          }
+
+          table thead {
+            display: none;
+          }
+
+          table tbody tr {
+            box-shadow: 0 0 0.5em #666666;
+            border: none;
+            display: block;
+          }
+
+          table tbody tr th {
+            padding: 0.4em;
+            text-align: right;
+            display: block;
+            width: 97%;
+          }
+
+          table tbody tr th[data-label]:before {
+            content: attr(data-label);
+            float: left;
+            font-weight: bold;
+          }
+
+          table tbody tr th.numeric {
+            text-align: left;
+          }
+        }
       }
     }
 
-    &--closed {
-      font-size: 20px;
-    }
+    .modal {
 
-    &--title {
-      font-size: 20px;
-    }
+      &__content-modal-delete {
+        margin: 25% auto;
+        width: 60%;
+        font-size: 13px;
+        height: 112px;
+        padding-bottom: 25px;
 
-    &__content-modal {
-      margin: 15% auto;
-      width: 90%;
-      font-size: 12px;
-    }
+        &--dialog {
+          padding: 25px;
+          margin: 0;
+        }
+      }
 
-    &--button {
-      margin-left: 17px;
-      font-size: 12px;
+      &__active {
+        padding-bottom: 25px;
+        margin-bottom: 25px;
+
+        &--btn {
+          width: 60%;
+          font-size: 12px;
+          padding: 3px;
+          height: 25px;
+        }
+      }
+
+      &__tab-menu {
+        &--link {
+          font-size: 12px;
+          height: 15px;
+        }
+      }
+
+      &--closed {
+        font-size: 20px;
+      }
+
+      &--title {
+        font-size: 20px;
+      }
+
+      &__content-modal {
+        margin: 15% auto;
+        width: 90%;
+        font-size: 12px;
+      }
+
+      &--button {
+        margin-left: 17px;
+        font-size: 12px;
+      }
     }
   }
 }
@@ -168,6 +205,43 @@
 
   .container {
 
+    &__form {
+      font-size: 18px;
+      padding: 30px;
+      width: 35%;
+
+      &__message{
+        font-size: 12px;
+        margin: 5px;
+      }
+
+      &--avatar {
+        height: 87px;
+        width: 87px;
+      }
+
+      &--label {
+        padding: 8px;
+      }
+
+      &--input {
+        font-size: 18px;
+        height: 25px;
+      }
+
+      &--button {
+        padding: 10px;
+        margin-top: 35px;
+        margin-left: 15px;
+        font-size: 18px;
+      }
+
+      &--text {
+        margin-top: 15px;
+        font-size: 20px;
+      }
+    }
+
     &__content {
 
       &__header {
@@ -199,6 +273,7 @@
 
       &__data {
       }
+
       &--closed {
         font-size: 20px;
       }
@@ -297,6 +372,43 @@
 
   .container {
 
+    &__form {
+      font-size: 25px;
+      padding: 40px;
+      width: 35%;
+
+      &__message{
+        font-size: 15px;
+        margin: 5px;
+      }
+
+      &--avatar {
+        height: 107px;
+        width: 107px;
+      }
+
+      &--label {
+        padding: 10px;
+      }
+
+      &--input {
+        font-size: 18px;
+        height: 35px;
+      }
+
+      &--button {
+        padding: 10px;
+        margin-top: 35px;
+        margin-left: 15px;
+        font-size: 25px;
+      }
+
+      &--text {
+        margin-top: 15px;
+        font-size: 25px;
+      }
+    }
+
     &__content {
       padding: 30px;
 
@@ -363,6 +475,7 @@
         padding: 8px;
       }
     }
+
     &--closed {
       font-size: 25px;
     }
@@ -389,6 +502,7 @@
         height: 50px;
         margin: 15px;
         padding: 10px;
+
         &:hover {
           background: var(--btn-profile-hover-big);
         }
@@ -409,6 +523,44 @@
   }
 
   .container {
+
+    &__form {
+      width: 30%;
+      font-size: 40px;
+      padding: 60px;
+
+      &__message{
+        font-size: 20px;
+        margin: 5px;
+      }
+
+      &--avatar {
+        height: 157px;
+        width: 157px;
+      }
+
+      &--label {
+        padding: 12px;
+      }
+
+      &--input {
+        font-size: 30px;
+        height: 55px;
+      }
+
+      &--button {
+        padding: 8px;
+        margin-top: 35px;
+        margin-left: 15px;
+        font-size: 35px;
+        height: 65px;
+      }
+
+      &--text {
+        margin-top: 20px;
+        font-size: 35px;
+      }
+    }
 
     &__content {
       padding: 40px;
@@ -452,11 +604,12 @@
           font-size: 35px;
           width: 100%;
         }
+
         &--items-head {
           height: 100px;
         }
 
-          &--items-body {
+        &--items-body {
           padding: 20px;
         }
       }
@@ -492,7 +645,7 @@
       }
     }
 
-    &__message{
+    &__message {
       font-size: 25px;
     }
 

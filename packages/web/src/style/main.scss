@@ -1,88 +1,87 @@
+@import 'variables';
+
 body {
   background: var(--background);
   background-size: cover;
   font-family: 'Montserrat', sans-serif;
   font-size: 30px;
-  --logo-color: #F00418;
-  --background: url("../../assets/svg/backgroud_light.svg");
-  --btn-them: url("../../assets/svg/icon_dark.svg");
-  --text-color: #000000;
-  --text-color-hover: #F08686;
-  --bg-dropdawn: #999999;
-  --bg-dropdawn-hover: #DAD7D7;
+}
+
+:root{
+  --background: url(#{$background_light});
+  --btn-profile: url(#{$icon_profile_light});
+  --btn-profile-big: url(#{$icon_profile_light-big});
+  --btn-profile-hover: url(#{$icon_profile_light-hover});
+  --btn-profile-hover-big: url(#{$icon_profile_light-hover-big});
+  --btn-profile-250: url(#{$icon_profile_light-little});
+  --btn-logout: url(#{$icon_logout_light});
+  --btn-logout-big: url(#{$icon_logout_light-big});
+  --btn-logout-250: url(#{$icon_logout_light-little});
+  --btn-logout-hover: url(#{$icon_logout_light-hover});
+  --btn-logout-hover-big: url(#{$icon_logout_light-hover-big});
+  --btn-logout-hover-250: url(#{$icon_logout_light-hover-little});
+  --logo-color: $red;
+  --text-color: $black;
+  --text-color-hover: $pink;
   --opacity-container: 1;
   --border-input-active: solid 2px #FFFFFF;
-  --bg-container: #E4E4E4;
-  --btn-profile: url('../../assets/svg/icon-profile-light.svg');
-  --btn-profile-big: url('../../assets/svg/icon-profile-light-big.svg');
-  --btn-profile-hover: url('../../assets/svg/icon-profile-light-hover.svg');
-  --btn-profile-hover-big: url('../../assets/svg/icon-profile-light-hover-big.svg');
-  --btn-profile-250: url('../../assets/svg/icon-profile-light250.svg');
-  --btn-logout: url('../../assets/svg/logout_light.svg');
-  --btn-logout-big: url('../../assets/svg/logout_light-big.svg');
-  --btn-logout-250: url('../../assets/svg/logout_light-250.svg');
-  --btn-logout-hover: url('../../assets/svg/logout_light-hover.svg');
-  --btn-logout-hover-big: url('../../assets/svg/logout_light-hover-big.svg');
-  --btn-logout-hover-250: url('../../assets/svg/logout_light-hover-250.svg');
-  --text-select: #000000;
+  --bg-container: $active_gray;
+  --text-select: $black;
   --text-btn: #FFFFFF;
-  --text-color-label: #F08686;
-  --bg-btn: #F00418;
+  --text-color-label: $pink;
+  --bg-btn: $red;
   --border-cont: none;
-  --bg-input: #c2bfbf;
-  --bg-head-table: #999999;
+  --bg-input: $inp_gray;
+  --bg-head-table: $gray;
   --hover-table-color: #FFFFFF;
-  --bg-tr-odd: #DAD7D7;
-  --bg-tr: #A8A7A7;
-  --bg-tab: #999999;
-  --bg-tab-active: #E4E4E4;
-  --bg-modal: #E4E4E4;
-  --btn-form: #F00418;
+  --bg-tr-odd: $little_gray;
+  --bg-tr: $tr_gray;
+  --bg-tab: $gray;
+  --bg-tab-active: $light_gray;
+  --bg-modal: $light_gray;
+  --btn-form: $red;
   --text-btn-form: #FFFFFF;
-  --border-table-click: 3px solid #F08686;
+  --border-table-click: 3px solid $pink;
   --hover-button: 2px 7px 8px 0px rgba(34, 60, 80, 0.31);
   --active-button: 0px -1px 10px 2px rgba(34, 60, 80, 0.2) inset;
   --bg-option: #FFFFFF;
 }
 
 .dark {
-  --background: url('../../assets/svg/background_dark.svg');
+  --background: url(#{$background_dark});
+  --btn-profile: url(#{$icon_profile_dark});
+  --btn-profile-hover: url(#{$icon_profile_dark-hover});
+  --btn-profile-hover-big: url(#{$icon_profile_dark-hover-big});
+  --btn-profile-big: url(#{$icon_profile_dark-big});
+  --btn-profile-250: url(#{$icon_profile_dark-little});
+  --btn-logout: url(#{$icon_logout_dark});
+  --btn-logout-big: url(#{$icon_logout_dark-big});
+  --btn-logout-250: url(#{$icon_logout_dark-little});
+  --btn-logout-hover: url(#{$icon_logout_dark-hover});
+  --btn-logout-hover-big: url(#{$icon_logout_dark-hover-big});
+  --btn-logout-hover-250: url(#{$icon_logout_dark-hover-little});
   --logo-color: #FFFFFF;
-  --btn-them: url("../../assets/svg/icon_light.svg");
   --text-color: #FFFFFF;
-  --text-color-hover: #FAFF00;
-  --bg-dropdawn: #646FA1;
-  --bg-dropdawn-hover: #C9C0C0;
+  --text-color-hover: $yellow;
   --border-input-active: solid 2px #DBFF00;
   --opacity-container: 0.8;
   --text-color-label: #FFFFFF;
-  --bg-container: linear-gradient(#630086, #00408B);
-  --btn-profile: url('../../assets/svg/icon-profile-dark.svg');
-  --btn-profile-hover: url('../../assets/svg/icon-profile-dark-hover.svg');
-  --btn-profile-hover-big: url('../../assets/svg/icon-profile-dark-hover-big.svg');
-  --btn-profile-big: url('../../assets/svg/icon-profile-dark-big.svg');
-  --btn-profile-250: url('../../assets/svg/icon-profile-dark250.svg');
-  --btn-logout: url('../../assets/svg/logout_dark.svg');
-  --btn-logout-big: url('../../assets/svg/logout_dark-big.svg');
-  --btn-logout-250: url('../../assets/svg/logout_dark-250.svg');
-  --btn-logout-hover: url('../../assets/svg/logout_dark-hover.svg');
-  --btn-logout-hover-big: url('../../assets/svg/logout_dark-hover-big.svg');
-  --btn-logout-hover-250: url('../../assets/svg/logout_dark-hover-250.svg');
-  --text-select: #7F1581;
-  --text-btn: #7F1581;
+  --bg-container: linear-gradient($violet, $blue);
+  --text-select: $purple;
+  --text-btn: $purple;
   --bg-btn: #FFFFFF;
   --border-cont: solid #FFFFFF;
   --bg-input: #FFFFFF;
-  --bg-head-table: #485380;
-  --hover-table-color: #A562DF;
-  --bg-tr-odd: #55608F;
-  --bg-tr: #646FA1;
-  --bg-tab: #3B0A4F;
-  --bg-modal: linear-gradient(#461888FF, #3E18BC);
-  --bg-tab-active: linear-gradient(#590986FF, #461888FF);
+  --bg-head-table: $dark_grey;
+  --hover-table-color: $light_purple;
+  --bg-tr-odd: $tr_odd;
+  --bg-tr: $grey_blue;
+  --bg-tab: $dark_purple;
+  --bg-modal: linear-gradient($bg_purple, $bg_blue);
+  --bg-tab-active: linear-gradient($tab_purple, $bg_purple);
   --btn-form: #FFFFFF;
-  --text-btn-form: #000000;
-  --border-table-click: 3px solid #A562DF;
+  --text-btn-form: $black;
+  --border-table-click: 3px solid $light_purple;
   --hover-button: 5px 5px 5px 1px rgba(34, 60, 80, 0.6);
   --active-button: 0px -1px 10px 2px rgba(34, 60, 80, 0.71) inset;
 }
@@ -101,7 +100,7 @@ body {
 
   &__message{
     font-size: 15px;
-    color: #ff5d5d;
+    color: $error_pink;
     margin: 5px;
   }
 
@@ -212,7 +211,7 @@ body {
     }
 
     &:invalid {
-      border: solid 2px #F00418;
+      border: solid 2px $red;
     }
   }
 
@@ -315,7 +314,7 @@ body {
     }
 
     &--option{
-      color: #000000;
+      color: $black;
       line-height: 1em;
     }
 
@@ -414,7 +413,7 @@ body {
         border-radius: 10px;
         background: var(--bg-input);
         opacity: 0.5;
-        color: #000000;
+        color: $black;
       }
 
     }

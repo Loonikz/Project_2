@@ -4,15 +4,14 @@ body {
   font-family: 'Montserrat', sans-serif;
   font-size: 25px;
   --logo-color: #F00418;
-  --background: url("../../assets/svg/backgroud_light.svg");
-  --btn-them: url("../../assets/svg/icon_dark.svg");
+  --background: url("./../assets/svg/backgroud_light.svg");
   --text-color: #000000;
   --text-color-hover: #F08686;
   --bg-dropdawn: #999999;
   --bg-dropdawn-hover: #DAD7D7;
   --text-color-label: #F08686;
-  --bg-avatar: url("../../assets/svg/icon_user_light.svg");
-  --bg-avatar-250: url("../../assets/svg/icon_user_light-250.svg");
+  --bg-avatar: url("./../assets/svg/icon_user_light.svg");
+  --bg-avatar-250: url("./../assets/svg/icon_user_light-250.svg");
   --btn-registr: #F00418;
   --opacity-container: 1;
   --bg-container: #E4E4E4;
@@ -24,16 +23,15 @@ body {
 
 .dark{
   background-size: cover;
-  --background: url('../../assets/svg/background_dark.svg');
+  --background: url('./../assets/svg/background_dark.svg');
   --logo-color: #FFFFFF;
-  --btn-them: url("../../assets/svg/icon_light.svg");
   --text-color: #FFFFFF;
   --text-color-hover: #FAFF00;
   --bg-dropdawn: #646FA1;
   --bg-dropdawn-hover: #C9C0C0;
   --text-color-label: #FFFFFF;
-  --bg-avatar: url("../../assets/svg/icon_user_dark.svg");
-  --bg-avatar-250: url("../../assets/svg/icon_user_dark-250.svg");
+  --bg-avatar: url("./../assets/svg/icon_user_dark.svg");
+  --bg-avatar-250: url("./../assets/svg/icon_user_dark-250.svg");
 
   --btn-registr: #5C17B4;
   --opacity-container: 0.8;

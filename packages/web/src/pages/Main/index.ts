@@ -1,4 +1,4 @@
-import './styles.scss';
+import '../../style/main.scss';
 import {
   addListener,
   fromLocaleStorageToDropDown,
