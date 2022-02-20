@@ -14,12 +14,16 @@ body {
   --border-input-active: solid 2px #FFFFFF;
   --bg-container: #E4E4E4;
   --btn-profile: url('../../assets/svg/icon-profile-light.svg');
+  --btn-profile-big: url('../../assets/svg/icon-profile-light-big.svg');
   --btn-profile-hover: url('../../assets/svg/icon-profile-light-hover.svg');
+  --btn-profile-hover-big: url('../../assets/svg/icon-profile-light-hover-big.svg');
   --btn-profile-250: url('../../assets/svg/icon-profile-light250.svg');
   --btn-logout: url('../../assets/svg/logout_light.svg');
+  --btn-logout-big: url('../../assets/svg/logout_light-big.svg');
   --btn-logout-250: url('../../assets/svg/logout_light-250.svg');
-  --btn-logout-hover-250: url('../../assets/svg/logout_light-hover-250.svg');
   --btn-logout-hover: url('../../assets/svg/logout_light-hover.svg');
+  --btn-logout-hover-big: url('../../assets/svg/logout_light-hover-big.svg');
+  --btn-logout-hover-250: url('../../assets/svg/logout_light-hover-250.svg');
   --text-select: #000000;
   --text-btn: #FFFFFF;
   --text-color-label: #F08686;
@@ -38,6 +42,7 @@ body {
   --border-table-click: 3px solid #F08686;
   --hover-button: 2px 7px 8px 0px rgba(34, 60, 80, 0.31);
   --active-button: 0px -1px 10px 2px rgba(34, 60, 80, 0.2) inset;
+  --bg-option: #FFFFFF;
 }
 
 .dark {
@@ -54,11 +59,15 @@ body {
   --bg-container: linear-gradient(#630086, #00408B);
   --btn-profile: url('../../assets/svg/icon-profile-dark.svg');
   --btn-profile-hover: url('../../assets/svg/icon-profile-dark-hover.svg');
+  --btn-profile-hover-big: url('../../assets/svg/icon-profile-dark-hover-big.svg');
+  --btn-profile-big: url('../../assets/svg/icon-profile-dark-big.svg');
   --btn-profile-250: url('../../assets/svg/icon-profile-dark250.svg');
   --btn-logout: url('../../assets/svg/logout_dark.svg');
+  --btn-logout-big: url('../../assets/svg/logout_dark-big.svg');
   --btn-logout-250: url('../../assets/svg/logout_dark-250.svg');
-  --btn-logout-hover-250: url('../../assets/svg/logout_dark-hover-250.svg');
   --btn-logout-hover: url('../../assets/svg/logout_dark-hover.svg');
+  --btn-logout-hover-big: url('../../assets/svg/logout_dark-hover-big.svg');
+  --btn-logout-hover-250: url('../../assets/svg/logout_dark-hover-250.svg');
   --text-select: #7F1581;
   --text-btn: #7F1581;
   --bg-btn: #FFFFFF;
@@ -76,7 +85,6 @@ body {
   --border-table-click: 3px solid #A562DF;
   --hover-button: 5px 5px 5px 1px rgba(34, 60, 80, 0.6);
   --active-button: 0px -1px 10px 2px rgba(34, 60, 80, 0.71) inset;
-
 }
 
 .modal {
@@ -89,6 +97,13 @@ body {
   width: 100%;
   text-align: center;
   height: 100%;
+  overflow: auto;
+
+  &__message{
+    font-size: 15px;
+    color: #ff5d5d;
+    margin: 5px;
+  }
 
   &__content-modal {
     font-family: 'Montserrat', sans-serif;
@@ -229,11 +244,6 @@ body {
     }
   }
 
-  &--message {
-    font-size: 25px;
-    padding: 5%;
-  }
-
   &__content-modal-delete {
     font-family: 'Montserrat', sans-serif;
     background: var(--bg-container);
@@ -256,6 +266,14 @@ body {
       margin: 15px;
       padding: 8px;
       border: none;
+
+      &:hover {
+        box-shadow: var(--hover-button);
+      }
+
+      &:active {
+        box-shadow: var(--active-button);
+      }
     }
   }
 
@@ -268,7 +286,6 @@ body {
   justify-content: space-between;
 
   &__logo {
-    font-size: 50px;
     color: var(--logo-color);
     user-select: none;
   }
@@ -281,10 +298,7 @@ body {
       background: var(--btn-profile);
       cursor: pointer;
       border: none;
-      width: 35px;
-      height: 35px;
-      margin: 15px;
-      padding: 10px;
+
 
       &:hover {
         background: var(--btn-profile-hover);
@@ -296,19 +310,19 @@ body {
       background: transparent;
       border: none;
       font-family: 'Montserrat', sans-serif;
-      font-size: 20px;
       cursor: pointer;
       margin: 2px;
+    }
+
+    &--option{
+      color: #000000;
+      line-height: 1em;
     }
 
     &--logout {
       background: var(--btn-logout);
       cursor: pointer;
       border: none;
-      width: 35px;
-      height: 35px;
-      margin: 15px;
-      padding: 10px;
 
       &:hover {
         background: var(--btn-logout-hover);
@@ -329,10 +343,9 @@ body {
     background: var(--bg-container);
     border-radius: 15px;
     margin: 25px auto;
-    padding: 30px;
-    width: 82%;
     opacity: var(--opacity-container);
     border: var(--border-cont);
+    width: 82%;
 
     &__header {
       display: flex;
@@ -344,10 +357,8 @@ body {
       &--list {
         border-radius: 10px;
         font-family: 'Montserrat', sans-serif;
-        font-size: 15px;
         border: none;
         padding: 8px;
-        height: 40px;
         color: var(--text-select);
         cursor: pointer;
 
@@ -365,13 +376,14 @@ body {
         }
       }
 
+      &--panel{
+      }
+
       &--btn {
         border-radius: 10px;
         border: none;
         font-family: 'Montserrat', sans-serif;
         font-size: 15px;
-        padding: 8px;
-        height: 40px;
         justify-content: center;
         color: var(--text-btn);
         background: var(--bg-btn);
@@ -402,7 +414,7 @@ body {
         border-radius: 10px;
         background: var(--bg-input);
         opacity: 0.5;
-        height: 40px;
+        color: #000000;
       }
 
     }

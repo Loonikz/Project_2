@@ -6,7 +6,7 @@ import { getLocalStorage } from '../../logic/header/getLocalStorage';
 import { loginValidate, passwordValidate } from '../Main/validation';
 import { loginIn } from './logic';
 
-function init() {
+export function init() {
   const state = {
     baseURL: 'https://wannaworkinginwizarddev.herokuapp.com',
   };
