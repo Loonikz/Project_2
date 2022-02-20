@@ -1,6 +1,7 @@
 import { Request, Response, Router } from 'express';
 import { MongoDB } from '../controllers/MongoDB';
 import { authMiddleware } from '../middleware/authMiddleware';
+import { Validation } from '../middleware/Validation';
 
 export class MongoDBRouter {
   path = '/mongodb';
@@ -22,15 +23,19 @@ export class MongoDBRouter {
   static postData(req: Request, res: Response): void {
     try {
       const mongoDB = new MongoDB();
-      const { fname, lname, age, city, phoneNumber, email, companyName } = req.body;
-      mongoDB
-        .insert(fname, lname, age, city, phoneNumber, email, companyName)
-        .then(() => {
-          res.status(200).end();
-        })
-        .catch(() => {
-          res.status(409).end();
-        });
+      if (new Validation(req.body).isValid()) {
+        const { fname, lname, age, city, phoneNumber, email, companyName } = req.body;
+        mongoDB
+          .insert(fname, lname, age === '' ? null : age, city, phoneNumber, email, companyName)
+          .then(() => {
+            res.status(200).end();
+          })
+          .catch(() => {
+            res.status(409).end();
+          });
+      } else {
+        res.status(400).json({ message: `Error validation` }).end();
+      }
     } catch (e) {
       res
         .status(400)
@@ -42,15 +47,19 @@ export class MongoDBRouter {
   static putData(req: Request, res: Response): void {
     try {
       const mongoDB = new MongoDB();
-      const { id, fname, lname, age, city, phoneNumber, email, companyName } = req.body;
-      mongoDB
-        .update(id, fname, lname, age, city, phoneNumber, email, companyName)
-        .then(() => {
-          res.status(200).end();
-        })
-        .catch(() => {
-          res.status(409).end();
-        });
+      if (new Validation(req.body).isValid()) {
+        const { id, fname, lname, age, city, phoneNumber, email, companyName } = req.body;
+        mongoDB
+          .update(id, fname, lname, age === '' ? null : age, city, phoneNumber, email, companyName)
+          .then(() => {
+            res.status(200).end();
+          })
+          .catch(() => {
+            res.status(409).end();
+          });
+      } else {
+        res.status(400).json({ message: `Error validation` }).end();
+      }
     } catch (e) {
       res
         .status(400)
