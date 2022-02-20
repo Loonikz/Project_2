@@ -9,7 +9,7 @@ import {
 
 export function validationName(state, id, index) {
   const value = getInputValue(id);
-  state.validateStatus[index] = value.length >= 3;
+  state.validateStatus[index] = value.length >= 3 && value.length <= 20;
   if (!state.validateStatus[index]) {
     setInnerText(`${id}-message`, i18next.t('error_length'));
   } else {
@@ -19,7 +19,7 @@ export function validationName(state, id, index) {
 
 export function validationAge(state) {
   const value = getInputValue('age');
-  state.validateStatus[2] = (value.length <= 3 && value !== '0') || value === '';
+  state.validateStatus[2] = (Number.isInteger(Number(value)) && Number(value) >= 18 && Number(value) <= 120) || value === '';
   if (!state.validateStatus[2]) {
     setInnerText(`age-message`, i18next.t('error_length_val_zero'));
   } else {
@@ -29,7 +29,8 @@ export function validationAge(state) {
 
 export function validationCity(state) {
   const value = getInputValue('city');
-  state.validateStatus[3] = (value.length >= 3 && value.match(/^[a-zA-Zа-яА-я]*$/)) || value === '';
+  state.validateStatus[3] =
+    (value.length >= 3 && value.length <= 20 && value.match(/^[a-zA-Zа-яА-я]*$/)) || value === '';
   if (!state.validateStatus[3]) {
     setInnerText(`city-message`, i18next.t('error_only_letter'));
   } else {
@@ -62,7 +63,7 @@ export function validationEmail(state) {
 
 export function validationCompany(state) {
   const value = getInputValue('company');
-  state.validateStatus[6] = value.length >= 3 || value === '';
+  state.validateStatus[6] = (value.length >= 3 && value.length <= 20) || value === '';
   if (!state.validateStatus[6]) {
     setInnerText(`company-message`, i18next.t('error_length'));
   } else {

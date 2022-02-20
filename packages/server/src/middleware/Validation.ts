@@ -17,7 +17,7 @@ export class Validation {
   }
 
   static validateName(value): boolean {
-    return value.length >= 3;
+    return value.length >= 3 && value.length <= 20;
   }
 
   static validateAge(value): boolean {
@@ -28,7 +28,9 @@ export class Validation {
   }
 
   static validateCity(value): boolean {
-    return (value.length >= 3 && value.match(/^[a-zA-Zа-яА-я]*$/)) || value === '';
+    return (
+      (value.length >= 3 && value.length <= 20 && value.match(/^[a-zA-Zа-яА-я]*$/)) || value === ''
+    );
   }
 
   static validatePhoneNumber(value): boolean {
@@ -43,6 +45,6 @@ export class Validation {
   }
 
   static validateCompanyName(value): boolean {
-    return value.length >= 3 || value === '';
+    return (value.length >= 3 && value.length <= 20) || value === '';
   }
 }
