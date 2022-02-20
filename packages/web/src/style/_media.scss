@@ -279,6 +279,42 @@
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
+  .nav-container {
+    align-items: center;
+
+    &__logo {
+      font-size: 25px;
+    }
+
+    &__buttons {
+      &--select {
+        font-size: 12px;
+      }
+
+      &--profile {
+        background: var(--btn-profile-hover-little);
+        width: 15px;
+        height: 15px;
+        margin: 15px;
+        padding: 5px;
+        &:hover{
+          background: var(--btn-pro);
+        }
+      }
+
+      &--logout {
+        background: var(--btn-logout-250);
+        width: 15px;
+        height: 15px;
+        margin: 15px;
+        padding: 5px;
+
+        &:hover {
+          background: var(--btn-logout-hover-250);
+        }
+      }
+    }
+  }
 
   .container {
 
@@ -320,7 +356,7 @@
     }
 
     &__content {
-
+      padding: 20px;
       &__header {
         display: grid;
 
@@ -331,6 +367,7 @@
 
         &--list {
           width: 49%;
+          height: 35px;
         }
 
         &--panell {
@@ -340,15 +377,20 @@
         &--btn {
           margin: 5px 0;
           width: 49%;
+          height: 35px;
         }
 
         &--search {
           margin: 5px 0;
           width: 100%;
+          height: 35px;
         }
       }
 
       &__data {
+        &--table{
+          font-size: 10px;
+        }
       }
 
       &--closed {
@@ -403,8 +445,6 @@
     }
 
     &--button {
-      margin-top: 10px;
-      margin-left: 35px;
       margin-bottom: 15px;
       font-size: 18px;
     }
@@ -475,8 +515,6 @@
 
       &--button {
         padding: 10px;
-        margin-top: 35px;
-        margin-left: 15px;
         font-size: 25px;
       }
 
@@ -629,8 +667,6 @@
 
       &--button {
         padding: 8px;
-        margin-top: 35px;
-        margin-left: 15px;
         font-size: 35px;
         height: 65px;
       }
