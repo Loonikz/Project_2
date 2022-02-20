@@ -7,6 +7,7 @@ import { loginValidate, passwordValidate } from '../Main/validation';
 import { loginIn } from './logic';
 
 export function init() {
+  getLocalStorage();
   const state = {
     baseURL: 'https://wannaworkinginwizarddev.herokuapp.com',
   };
@@ -20,8 +21,6 @@ export function init() {
 
   addListener('dropdownLanguage', 'change', changeLng);
   addListener('dropdownTheme', 'change', changeTheme);
-
-  getLocalStorage();
 }
 
 document.addEventListener('DOMContentLoaded', init);

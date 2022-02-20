@@ -36,6 +36,7 @@ import { changeLogin, changePassword, clickClear, clickDelete, logout } from './
 // import { eventClickWithoutModal } from '../../logic/header/eventClickWithoutModal';
 
 export function init() {
+  getLocalStorage();
   const state = {
     baseURL: 'https://wannaworkinginwizarddev.herokuapp.com',
     mongoDB: [],
@@ -128,7 +129,6 @@ export function init() {
     'click',
     eventClickWithoutModal.bind(null, 'modal-delete', 'modal__content-modal-delete') ,
   );
-  getLocalStorage();
   loadData(state);
 }
 

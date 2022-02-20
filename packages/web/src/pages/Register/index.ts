@@ -3,12 +3,11 @@ import { addListener, fromLocaleStorageToDropDown } from '../../logic/header/uti
 import { changeLng } from '../../logic/header/localization';
 import { changeTheme } from '../../logic/header/theme';
 import { getLocalStorage } from '../../logic/header/getLocalStorage';
-import {
-  sendRegister,
-} from './logic';
+import { sendRegister } from './logic';
 import { confirmPasswordValidate, passwordValidate, loginValidate } from '../Main/validation';
 
 export function init() {
+  getLocalStorage();
   const state = {
     baseURL: 'https://wannaworkinginwizarddev.herokuapp.com',
   };
@@ -27,8 +26,6 @@ export function init() {
 
   addListener('dropdownLanguage', 'change', changeLng);
   addListener('dropdownTheme', 'change', changeTheme);
-
-  getLocalStorage();
 }
 
 document.addEventListener('DOMContentLoaded', init);
