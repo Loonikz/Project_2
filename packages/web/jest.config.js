@@ -12,7 +12,7 @@ module.exports = {
   // },
   transform: {
     '^.+\\.ts?$': 'ts-jest',
-    '.(css|scss)$': '<rootDir>/src/jest-config/style-mock.js',
+    '.(css|scss)$': '<rootDir>/src/jest-config/style-mock.ts',
   },
   setupFiles: ['<rootDir>/src/jest-config/LocalStorageMock.ts'],
 };
