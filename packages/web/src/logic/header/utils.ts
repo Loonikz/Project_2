@@ -129,7 +129,7 @@ export function selectRow(state, event: { target: HTMLTableElement }) {
   state.setCurrentNode(node);
   const nodeId: HTMLTableElement = <HTMLTableElement>node.firstChild;
   state.setCurrentRecordId(nodeId.innerText);
-  if (typeof nodeId.innerText === 'undefined') {
+  if (typeof nodeId.innerText === 'undefined' || nodeId.innerText === 'id') {
     setDisabledAttribute(getElementById('update'));
     setDisabledAttribute(getElementById('delete'));
   } else {
