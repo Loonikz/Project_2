@@ -38,13 +38,12 @@
     <section class='container__form--avatar'>
     </section>
     <label class='container__form--label' data-i18n='label_login'></label>
-    <input class='container__form--input' id='login-reg' type='text'>
-    <p class='container__form__message' id='login-reg-message'></p>
+    <input class='container__form--input' id='login-reg' type='text' pattern="^[a-zA-Z0-9_]*$" maxlength="20" minlength="6">
+    <p class='container__form__message' id='login-reg-message' ></p>
 
     <label class='container__form--label' data-i18n='label_password'></label>
-    <input class='container__form--input' id='password-reg' type='password'>
-    <p class='container__form__message' id='password-reg-message'></p>
-
+    <input class='container__form--input' id='password-reg' type='password' pattern="^(?=.*\d)(?=.*[a-zA-Z])(?=.*[!@#$%^&*]).*$" maxlength="25" minlength="8">
+    <p class='container__form__message' id='password-reg-message'  ></p>
     <button class='container__form--button' id='login-btn' type='button'
             data-i18n='btn_login'></button>
     <section class='container__form--text'>
