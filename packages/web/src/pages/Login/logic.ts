@@ -18,6 +18,5 @@ export function loginIn(state): boolean {
       setInnerText('password-reg-message', i18next.t('error_wrong_pass_login'))
     }
   }).catch((err) => console.log(err));
-  });
   return true;
 }
