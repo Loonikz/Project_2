@@ -3,7 +3,8 @@ import { getData, sendData } from './request';
 import {
   getElementById,
   getInputValue,
-  getValueLocalStorage, removeDisabledAttribute, setDisabledAttribute,
+  getValueLocalStorage,
+  setDisabledAttribute,
   setNodeValue,
   setStyleDisplay,
   setValueLocalStorage,
@@ -11,7 +12,7 @@ import {
 import { checkValidation } from '../pages/Main/validation';
 import { closeCreateModal } from '../pages/Main/modal';
 
-function renderCell(value: string, attribute: string) {
+export function renderCell(value: string, attribute: string) {
   const th = document.createElement('th');
   th.setAttribute('class', 'container__content__data--items-body');
   th.setAttribute('data-label', attribute);
@@ -19,7 +20,7 @@ function renderCell(value: string, attribute: string) {
   return th;
 }
 
-function renderRow(arrayData: Array<Person>) {
+export function renderRow(arrayData: Array<Person>) {
   const fragment = document.createDocumentFragment();
   arrayData.forEach((row: Person) => {
     const tr = document.createElement('tr');
@@ -75,10 +76,13 @@ export function changeDB(state) {
 }
 
 export function sort(arrayData: [], field) {
+  if (field === 'id') {
+    return arrayData.sort((a, b) => (Number(a[field]) > Number(b[field]) ? 1 : -1));
+  }
   return arrayData.sort((a, b) => (a[field] > b[field] ? 1 : -1));
 }
 
-function activeArray(state): [] {
+export function activeArray(state): [] {
   if (getInputValue('selectDB') === 'MySQL') {
     return state.mySQL;
   }
@@ -135,8 +139,6 @@ export function createRecord(state) {
       closeCreateModal();
       renderTable(db, state);
     });
-  } else {
-    window.alert('Validation error');
   }
 }
 
@@ -181,4 +183,3 @@ export function deleteRecord(state) {
   }
   setStyleDisplay('modal-delete', 'none');
 }
-
