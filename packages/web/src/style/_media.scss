@@ -129,6 +129,7 @@
             text-align: right;
             display: block;
             width: 97%;
+            height: 30px;
           }
 
           table tbody tr th[data-label]:before {
@@ -489,6 +490,7 @@
       padding: 30px;
 
       &__header {
+        display: flex;
 
         &--selects {
           width: 30%;
@@ -521,10 +523,11 @@
       }
 
       &__data {
-        font-size: 18px;
+        font-size: 15px;
 
         table {
           width: 100%;
+          font-size: 25px;
         }
       }
     }
@@ -642,6 +645,7 @@
       padding: 40px;
 
       &__header {
+        display: flex;
 
         &--selects {
           width: 30%;
@@ -677,7 +681,7 @@
         margin-top: 25px;
 
         &--table {
-          font-size: 35px;
+          font-size: 25px;
           width: 100%;
         }
 
@@ -752,14 +756,15 @@
 
     &--input {
       height: 45px;
+      font-size: 20px;
     }
 
     &--button {
       margin-top: 35px;
-      margin-left: 55px;
+      margin-left: 7%;
       margin-bottom: 45px;
       padding: 10px;
-      font-size: 35px;
+      font-size: 25px;
     }
   }
 }
