@@ -38,15 +38,15 @@
     <section class='container__form--avatar'>
     </section>
     <label class='container__form--label' data-i18n='label_login'></label>
-    <input class='container__form--input' id='sign-up-login' type='text'>
+    <input class='container__form--input' id='sign-up-login' type='text' pattern="^[a-zA-Z0-9_]*$" maxlength="20" minlength="6">
     <p class='container__form__message' id='sign-up-login-message'></p>
 
     <label class='container__form--label' data-i18n='label_password'></label>
-    <input class='container__form--input' id='sign-up-password' type='password'>
+    <input class='container__form--input' id='sign-up-password' type='password' pattern="^(?=.*\d)(?=.*[a-zA-Z])(?=.*[!@#$%^&*]).*$" maxlength="25" minlength="8">
     <p class='container__form__message' id='sign-up-password-message'></p>
 
     <label class='container__form--label' data-i18n='pass_confir'></label>
-    <input class='container__form--input' id='sign-up-password-confirm' type='password'>
+    <input class='container__form--input' id='sign-up-password-confirm' type='password' pattern="^(?=.*\d)(?=.*[a-zA-Z])(?=.*[!@#$%^&*]).*$" maxlength="25" minlength="8" >
     <p class='container__form__message' id='sign-up-password-confirm-message'></p>
 
     <button class='container__form--button' id='registration-btn' data-i18n='btn_regis'
