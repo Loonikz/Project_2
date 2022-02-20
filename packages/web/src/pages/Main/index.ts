@@ -12,7 +12,6 @@ import { changeTabSecurity } from '../../logic/header/changeTabSecurity';
 import {
   changeDB,
   changeSort,
-  clearAllRecord,
   createRecord,
   deleteRecord,
   loadData,
@@ -24,16 +23,9 @@ import {
   confirmPasswordValidate,
   loginValidate,
   passwordValidate,
-  validationAge,
-  validationCity,
-  validationCompany,
-  validationEmail,
-  validationName,
-  validationPhone,
 } from './validation';
 import { closeCreateModal, closeSecurity, eventClickWithoutModal } from './modal';
 import { changeLogin, changePassword, clickClear, clickDelete, logout } from './logic';
-// import { eventClickWithoutModal } from '../../logic/header/eventClickWithoutModal';
 
 export function init() {
   getLocalStorage();
@@ -83,8 +75,6 @@ export function init() {
   addListener('logout', 'click', logout.bind(null, state));
   addListener('closed-create-update', 'click', closeCreateModal);
   addListener('cancel-create', 'click', closeCreateModal);
-
-  getLocalStorage();
   changeTabSecurity();
 
   addListener('selectDB', 'change', changeDB.bind(null, state));
