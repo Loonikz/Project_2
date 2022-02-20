@@ -120,7 +120,7 @@ export class MySQL {
           }
         });
       } catch (e) {
-        console.log(e)
+        console.log(e);
       }
     });
   }

@@ -7,7 +7,13 @@ class AuthRouter {
   router = Router();
 
   constructor() {
-    UserController.connect();
+    try {
+      UserController.connect().catch((error) => {
+        throw error;
+      });
+    } catch (e) {
+      console.log(e);
+    }
     this.routes();
   }
 

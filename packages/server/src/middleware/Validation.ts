@@ -1,5 +1,5 @@
 export class Validation {
-  private status: boolean;
+  private readonly status: boolean;
 
   constructor({ fname, lname, age, city, phoneNumber, email, companyName }) {
     this.status =

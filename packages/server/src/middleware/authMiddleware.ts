@@ -20,4 +20,3 @@ export async function authMiddleware(req: Request, res: Response, next) {
     res.redirect('/login');
   }
 }
-

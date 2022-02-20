@@ -70,7 +70,7 @@ export class MongoDB {
 
   private updateId(name) {
     return new Promise((resolve, reject) => {
-      this.client.connect((e, client) => {
+      this.client.connect((e) => {
         if (e) {
           console.log(e);
         }
@@ -86,7 +86,7 @@ export class MongoDB {
             },
           )
           .then((result) => {
-            resolve(result['value']['seq']);
+            resolve(result.value.seq);
           })
           .catch(() => {
             reject();
