@@ -76,10 +76,13 @@ export function changeDB(state) {
 }
 
 export function sort(arrayData: [], field) {
+  if (field === 'id') {
+    return arrayData.sort((a, b) => (Number(a[field]) > Number(b[field]) ? 1 : -1));
+  }
   return arrayData.sort((a, b) => (a[field] > b[field] ? 1 : -1));
 }
 
-function activeArray(state): [] {
+export function activeArray(state): [] {
   if (getInputValue('selectDB') === 'MySQL') {
     return state.mySQL;
   }
