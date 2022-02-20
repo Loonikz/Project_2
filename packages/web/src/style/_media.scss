@@ -18,6 +18,9 @@
         height: 15px;
         margin: 15px;
         padding: 5px;
+        &:hover{
+          background: var(--btn-profile-hover-little);
+        }
       }
 
       &--logout {
@@ -103,7 +106,6 @@
           &--search {
             width: 100%;
             height: 28px;
-            margin: 5px auto;
           }
         }
 
@@ -175,9 +177,9 @@
         }
 
         &--search {
+          margin-top: 8px;
           width: 100%;
           height: 28px;
-          margin: 5px auto;
         }
       }
 
@@ -292,13 +294,13 @@
       }
 
       &--profile {
-        background: var(--btn-profile-hover-little);
+        background: var(--btn-profile-250);
         width: 15px;
         height: 15px;
         margin: 15px;
         padding: 5px;
         &:hover{
-          background: var(--btn-pro);
+          background: var(--btn-profile-hover-little);
         }
       }
 
@@ -381,7 +383,6 @@
         }
 
         &--search {
-          margin: 5px 0;
           width: 100%;
           height: 35px;
         }
@@ -471,6 +472,10 @@
         height: 35px;
         margin: 15px;
         padding: 10px;
+
+        &:hover {
+          background: var(--btn-profile-hover);
+        }
       }
 
       &--logout {
@@ -556,7 +561,6 @@
         &--search {
           width: 20%;
           height: 40px;
-          margin: 5px auto;
         }
       }
 

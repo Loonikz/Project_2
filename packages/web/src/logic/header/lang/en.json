@@ -43,5 +43,8 @@
   "error_login": "Login may be contain only letters, numbers, and underscores. Login at least 6 characters",
   "error_password": "Password must contain letters, numbers, and special symbols. Password at least 8 characters",
   "error_confirm_pass": "Passwords does`t match",
-  "error_wrong_pass_login": "Wrong login or password"
+  "error_wrong_pass_login": "Wrong login or password",
+  "error_change_name": "A user with this name already exists",
+  "error_change_wrong_password": "Wrong password",
+  "error_change_try_later": "Try later"
 }
