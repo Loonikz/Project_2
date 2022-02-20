@@ -81,6 +81,7 @@ export function init() {
   addListener('logout', 'click', logout.bind(null, state));
   addListener('closed-create-update', 'click', closeCreateModal);
   addListener('cancel-create', 'click', closeCreateModal);
+
   getLocalStorage();
   changeTabSecurity();
 
@@ -111,7 +112,6 @@ export function init() {
     'input',
     confirmPasswordValidate.bind(null, 'confirm-pass-edit'),
   );
-
   getLocalStorage();
   loadData(state);
 }

@@ -1,7 +1,7 @@
 @import 'variables';
 
 body {
-  background: var(--background);
+  background: var(--background) no-repeat;
   background-size: cover;
   font-family: 'Montserrat', sans-serif;
   font-size: 30px;
