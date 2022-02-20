@@ -1,4 +1,4 @@
-import './styles.scss';
+import '../../style/login-register.scss';
 import { addListener, fromLocaleStorageToDropDown } from '../../logic/header/utils';
 import { changeLng } from '../../logic/header/localization';
 import { changeTheme } from '../../logic/header/theme';
