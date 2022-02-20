@@ -33,6 +33,7 @@ import {
 } from './validation';
 import { closeCreateModal, closeSecurity } from './modal';
 import { changeLogin, changePassword, clickClear, clickDelete, logout } from './logic';
+import { eventClickWithoutModal } from '../../logic/header/eventClickWithoutModal';
 
 export function init() {
   const state = {
@@ -69,6 +70,7 @@ export function init() {
   addListener('closed-modal', 'click', closeSecurity);
   addListener('cancel', 'click', closeSecurity);
   addListener('cancelS', 'click', closeSecurity);
+  addListener('modal-security', 'click', eventClickWithoutModal('modal', 'click'));
 
   addListener('create', 'click', setStyleDisplay.bind(null, 'modal-create-update', 'block'));
   addListener('delete', 'click', clickDelete.bind(null, state));

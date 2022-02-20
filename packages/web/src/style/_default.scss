@@ -1,8 +1,8 @@
 @import 'variables';
 
 body {
-  background: var(--background) no-repeat;
-  background-size: cover;
+  background: var(--background);
+  overflow: auto;
   font-family: 'Montserrat', sans-serif;
   font-size: 30px;
 }
@@ -13,6 +13,7 @@ body {
   --btn-profile-big: url(#{$icon_profile_light-big});
   --btn-profile-hover: url(#{$icon_profile_light-hover});
   --btn-profile-hover-big: url(#{$icon_profile_light-hover-big});
+  --btn-profile-hover-little: url(#{$icon_profile_light-little});
   --btn-profile-250: url(#{$icon_profile_light-little});
   --btn-logout: url(#{$icon_logout_light});
   --btn-logout-big: url(#{$icon_logout_light-big});
@@ -62,6 +63,7 @@ body {
   --btn-profile-hover-big: url(#{$icon_profile_dark-hover-big});
   --btn-profile-big: url(#{$icon_profile_dark-big});
   --btn-profile-250: url(#{$icon_profile_dark-little});
+  --btn-profile-hover-little: url(#{$icon_profile_dark-little});
   --btn-logout: url(#{$icon_logout_dark});
   --btn-logout-big: url(#{$icon_logout_dark-big});
   --btn-logout-250: url(#{$icon_logout_dark-little});
@@ -343,4 +345,8 @@ body {
       }
     }
   }
+}
+
+.error-input{
+  border: solid 2px $red;
 }

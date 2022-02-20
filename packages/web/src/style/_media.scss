@@ -279,6 +279,42 @@
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
+  .nav-container {
+    align-items: center;
+
+    &__logo {
+      font-size: 25px;
+    }
+
+    &__buttons {
+      &--select {
+        font-size: 12px;
+      }
+
+      &--profile {
+        background: var(--btn-profile-hover-little);
+        width: 15px;
+        height: 15px;
+        margin: 15px;
+        padding: 5px;
+        &:hover{
+          background: var(--btn-pro);
+        }
+      }
+
+      &--logout {
+        background: var(--btn-logout-250);
+        width: 15px;
+        height: 15px;
+        margin: 15px;
+        padding: 5px;
+
+        &:hover {
+          background: var(--btn-logout-hover-250);
+        }
+      }
+    }
+  }
 
   .container {
 
