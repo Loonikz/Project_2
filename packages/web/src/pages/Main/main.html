@@ -84,7 +84,7 @@
 
       <form class='modal__form-edit' data-tab-content="2">
         <label class='modal--label' data-i18n='old_pass'></label>
-        <input class='modal--input' id='new-pass' type='password' pattern="^[a-zA-Z0-9_]*$" maxlength="20" minlength="6">
+        <input class='modal--input' id='new-pass' type='password' pattern="^(?=.*\d)(?=.*[a-zA-Z])(?=.*[!@#$%^&*]).*$" maxlength="20" minlength="6">
         <p class='modal__message' id='new-pass-message'></p>
 
         <label class='modal--label' data-i18n='new_password'></label>
