@@ -16,7 +16,7 @@ export function renderCell(value: string, attribute: string) {
   const th = document.createElement('th');
   th.setAttribute('class', 'container__content__data--items-body');
   th.setAttribute('data-label', attribute);
-  th.innerHTML = value === '' ? '.' : value;
+  th.innerHTML = value === '' || value === null ? '.' : value;
   return th;
 }
 
