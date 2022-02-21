@@ -11,6 +11,8 @@ export async function authMiddleware(req: Request, res: Response, next) {
       const user = await SchemaUser.findOne({ _id: decoded.id });
       if (user) {
         next();
+      } else {
+        res.redirect('/login');
       }
     } else {
       res.redirect('/login');
