@@ -1,5 +1,13 @@
 {
   "extends": "../../tsconfig.json",
-  "include": ["src/**/*.ts"],
-  "exclude": ["node_modules"]
+  "include": [
+    "src/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ],
+  "types": ["jest", "node", "@types/jest"],
+  "compilerOptions": {
+    "resolveJsonModule": true
+  }
 }

@@ -1,12 +1,31 @@
-import "./styles.scss"
-import {onTheme} from "../../logic/header/theme";
-import {addListener} from "../../logic/header/utils";
-import {changeLng} from "../../logic/header/localization";
+import '../../style/login-register.scss';
+import { addListener, fromLocaleStorageToDropDown } from '../../logic/header/utils';
+import { changeLng } from '../../logic/header/localization';
+import { changeTheme } from '../../logic/header/theme';
+import { getLocalStorage } from '../../logic/header/getLocalStorage';
+import { sendRegister } from './logic';
+import { confirmPasswordValidate, passwordValidate, loginValidate } from '../Main/validation';
 
-function init() {
-  onTheme();
-  addListener('dropdownLanguage', 'change', (event) => changeLng(event));
+export function init() {
+  getLocalStorage();
+  const state = {
+    baseURL: 'https://wannaworkinginwizarddev.herokuapp.com',
+  };
+  fromLocaleStorageToDropDown('changeTheme', 'theme', ['light', 'dark']);
+  fromLocaleStorageToDropDown('changeLanguage', 'lang', ['en', 'ru']);
+  changeLng();
+
+  addListener('registration-btn', 'click', sendRegister.bind(null, state));
+  addListener('sign-up-login', 'input', loginValidate.bind(null, 'sign-up-login'));
+  addListener('sign-up-password', 'input', passwordValidate.bind(null, 'sign-up-password'));
+  addListener(
+    'sign-up-password-confirm',
+    'change',
+    confirmPasswordValidate.bind(null, 'sign-up-password', 'sign-up-password-confirm'),
+  );
+
+  addListener('dropdownLanguage', 'change', changeLng);
+  addListener('dropdownTheme', 'change', changeTheme);
 }
-document.addEventListener('DOMContentLoaded', function () {
-  init();
-});
+
+document.addEventListener('DOMContentLoaded', init);

@@ -75,7 +75,7 @@ module.exports = {
   mode: isDevMode ? 'development' : 'production',
   entry: {
     login: resolve('Login', 'index.ts'),
-    registration: resolve('Register', 'index.ts'),
+    register: resolve('Register', 'index.ts'),
     main: resolve('Main', 'index.ts'),
   },
   output: {

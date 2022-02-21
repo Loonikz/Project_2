@@ -1,0 +1,354 @@
+@import 'variables';
+
+body {
+  background: var(--background);
+  -webkit-background-size: cover;
+  background-size: cover;
+  overflow: auto;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 30px;
+}
+
+:root {
+  --background: url(#{$background_light});
+  --btn-profile: url(#{$icon_profile_light});
+  --btn-profile-big: url(#{$icon_profile_light-big});
+  --btn-profile-hover: url(#{$icon_profile_light-hover});
+  --btn-profile-hover-big: url(#{$icon_profile_light-hover-big});
+  --btn-profile-hover-little: url(#{$icon_profile_light-hover-little});
+  --btn-profile-250: url(#{$icon_profile_light-little});
+  --btn-logout: url(#{$icon_logout_light});
+  --btn-logout-big: url(#{$icon_logout_light-big});
+  --btn-logout-250: url(#{$icon_logout_light-little});
+  --btn-logout-hover: url(#{$icon_logout_light-hover});
+  --btn-logout-hover-big: url(#{$icon_logout_light-hover-big});
+  --btn-logout-hover-250: url(#{$icon_logout_light-hover-little});
+  --bg-avatar: url(#{$icon-avatar-light});
+  --bg-avatar-250: url(#{$icon-avatar-light-little});
+  --logo-color: #F00418;
+  --text-color: #000000;
+  --text-color-hover: #F08686;
+  --opacity-container: 1;
+  --border-input-active: solid 2px #FFFFFF;
+  --bg-container: #E4E4E4;
+  --text-select: #000000;
+  --text-btn: #FFFFFF;
+  --text-color-label: #F08686;
+  --bg-btn: #F00418;
+  --border-cont: none;
+  --bg-input: #c2bfbf;
+  --bg-head-table: #999999;
+  --hover-table-color: #FFFFFF;
+  --bg-tr-odd: #DAD7D7;
+  --bg-tr: #A8A7A7;
+  --bg-tab: #999999;
+  --bg-tab-active: #E4E4E4;
+  --bg-modal: #E4E4E4;
+  --btn-form: #F00418;
+  --text-btn-form: #FFFFFF;
+  --border-table-click: 3px solid #F08686;
+  --hover-button: 2px 7px 8px 0px rgba(34, 60, 80, 0.31);
+  --active-button: 0px -1px 10px 2px rgba(34, 60, 80, 0.2) inset;
+  --bg-option: #FFFFFF;
+  --btn-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.5);
+  --btn-registr: #F00418;
+  --text-btn-color: #8A8A8A;
+  --text-btn-sign-up: #000000;
+  --loader: linear-gradient(to right, #cccccc 20%, #ababab 50%, #cccccc 80%);
+  --btn-cancel: #c2bfbf;
+}
+
+.dark {
+  --background: url(#{$background_dark});
+  --btn-profile: url(#{$icon_profile_dark});
+  --btn-profile-hover: url(#{$icon_profile_dark-hover});
+  --btn-profile-hover-big: url(#{$icon_profile_dark-hover-big});
+  --btn-profile-big: url(#{$icon_profile_dark-big});
+  --btn-profile-250: url(#{$icon_profile_dark-little});
+  --btn-profile-hover-little: url(#{$icon_profile_dark-hover-little});
+  --btn-logout: url(#{$icon_logout_dark});
+  --btn-logout-big: url(#{$icon_logout_dark-big});
+  --btn-logout-250: url(#{$icon_logout_dark-little});
+  --btn-logout-hover: url(#{$icon_logout_dark-hover});
+  --btn-logout-hover-big: url(#{$icon_logout_dark-hover-big});
+  --btn-logout-hover-250: url(#{$icon_logout_dark-hover-little});
+  --bg-avatar: url(#{$icon-avatar-dark});
+  --bg-avatar-250: url(#{$icon-avatar-dark-little});
+  --logo-color: #FFFFFF;
+  --text-color: #FFFFFF;
+  --text-color-hover: #FAFF00;
+  --border-input-active: solid 2px #DBFF00;
+  --opacity-container: 0.8;
+  --text-color-label: #FFFFFF;
+  --bg-container: linear-gradient(#630086, #00408B);
+  --text-select: #7F1581;
+  --text-btn: #7F1581;
+  --bg-btn: #FFFFFF;
+  --border-cont: solid #FFFFFF;
+  --bg-input: #FFFFFF;
+  --bg-head-table: #485380;
+  --hover-table-color: #A562DF;
+  --bg-tr-odd: #55608F;
+  --bg-tr: #646FA1;
+  --bg-tab: #3B0A4F;
+  --bg-modal: linear-gradient(#461888FF, #3E18BC);
+  --bg-tab-active: linear-gradient(#590986FF, #461888FF);
+  --btn-form: #FFFFFF;
+  --text-btn-form: #000000;
+  --border-table-click: 3px solid #A562DF;
+  --hover-button: 5px 5px 5px 1px rgba(34, 60, 80, 0.6);
+  --active-button: 0px -1px 10px 2px rgba(34, 60, 80, 0.71) inset;
+  --btn-shadow: 0px 0px 20px 0px rgba(255, 255, 255, 0.5);
+  --btn-registr: #5C17B4;
+  --text-btn-color: #FFFFFF;
+  --text-btn-sign-up: #FAFF00;
+  --loader: linear-gradient(to right, #A562DF 20%, #646FA1 50%, #A562DF 80%);
+  --btn-cancel: #7436b4;
+}
+
+.nav-container {
+  display: flex;
+  margin: 1% auto;
+  width: 90%;
+  justify-content: space-between;
+
+  &__logo {
+    color: var(--logo-color);
+    user-select: none;
+  }
+
+  &__buttons {
+    display: flex;
+    align-items: center;
+
+    &--profile {
+      background: var(--btn-profile);
+      cursor: pointer;
+      border: none;
+
+
+      &:hover {
+        background: var(--btn-profile-hover);
+      }
+    }
+
+    &--select {
+      color: var(--text-color);
+      background: transparent;
+      border: none;
+      font-family: 'Montserrat', sans-serif;
+      cursor: pointer;
+      margin: 2px;
+    }
+
+    &--option {
+      color: #000000;
+      line-height: 1em;
+    }
+
+    &--logout {
+      background: var(--btn-logout);
+      cursor: pointer;
+      border: none;
+
+      &:hover {
+        background: var(--btn-logout-hover);
+      }
+    }
+  }
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  backdrop-filter: blur(5px);
+  width: 100%;
+  text-align: center;
+  height: 100%;
+  overflow: auto;
+
+  &__message {
+    font-size: 15px;
+    color: #ff5d5d;
+    margin: 5px;
+  }
+
+  &__content-modal {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    background: var(--bg-container);
+    width: 550px;
+    margin: 3% auto;
+    height: auto;
+    color: var(--text-color);
+    border-radius: 20px;
+    justify-content: center;
+    text-align: center;
+  }
+
+  &__form-create {
+    text-align: left;
+    width: 80%;
+    margin: 5px auto;
+    z-index: 99;
+    border-radius: 0 0 20px 20px;
+    position: relative;
+  }
+
+  &--title {
+    font-size: 25px;
+    display: inline-block;
+    margin: 20px auto;
+  }
+
+  &--closed {
+    cursor: pointer;
+    display: inline-block;
+    float: right;
+    margin-top: 5px;
+    margin-right: 15px;
+    font-size: 28px;
+    font-weight: bold;
+  }
+
+  &__tab-menu {
+    display: flex;
+
+    &--link {
+      display: block;
+      cursor: pointer;
+      text-decoration: none;
+      box-shadow: 0px 0px 14px 0px rgba(191, 163, 186, 0.2);
+      font-weight: bold;
+      font-size: 20px;
+      text-align: center;
+      background: var(--bg-tab);
+      padding: 25px;
+      width: 50%;
+      height: 30px;
+      color: white;
+      border-radius: 30px 30px 0 0;
+      position: relative;
+    }
+  }
+
+  .active {
+    color: var(--text-color-hover);
+    background: var(--bg-tab-active);
+  }
+
+  &__form {
+    text-align: left;
+    display: flex;
+    width: 100%;
+    margin-top: -10px;
+    background: var(--bg-modal);
+    z-index: 99;
+    border-radius: 0 0 20px 20px;
+    position: relative;
+  }
+
+  &__form-edit {
+    width: 80%;
+    margin: 0 auto;
+    display: none;
+  }
+
+  .active-form {
+    display: block;
+  }
+
+  &--label {
+    display: block;
+    color: var(--text-color-label);
+    padding: 10px;
+  }
+
+  &--input {
+    display: block;
+    height: 25px;
+    margin: 0 auto;
+    border-radius: 10px;
+    border: none;
+    padding: 8px;
+    background: #BEBDBD;
+    width: 100%;
+
+    &:focus {
+      outline: none;
+      border: var(--border-input-active);
+    }
+
+    &:invalid {
+      border: solid 2px $red;
+    }
+  }
+
+  &--button {
+    border: none;
+    border-radius: 8px;
+    width: 38%;
+    margin-top: 20px;
+    margin-left: 35px;
+    margin-bottom: 25px;
+    padding: 8px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    background: var(--btn-form);
+    color: var(--text-btn-form);
+
+    &:disabled {
+      cursor: no-drop;
+      background: var(--bg-tr);
+      color: #FFFFFF;
+    }
+
+    &:hover {
+      box-shadow: var(--hover-button);
+    }
+
+    &:active {
+      box-shadow: var(--active-button);
+    }
+  }
+
+  &__content-modal-delete {
+    font-family: 'Montserrat', sans-serif;
+    background: var(--bg-container);
+    width: 550px;
+    height: auto;
+    color: var(--text-color);
+    border-radius: 20px;
+    margin: 15% auto;
+  }
+
+  &__active {
+    display: flex;
+
+    &--btn {
+      background: var(--btn-form);
+      color: var(--text-btn);
+      width: 50%;
+      font-size: 25px;
+      align-items: center;
+      margin: 15px;
+      padding: 8px;
+      border: none;
+
+      &:hover {
+        box-shadow: var(--hover-button);
+      }
+
+      &:active {
+        box-shadow: var(--active-button);
+      }
+    }
+  }
+}
+
+.error-input{
+  border: solid 2px $red;
+}

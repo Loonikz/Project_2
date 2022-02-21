@@ -1,0 +1,811 @@
+@media (min-width: 280px) and (max-width: 768px) {
+
+  .nav-container {
+    align-items: center;
+
+    &__logo {
+      font-size: 25px;
+    }
+
+    &__buttons {
+      &--select {
+        font-size: 12px;
+      }
+
+      &--profile {
+        background: var(--btn-profile-250);
+        width: 15px;
+        height: 15px;
+        margin: 15px;
+        padding: 5px;
+        &:hover{
+          background: var(--btn-profile-hover-little);
+        }
+      }
+
+      &--logout {
+        background: var(--btn-logout-250);
+        width: 15px;
+        height: 15px;
+        margin: 15px;
+        padding: 5px;
+
+        &:hover {
+          background: var(--btn-logout-hover-250);
+        }
+      }
+    }
+  }
+
+  .container {
+    &__form {
+      font-size: 18px;
+      padding: 30px;
+      width: 55%;
+
+      &__message {
+        font-size: 12px;
+        margin: 5px;
+      }
+
+      &--avatar {
+        height: 87px;
+        width: 87px;
+      }
+
+      &--label {
+        padding: 8px;
+      }
+
+      &--input {
+        font-size: 18px;
+        height: 25px;
+      }
+
+      &--button {
+        padding: 10px;
+        margin-top: 35px;
+        margin-left: 15px;
+        font-size: 18px;
+      }
+
+      &--text {
+        margin-top: 15px;
+        font-size: 20px;
+      }
+
+      &__content {
+        padding: 12px;
+        width: 90%;
+
+        &__header {
+          display: grid;
+
+          &--selects {
+            width: 100%;
+          }
+
+          &--list {
+            font-size: 11px;
+            margin-right: 0;
+            width: 100%;
+            height: 29px;
+          }
+
+          &--panell {
+            width: 100%;
+          }
+
+          &--btn {
+            font-size: 12px;
+            padding: 3px;
+            height: 28px;
+            width: 100%;
+          }
+
+          &--search {
+            width: 100%;
+            height: 28px;
+          }
+        }
+
+        &__data {
+          font-size: 12px;
+
+          table {
+            width: 100%;
+          }
+
+          table thead {
+            display: none;
+          }
+
+          table tbody tr {
+            box-shadow: 0 0 0.5em #666666;
+            border: none;
+            display: block;
+          }
+
+          table tbody tr th {
+            padding: 0.4em;
+            text-align: right;
+            display: block;
+            width: 97%;
+            height: 35px;
+          }
+
+          table tbody tr th[data-label]:before {
+            content: attr(data-label);
+            float: left;
+            font-weight: bold;
+          }
+
+          table tbody tr th.numeric {
+            text-align: left;
+          }
+        }
+      }
+    }
+
+    &__content {
+      padding: 12px;
+      width: 90%;
+
+      &__header {
+        display: grid;
+
+        &--selects {
+          width: 100%;
+        }
+
+        &--list {
+          font-size: 11px;
+          margin-right: 0;
+          width: 100%;
+          height: 29px;
+        }
+
+        &--panell {
+          width: 100%;
+        }
+
+        &--btn {
+          font-size: 12px;
+          padding: 3px;
+          height: 28px;
+          width: 100%;
+        }
+
+        &--search {
+          margin-top: 8px;
+          width: 100%;
+          height: 28px;
+        }
+      }
+
+      &__data {
+        font-size: 12px;
+
+        &--span{
+          height: 80%;
+          width: 90%;
+          margin: 0 auto;
+        }
+
+        table {
+          width: 100%;
+        }
+
+        table thead {
+          display: none;
+        }
+
+        table tbody tr {
+          box-shadow: 0 0 0.5em #666666;
+          border: none;
+          display: block;
+        }
+
+        table tbody tr th {
+          padding: 0.4em;
+          text-align: right;
+          display: block;
+          width: 97%;
+        }
+
+        table tbody tr th[data-label]:before {
+          content: attr(data-label);
+          float: left;
+          font-weight: bold;
+        }
+
+        table tbody tr th.numeric {
+          text-align: left;
+        }
+      }
+    }
+  }
+
+  .modal {
+    &__content-modal-delete {
+      margin: 25% auto;
+      width: 60%;
+      font-size: 13px;
+      height: 112px;
+      padding-bottom: 25px;
+
+      &--dialog {
+        padding: 25px;
+        margin: 0;
+      }
+    }
+
+    &__active {
+      padding-bottom: 25px;
+      margin-bottom: 25px;
+
+      &--btn {
+        width: 60%;
+        font-size: 12px;
+        padding: 3px;
+        height: 25px;
+      }
+    }
+
+    &__tab-menu {
+      &--link {
+        font-size: 12px;
+        height: 15px;
+      }
+    }
+
+    &--closed {
+      font-size: 20px;
+    }
+
+    &--title {
+      font-size: 20px;
+    }
+
+    &__content-modal {
+      margin: 15% auto;
+      width: 90%;
+      font-size: 12px;
+    }
+
+    &--button {
+      margin-left: 17px;
+      font-size: 12px;
+    }
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .nav-container {
+    align-items: center;
+
+    &__logo {
+      font-size: 25px;
+    }
+
+    &__buttons {
+      &--select {
+        font-size: 12px;
+      }
+
+      &--profile {
+        background: var(--btn-profile-250);
+        width: 15px;
+        height: 15px;
+        margin: 15px;
+        padding: 5px;
+        &:hover{
+          background: var(--btn-profile-hover-little);
+        }
+      }
+
+      &--logout {
+        background: var(--btn-logout-250);
+        width: 15px;
+        height: 15px;
+        margin: 15px;
+        padding: 5px;
+
+        &:hover {
+          background: var(--btn-logout-hover-250);
+        }
+      }
+    }
+  }
+
+  .container {
+
+    &__form {
+      font-size: 18px;
+      padding: 30px;
+      width: 40%;
+
+      &__message {
+        font-size: 10px;
+        margin: 5px;
+      }
+
+      &--avatar {
+        height: 87px;
+        width: 87px;
+      }
+
+      &--label {
+        padding: 8px;
+      }
+
+      &--input {
+        font-size: 18px;
+        height: 20px;
+      }
+
+      &--button {
+        padding: 10px;
+        margin-top: 25px;
+        margin-left: 10px;
+        font-size: 18px;
+      }
+
+      &--text {
+        margin-top: 15px;
+        font-size: 20px;
+      }
+    }
+
+    &__content {
+      padding: 20px;
+      &__header {
+        display: grid;
+
+        &--selects {
+          margin: 5px 0;
+          width: 100%;
+        }
+
+        &--list {
+          width: 49%;
+          height: 35px;
+        }
+
+        &--panell {
+          width: 100%;
+        }
+
+        &--btn {
+          margin: 5px 0;
+          width: 49%;
+          height: 35px;
+        }
+
+        &--search {
+          width: 100%;
+          height: 35px;
+        }
+      }
+
+      &__data {
+        &--table{
+          font-size: 10px;
+        }
+      }
+
+      &--closed {
+        font-size: 20px;
+      }
+    }
+  }
+
+  .modal {
+    &__content-modal-delete {
+      margin: 30% auto;
+      width: 60%;
+      font-size: 13px;
+      padding-bottom: 25px;
+
+      &--dialog {
+        padding: 25px;
+        margin: 0;
+      }
+    }
+
+    &__active {
+      padding-bottom: 25px;
+      margin-bottom: 25px;
+
+      &--btn {
+        width: 60%;
+        font-size: 12px;
+        padding: 3px;
+        height: 25px;
+      }
+    }
+
+    &__tab-menu {
+      &--link {
+        font-size: 18px;
+        height: 18px;
+      }
+    }
+
+    &--closed {
+    }
+
+    &--title {
+      font-size: 20px;
+    }
+
+    &__content-modal {
+      width: 60%;
+      margin: 5% auto;
+      font-size: 18px;
+    }
+
+    &--button {
+      margin-bottom: 15px;
+      font-size: 18px;
+    }
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1920px) {
+
+  .nav-container {
+    align-items: center;
+
+    &__logo {
+      font-size: 50px;
+    }
+
+    &__buttons {
+      &--select {
+        font-size: 20px;
+      }
+
+      &--profile {
+        background: var(--btn-profile);
+        width: 35px;
+        height: 35px;
+        margin: 15px;
+        padding: 10px;
+
+        &:hover {
+          background: var(--btn-profile-hover);
+        }
+      }
+
+      &--logout {
+        background: var(--btn-logout);
+        width: 35px;
+        height: 35px;
+        margin: 15px;
+        padding: 10px;
+
+        &:hover {
+          background: var(--btn-logout-hover);
+        }
+      }
+    }
+  }
+
+  .container {
+
+    &__form {
+      font-size: 25px;
+      padding: 40px;
+      width: 35%;
+
+      &__message {
+        font-size: 15px;
+        margin: 5px;
+      }
+
+      &--avatar {
+        height: 107px;
+        width: 107px;
+      }
+
+      &--label {
+        padding: 10px;
+      }
+
+      &--input {
+        font-size: 18px;
+        height: 35px;
+      }
+
+      &--button {
+        padding: 10px;
+        font-size: 25px;
+      }
+
+      &--text {
+        margin-top: 15px;
+        font-size: 25px;
+      }
+    }
+
+    &__content {
+      padding: 30px;
+
+      &__header {
+        display: flex;
+
+        &--selects {
+          width: 30%;
+        }
+
+        &--list {
+          width: 48%;
+          font-size: 15px;
+          height: 40px;
+        }
+
+        &--panel {
+          margin: 0 15px;
+          width: 50%;
+          align-items: center;
+        }
+
+        &--btn {
+          font-size: 12px;
+          padding: 8px;
+          height: 40px;
+          width: 23%;
+        }
+
+        &--search {
+          width: 20%;
+          height: 40px;
+        }
+      }
+
+      &__data {
+        font-size: 15px;
+
+        table {
+          width: 100%;
+          font-size: 25px;
+        }
+      }
+    }
+  }
+
+  .modal {
+    &__content-modal-delete {
+      margin: 15% auto;
+      width: 40%;
+      font-size: 25px;
+      padding-bottom: 15px;
+
+      &--dialog {
+        padding: 25px;
+        margin: 0;
+      }
+    }
+
+    &__active {
+
+      &--btn {
+        width: 60%;
+        font-size: 18px;
+        padding: 8px;
+      }
+    }
+
+    &--closed {
+      font-size: 25px;
+    }
+  }
+}
+
+@media (min-width: 1921px) {
+
+  .nav-container {
+    align-items: center;
+
+    &__logo {
+      font-size: 70px;
+    }
+
+    &__buttons {
+      &--select {
+        font-size: 30px;
+      }
+
+      &--profile {
+        background: var(--btn-profile-big);
+        width: 50px;
+        height: 50px;
+        margin: 15px;
+        padding: 10px;
+
+        &:hover {
+          background: var(--btn-profile-hover-big);
+        }
+      }
+
+      &--logout {
+        background: var(--btn-logout-big);
+        width: 50px;
+        height: 50px;
+        margin: 15px;
+        padding: 10px;
+
+        &:hover {
+          background: var(--btn-logout-hover-big);
+        }
+      }
+    }
+  }
+
+  .container {
+
+    &__form {
+      width: 30%;
+      font-size: 40px;
+      padding: 60px;
+
+      &__message {
+        font-size: 20px;
+        margin: 5px;
+      }
+
+      &--avatar {
+        height: 157px;
+        width: 157px;
+      }
+
+      &--label {
+        padding: 12px;
+      }
+
+      &--input {
+        font-size: 30px;
+        height: 55px;
+      }
+
+      &--button {
+        padding: 8px;
+        font-size: 35px;
+        height: 65px;
+      }
+
+      &--text {
+        margin-top: 20px;
+        font-size: 35px;
+      }
+    }
+
+    &__content {
+      padding: 40px;
+
+      &__header {
+        display: flex;
+
+        &--selects {
+          width: 30%;
+        }
+
+        &--list {
+          width: 48%;
+          font-size: 25px;
+          height: 50px;
+        }
+
+        &--panel {
+          margin: 0 15px;
+          width: 50%;
+          align-items: center;
+        }
+
+        &--btn {
+          font-size: 25px;
+          padding: 8px;
+          height: 50px;
+          width: 23%;
+        }
+
+        &--search {
+          width: 20%;
+          font-size: 25px;
+          height: 50px;
+        }
+      }
+
+      &__data {
+        margin-top: 25px;
+
+        &--table {
+          font-size: 25px;
+          width: 100%;
+        }
+
+        &--items-head {
+          height: 100px;
+        }
+
+        &--items-body {
+          padding: 20px;
+        }
+      }
+    }
+  }
+
+  .modal {
+    &__content-modal-delete {
+      margin: 15% auto;
+      width: 40%;
+      font-size: 45px;
+      padding-bottom: 15px;
+      height: 315px;
+
+      &--dialog {
+        padding: 68px 0;
+        margin: 0;
+      }
+    }
+
+    &--closed {
+      font-size: 45px;
+    }
+
+    &__active {
+      margin-top: 25px;
+
+      &--btn {
+        width: 60%;
+        font-size: 38px;
+        padding: 8px;
+        margin: 20px;
+      }
+    }
+
+    &__message {
+      font-size: 25px;
+    }
+
+    &__content-modal {
+      font-size: 40px;
+      margin: 8% auto;
+      width: 30%;
+    }
+
+    &__form-create {
+      margin: 5px auto;
+      padding-top: 15px;
+    }
+
+    &--title {
+      font-size: 45px;
+      margin: 35px;
+    }
+
+    &__tab-menu {
+
+      &--link {
+        padding: 25px;
+        height: 60px;
+        font-size: 35px;
+      }
+    }
+
+    &--input {
+      height: 45px;
+      font-size: 20px;
+    }
+
+    &--button {
+      margin-top: 35px;
+      margin-left: 7%;
+      margin-bottom: 45px;
+      padding: 10px;
+      font-size: 25px;
+    }
+  }
+}
+
