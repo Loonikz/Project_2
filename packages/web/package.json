@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "scripts": {
     "start": "webpack serve",
-    "build": "cross-env NODE_ENV=development webpack",
+    "build": "webpack",
     "build:prod": "cross-env NODE_ENV=production webpack",
     "build:analyze": "cross-env NODE_ENV=production webpack --analyze",
     "clear": "rimraf dist",
